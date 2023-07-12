@@ -34,61 +34,63 @@ Site owner goal
 
 ## User Stories
 
-- These are all the User Storys for this project, they are also found [here](https://github.com/users/andreas-ka/projects/7/views/1) on my porjects kanban board.
+- These are all the User Storys for this project, they are also found [here](https://github.com/users/andreas-ka/projects/12) on my porjects kanban board.
 
 ### Profile and account management
 
-- [x] As a registered user i can follow other users so that i can be inspired by likeminded users [#17](https://github.com/andreas-ka/Explore-Sthlm/issues/17)
+- [x] As a registered user i can follow other users so that i can be inspired by likeminded users [#17](https://github.com/andreas-ka/explore-sthlm-react-frontend/issues/17)
 
-- [x] As a registered user i can maintain a profile image so that i can get a personal experience [#16](https://github.com/andreas-ka/Explore-Sthlm/issues/16)
+- [x] As a registered user i can maintain a profile image so that i can get a personal experience [#16](https://github.com/andreas-ka/explore-sthlm-react-frontend/issues/16)
 
-- [x] As a registered user i can update my profile so that it fits my needs [#4](https://github.com/andreas-ka/Explore-Sthlm/issues/4)
+- [x] As a registered user i can update my profile so that it fits my needs [#4](https://github.com/andreas-ka/explore-sthlm-react-frontend/issues/4)
 
 ### Events
 
-- [x] As a registered user i can create my own event so that i can participate on the website [#19](https://github.com/andreas-ka/Explore-Sthlm/issues/19)
+- [x] As a registered user i can create my own event so that i can participate on the website [#19](https://github.com/andreas-ka/explore-sthlm-react-frontend/issues/19)
 
-- [ ] As a registered user i can like events so that the creator knows i like it [#11](https://github.com/andreas-ka/Explore-Sthlm/issues/11).
+- [ ] As a registered user i can like events so that the creator knows i like it [#11](https://github.com/andreas-ka/explore-sthlm-react-frontend/issues/11).
 
-- [x] As a registered user i can sort events based on categories so that find something specific [#10](https://github.com/andreas-ka/Explore-Sthlm/issues/10)
+- [x] As a registered user i can sort events based on categories so that find something specific [#10](https://github.com/andreas-ka/explore-sthlm-react-frontend/issues/10)
 
-- [x] As a registered user i can search all posts/events so that find something particular [#9](https://github.com/andreas-ka/Explore-Sthlm/issues/9)
+- [x] As a registered user i can search all posts/events so that find something particular [#9](https://github.com/andreas-ka/explore-sthlm-react-frontend/issues/9)
 
-- [x] As a registered user i can delete my own event so that i can remove it if it's not relevant anymore [#8](https://github.com/andreas-ka/Explore-Sthlm/issues/8)
+- [x] As a registered user i can delete my own event so that i can remove it if it's not relevant anymore [#8](https://github.com/andreas-ka/explore-sthlm-react-frontend/issues/8)
 
-- [x] As a registered user i can update my event so that add or remove information about the event [#7](https://github.com/andreas-ka/Explore-Sthlm/issues/7)
+- [x] As a registered user i can update my event so that add or remove information about the event [#7](https://github.com/andreas-ka/explore-sthlm-react-frontend/issues/7)
 
-- [x] As a registered user i can **view details on a specific event ** so that i can get more information [#5](https://github.com/andreas-ka/Explore-Sthlm/issues/5)
+- [x] As a registered user i can **view details on a specific event ** so that i can get more information [#5](https://github.com/andreas-ka/explore-sthlm-react-frontend/issues/5)
 
 ### Rating
 
-- [x] As a logged in user i can edit/delete my rate on an event so that i can change my opinion about the specific event [#26](https://github.com/andreas-ka/Explore-Sthlm/issues/26)
+- [x] As a logged in user i can delete my rate on an event so that i can change my opinion about the specific event [#22](https://github.com/andreas-ka/explore-sthlm-react-frontend/issues/22)
 
-- [x] As a logged in user i can rate an event so that show my opinion about the specific event [#25](https://github.com/andreas-ka/Explore-Sthlm/issues/25)
+- [x] As a logged in user i can edit my rate on an event so that i can change my opinion about the specific event [#21](https://github.com/andreas-ka/explore-sthlm-react-frontend/issues/21)
+
+- [x] As a logged in user i can rate an event so that show my opinion about the specific event [#20](https://github.com/andreas-ka/explore-sthlm-react-frontend/issues/20)
 
 ### Reviews
 
-- [x] As a registered user i can delete my comment so that if it's not relevant anymore it dont show [#15](https://github.com/andreas-ka/Explore-Sthlm/issues/15)
+- [x] As a registered user i can delete my comment so that if it's not relevant anymore it dont show [#15](https://github.com/andreas-ka/explore-sthlm-react-frontend/issues/15)
 
-- [x] As a registered user i can update my comments so that they have the right information [#14](https://github.com/andreas-ka/Explore-Sthlm/issues/14)
+- [x] As a registered user i can update my comments so that they have the right information [#14](https://github.com/andreas-ka/explore-sthlm-react-frontend/issues/14)
 
-- [x] As a registered user i can view reviews so that i can participate on the website [#13](https://github.com/andreas-ka/Explore-Sthlm/issues/13)
+- [x] As a registered user i can view reviews so that i can participate on the website [#13](https://github.com/andreas-ka/explore-sthlm-react-frontend/issues/13)
 
-- [x] As a registered user i can comments on posts so that i can interact with others and the creator of the post [#12](https://github.com/andreas-ka/Explore-Sthlm/issues/12)
+- [x] As a registered user i can comments on posts so that i can interact with others and the creator of the post [#12](https://github.com/andreas-ka/explore-sthlm-react-frontend/issues/12)
 
 - [x] [#2]()
 
 ### Navigation and authentication
 
-- [x] As a registered user i can easily navigate the website so that i can find the information i want [#18](https://github.com/andreas-ka/Explore-Sthlm/issues/18)
+- [x] As a registered user i can easily navigate the website so that i can find the information i want [#18](https://github.com/andreas-ka/explore-sthlm-react-frontend/issues/18)
 
-- [x] As a registered user i can view all posts in the feed so that i can get inspired [#6](https://github.com/andreas-ka/Explore-Sthlm/issues/6)
+- [x] As a registered user i can view all posts in the feed so that i can get inspired [#6](https://github.com/andreas-ka/explore-sthlm-react-frontend/issues/6)
 
-- [x] As a registered user i can logout so that end my visit at the website [#3](https://github.com/andreas-ka/Explore-Sthlm/issues/3)
+- [x] As a registered user i can logout so that end my visit at the website [#3](https://github.com/andreas-ka/explore-sthlm-react-frontend/issues/3)
 
-- [x] As a registered user i can login with my credentials so that participate on the website [#2](https://github.com/andreas-ka/Explore-Sthlm/issues/2)
+- [x] As a registered user i can login with my credentials so that participate on the website [#2](https://github.com/andreas-ka/explore-sthlm-react-frontend/issues/2)
 
-- [x] As a visiting user i can create an account so that participate in the website [#1](https://github.com/andreas-ka/Explore-Sthlm/issues/1)
+- [x] As a visiting user i can create an account so that participate in the website [#1](https://github.com/andreas-ka/explore-sthlm-react-frontend/issues/1)
 
 [Back up](#table-of-content)
 
