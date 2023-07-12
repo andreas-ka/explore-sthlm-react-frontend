@@ -319,7 +319,15 @@ To view the complete testing details and results, please [click here](TESTING.md
 ## Extensions
     - ESLint with prettier [Link](https://gist.github.com/ianmeigh/8e603b91a38d7829d959402bfcf29d3d)
 
+## Packages
+
     - ES7 Snippets
+
+    - React Router dom 5.3
+
+    - Eslint
+
+    - Prettier
 
 ---
 ## Deployment

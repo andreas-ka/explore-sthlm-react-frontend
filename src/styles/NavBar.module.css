@@ -1,0 +1,8 @@
+.NavLink {
+    padding: 5px;
+}
+
+.Active i {
+    color: #ff851c;
+}
+
