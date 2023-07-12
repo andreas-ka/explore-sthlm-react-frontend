@@ -329,6 +329,8 @@ To view the complete testing details and results, please [click here](TESTING.md
 
     - Prettier
 
+    - Axios
+
 ---
 ## Deployment
 
