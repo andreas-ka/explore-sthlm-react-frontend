@@ -315,7 +315,9 @@ To view the complete testing details and results, please [click here](TESTING.md
 # Programs and tools used
 
 ## Extensions
-    - ESLint with prettier [Link to guide](https://gist.github.com/ianmeigh/8e603b91a38d7829d959402bfcf29d3d)
+    - ESLint with prettier [Link](https://gist.github.com/ianmeigh/8e603b91a38d7829d959402bfcf29d3d)
+
+    - ES7 Snippets
 
 ---
 ## Deployment
