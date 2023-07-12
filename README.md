@@ -311,6 +311,13 @@ To view the complete testing details and results, please [click here](TESTING.md
 [Back up](#table-of-content)
 
 ---
+
+# Programs and tools used
+
+## Extensions
+    - ESLint with prettier [Link to guide](https://gist.github.com/ianmeigh/8e603b91a38d7829d959402bfcf29d3d)
+
+---
 ## Deployment
 
 The website was deployed using Heroku by following these steps:
