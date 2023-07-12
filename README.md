@@ -1,100 +1,390 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Milestone project 5
 
-Welcome,
+  
 
-This is the Code Institute student template for React apps on the Codeanywhere IDE. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
-
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **19th April, 2023**
-
-## Codeanywhere Reminders
-
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+![Screenshot](src/assets/readme-logo.png)
 
 ---
 
-Happy coding!
+Live website
 
-# Getting Started with Create React App
+View live website here: LINK
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+Table of contents
 
-In the project directory, you can run:
+---
 
-### `npm install`
+#### Project
 
-Installs the required npm packages.
+Objective
 
-### `npm start`
+The objective of this project and website was to create a fifth portfolio submission for Code Institutes fullstack developer program. Among following the projects assessment criteria, the website needed to be built using React, JSX (HTML, JavaScript and CSS) and appropriate frameworks and libraries, and connected to a separate backend API. The application needed to have complete CRUD (create, read, update and delete) functionality on the Front-End for users to work with data from an API.
 
-Runs the app in the development mode.\
-Open port 3000 to view it in the browser.
+I've chosen to create a project aimed toward my own interests to find inspiration, and chose to create a social networking website targeted towards people who are living or visiting Stockholm.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The project is partly based on the Code Institute Moments course material, using some of the code provided there, with additional functionality and styling added by me.
 
-### `npm test`
+Site user goal
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Site owner goal
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## User Stories
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- These are all the User Storys for this project, they are also found [here](https://github.com/users/andreas-ka/projects/7/views/1) on my porjects kanban board.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Profile and account management
 
-### `npm run eject`
+- [x] As a registered user i can follow other users so that i can be inspired by likeminded users [#17](https://github.com/andreas-ka/Explore-Sthlm/issues/17)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- [x] As a registered user i can maintain a profile image so that i can get a personal experience [#16](https://github.com/andreas-ka/Explore-Sthlm/issues/16)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- [x] As a registered user i can update my profile so that it fits my needs [#4](https://github.com/andreas-ka/Explore-Sthlm/issues/4)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Events
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- [x] As a registered user i can create my own event so that i can participate on the website [#19](https://github.com/andreas-ka/Explore-Sthlm/issues/19)
 
-## Learn More
+- [ ] As a registered user i can like events so that the creator knows i like it [#11](https://github.com/andreas-ka/Explore-Sthlm/issues/11).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- [x] As a registered user i can sort events based on categories so that find something specific [#10](https://github.com/andreas-ka/Explore-Sthlm/issues/10)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [x] As a registered user i can search all posts/events so that find something particular [#9](https://github.com/andreas-ka/Explore-Sthlm/issues/9)
 
-### Code Splitting
+- [x] As a registered user i can delete my own event so that i can remove it if it's not relevant anymore [#8](https://github.com/andreas-ka/Explore-Sthlm/issues/8)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- [x] As a registered user i can update my event so that add or remove information about the event [#7](https://github.com/andreas-ka/Explore-Sthlm/issues/7)
 
-### Analyzing the Bundle Size
+- [x] As a registered user i can **view details on a specific event ** so that i can get more information [#5](https://github.com/andreas-ka/Explore-Sthlm/issues/5)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Rating
 
-### Making a Progressive Web App
+- [x] As a logged in user i can edit/delete my rate on an event so that i can change my opinion about the specific event [#26](https://github.com/andreas-ka/Explore-Sthlm/issues/26)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- [x] As a logged in user i can rate an event so that show my opinion about the specific event [#25](https://github.com/andreas-ka/Explore-Sthlm/issues/25)
 
-### Advanced Configuration
+### Reviews
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- [x] As a registered user i can delete my comment so that if it's not relevant anymore it dont show [#15](https://github.com/andreas-ka/Explore-Sthlm/issues/15)
 
-### Deployment
+- [x] As a registered user i can update my comments so that they have the right information [#14](https://github.com/andreas-ka/Explore-Sthlm/issues/14)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- [x] As a registered user i can view reviews so that i can participate on the website [#13](https://github.com/andreas-ka/Explore-Sthlm/issues/13)
 
-### `npm run build` fails to minify
+- [x] As a registered user i can comments on posts so that i can interact with others and the creator of the post [#12](https://github.com/andreas-ka/Explore-Sthlm/issues/12)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [x] [#2]()
+
+### Navigation and authentication
+
+- [x] As a registered user i can easily navigate the website so that i can find the information i want [#18](https://github.com/andreas-ka/Explore-Sthlm/issues/18)
+
+- [x] As a registered user i can view all posts in the feed so that i can get inspired [#6](https://github.com/andreas-ka/Explore-Sthlm/issues/6)
+
+- [x] As a registered user i can logout so that end my visit at the website [#3](https://github.com/andreas-ka/Explore-Sthlm/issues/3)
+
+- [x] As a registered user i can login with my credentials so that participate on the website [#2](https://github.com/andreas-ka/Explore-Sthlm/issues/2)
+
+- [x] As a visiting user i can create an account so that participate in the website [#1](https://github.com/andreas-ka/Explore-Sthlm/issues/1)
+
+[Back up](#table-of-content)
+
+---
+
+## Features
+
+### Existing features
+
+#### Navbar
+
+#### Sign up
+
+#### Sign in
+
+#### Feed
+
+#### Events
+
+#### Profiles
+
+#### Follow - Followed
+
+#### Searchbar
+
+#### Reviews
+
+---
+
+### Structure
+
+#### Database
+
+[Back up](#table-of-content)
+
+### Skeleton
+
+#### Wireframes
+
+---
+
+## Typography and color scheme
+
+#### Design Choices
+
+#### Colour
+
+#### Fonts and Typography
+
+[Back up](#table-of-content)
+
+---
+
+## Technologies Used
+
+### Languages
+
+- HTML
+
+- CSS
+
+- Python
+
+- JSX (JavaScript XML)
+
+### Frameworks
+
+- Django: A high-level Python web framework used for building the Recipe Collective website.
+
+- React: A JavaScript library for building user interfaces. It is commonly used for creating dynamic and interactive components in web applications.
+
+- Cloudinary: A cloud-based media management platform used for storing and serving images in the Recipe Collective project.
+
+### Database
+
+- ElephantSQL: ElephantSQL is a PostgreSQL database as a service. It is used as the database for the Recipe Collective project, providing a reliable and scalable storage solution for the application's data.
+
+### Tools
+
+- Git: A distributed version control system used for tracking changes in the project's source code.
+
+- GitHub: A web-based hosting service for version control repositories, used for storing and managing the project's source code.
+
+- Gitpod: An online integrated development environment (IDE) used for developing and testing the Recipe Collective project.
+
+- Heroku: A cloud platform that enables deployment and hosting of web applications. Heroku was used for deploying the Recipe Collective project to a live server.
+
+- Balsamiq: A wireframing tool used for creating mockups and prototypes of the Recipe Collective website.
+
+- Lucidchart: Lucidchart is a web-based diagramming tool that offers a wide range of diagramming capabilities, including ER diagrams. It provides an intuitive interface and collaboration features, making it suitable for both individual and team use.
+
+- Google Fonts: A collection of free and open-source fonts used for typography on the Recipe Collective website.
+
+- Font Awesome: A library of icons used for adding scalable vector icons to the Recipe Collective website.
+
+### Supporting Libraries and Packages
+
+[Back up](#table-of-content)
+
+## Methodology
+
+The Explore Sthlm project has been developed using agile principles, enabling efficient collaboration, iterative development, and effective project management. The following methodology has been employed throughout the project:
+
+### Agile Project Management with GitHub Projects
+
+GitHub Projects has been utilized to facilitate agile project management. User stories and bugs have been organized as GitHub issues, allowing for a clear and structured approach to development. The project board in GitHub Projects serves as a Kanban board, providing an overview of the project's progress.
+
+### User Stories as GitHub Issues
+
+Each user story has been created as a GitHub issue, capturing the desired functionality from the user's perspective. The user stories are linked to their corresponding GitHub issues, allowing easy access to the acceptance criteria, tasks, and comments associated with each user story.
+
+### Bug Tracking 
+
+Bugs encountered during the development process have also been logged as GitHub issues. These issues contain details about the specific bug, its impact, and steps to reproduce it. By linking the bugs in the README.md to their respective GitHub issues, users can gain insights into the bugs' resolution progress and view any additional comments.
+
+### Iterative Development Approach
+
+The Explore Sthlm project follows an iterative development approach, allowing for continuous improvement and progress while adhering to time constraints. The development process is structured into sprints, with each sprint typically lasting around 6 days.
+
+To ensure efficient prioritization, the project employs the MuSCoW (Must have, Should have, Could have, Won't have) method. User stories critical to the app's success are categorized as Must-haves, followed by Should-haves, Could-haves, and Won't-haves. You can refer to the [Kanban board]() to view the prioritization.
+
+Within each sprint, a MoSCoW method is used to further prioritize user stories. They are classified as Must Do, Should Do, Could Do, and Won't Do, representing the remaining user stories that will not be included in the sprints. This approach ensures a clear differentiation between the overall project prioritization and the prioritization within each sprint, minimizing any potential confusion.
+ 
+
+## Planning & Documentation
+
+- Schedualed to be complete 11th of July 2023
+
+- Completed 10th of July 2023.
+
+  
+
+- [x] Plan Sprint (Must do)
+
+- [x] Create and write readme.md (Must do)
+
+- [x] Design Database Schema (Should do)
+
+- [ ] Create the wireframes (Should do)
+
+- [x] Plan Sprint 2 (Must do)
+
+## Backend
+
+- Schedualed to be complete 14th of July 2023
+
+- Completed 12th July 2023
+
+- [x] Create a repository for the api in Github (Must do)
+
+- [x] Start a django project in Gitpod (Must do)
+
+- [x] Install necessary libraries and dependencies (Must do)
+
+- [x] Create an ElephantSQL database and connect it to the API (Must do)
+
+- [x] Connect image uploads to Cloudinary (Must do)
+
+- [x] Add filtering (Should do)
+
+- [x] Deploy the Djano REST API (Should do)
+
+## Frontend
+
+- Schedualed to be complete 24th of July 2023
+
+- Completed on
+
+- [x] Create a repository for the Explore Sthlm (Should do)
+
+- [x] Start a React project in Gitpod (Could do)
+
+- [ ] Test deploy project on Heroku (Could do)
+
+- [ ] Install component library (Could do)
+
+- [ ] Design and implement navigation bar (Could do)
+
+- [ ] Do so navigation bar and authorization works (Could do)
+
+- [ ] Design and implement footer (Could do)
+
+- [ ] Test deploy project on Heroku (Must do)
+
+- [ ] Install component library (Must do)
+
+- [ ] Design and implement navigation bar (Must do)
+
+- [ ] Do so navigation bar and authorization works (Must do)
+
+- [ ] Design and implement footer (Must do)
+
+
+[Back up](#table-of-content)
+
+---
+
+## Bugs
+
+### Known bugs
+
+### Fixed bugs
+
+[Back up](#table-of-content)
+
+---
+
+## Testing
+
+Lighthouse
+
+CSS validator
+
+HTML Validator
+
+Code validation JSX
+
+To view the complete testing details and results, please [click here](TESTING.md). 
+
+[Back up](#table-of-content)
+
+---
+## Deployment
+
+The website was deployed using Heroku by following these steps:
+
+1. Set DEBUG to False in the settings.py file.
+
+2. Commit and push your code to the GitHub repository.
+
+3. Clear the 'static' folder in Cloudinary to ensure the latest static files are used during deployment. This step is important to avoid any potential conflicts between cached versions of static files and the updated versions being deployed. Clearing the 'static' folder ensures that the latest versions of static files are used during the deployment process, preventing any eTag errors or inconsistencies.
+
+4. Navigate to the project's deploy page in Heroku.
+
+5. Choose the manual deployment option to deploy the latest code changes. 
+
+You can for fork the repository by following these steps:
+
+1. Go to the GitHub repository
+
+2. Click on Fork button in upper right hand corner
+
+3. Wait for the forking process to complete. Once done, you will have a copy of the repository in your GitHub account.
+
+You can clone the repository by following these steps: 
+
+1. Go to the GitHub repository
+
+2. Locate the Code button above the list of files and click it
+
+3. Select your preferred method for cloning: HTTPS, SSH, or GitHub CLI, and click the copy button to copy the repository URL to your clipboard.
+
+4. Open Git Bash (or your preferred terminal).
+
+5. Change the current working directory to the location where you want the cloned directory to be created.
+
+6. Type the command **'git clone'** followed by the URL you copied in step 3. The command should look like this: **git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY**.
+
+7. Press Enter to create your local clone.
+
+[Back up](#table-of-content)
+
+---
+
+## Credits
+
+### Media
+
+...
+
+### Django Documentation:
+
+...
+
+### W3 Schools:
+
+...
+
+### Stackoverflow:
+
+...
+
+### Geeksforgeeks:
+
+...
+
+### Various tutorials and YouTube channels:
+
+....
+
+### Other open-source projects and packages:
+
+....
+
+[Back up](#table-of-content)
+
+## Acknowledgements
+
+[Back up](#table-of-content)
