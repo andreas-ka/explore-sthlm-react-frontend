@@ -2,9 +2,10 @@
 
   
 
-![Screenshot](src/assets/readme-logo.png)
+![Screenshot](src/assets/logo.png)
 
 ---
+This project has it's own backend API. Here is a link to the repository for [Explore-Sthlm-Api](https://github.com/andreas-ka/explore-sthlm-api)
 
 Live website
 
@@ -12,13 +13,27 @@ View live website here: LINK
 
 ---
 
+Am i responsive image 
+
+---
+
 Table of contents
 
 ---
 
-#### Project
+### Project idea and description
 
-Objective
+Explore Sthlm, the website for people living in the capital city of Sweden but also tourists who are here for a visit. Stockholm is renowned for its vibrant cultural scene and dynamic events, and now you can stay connected with all the happenings in one convenient platform.
+
+The website allows users to explore a diverse range of events taking place across the city. From music concerts and art exhibitions to sports tournaments and food festivals, there's always something exciting to discover. With a user-friendly interface and powerful search options, finding events that match your interests has never been easier.
+
+Not only can you explore events, but you can also share promote your events to a wider audience. Whether you're organizing a small gathering or a large-scale festival, Explore Sthlm offers a space to showcase your event details and attract attendees.
+
+Engage with fellow event-goers by commenting/reviewing, rate, and sharing your favorite events. Connect with like-minded individuals, share recommendations, and build a vibrant community of event enthusiasts.
+
+---
+
+### Project Objective
 
 The objective of this project and website was to create a fifth portfolio submission for Code Institutes fullstack developer program. Among following the projects assessment criteria, the website needed to be built using React, JSX (HTML, JavaScript and CSS) and appropriate frameworks and libraries, and connected to a separate backend API. The application needed to have complete CRUD (create, read, update and delete) functionality on the Front-End for users to work with data from an API.
 
@@ -26,9 +41,19 @@ I've chosen to create a project aimed toward my own interests to find inspiratio
 
 The project is partly based on the Code Institute Moments course material, using some of the code provided there, with additional functionality and styling added by me.
 
-Site user goal
+---
 
-Site owner goal
+### Site user goal
+
+This website is aimed at primarly two types, the one who wants to share an event, and the other who wants to find an event or something to do. Age is not an factor on this website, it's expected visitors would be in the range from 10-70.
+
+People who are planning an event can share it and easily reach out to alot of people, describe the events detail, like location and cost for example. They can also see what people think of their previous events by the rating and reviews people who attended it have given. They also have a better understanding of how many people that will attend their event due to the attend button that's featured on each event.
+
+The ones who are not planning an event and are here to found one to attend or get inspired can easily navigate the website, click attend on events and later found them in the calendar. Sort events by categorys and easy found out details about each event.
+
+### Site owner goal
+As the site owner i thought i would be fun and a great way to see whats happening in my city. Deliver a way for people to reach out easily when they are planning an event.
+
 
 ---
 
@@ -124,6 +149,8 @@ Site owner goal
 
 #### Database
 
+![Screenshot](src/assets/drawSQL.png)
+
 [Back up](#table-of-content)
 
 ### Skeleton
@@ -217,11 +244,7 @@ Within each sprint, a MoSCoW method is used to further prioritize user stories. 
 
 ## Planning & Documentation
 
-- Schedualed to be complete 11th of July 2023
-
-- Completed 10th of July 2023.
-
-  
+### Schedualed to be complete 11th of July 2023
 
 - [x] Plan Sprint (Must do)
 
@@ -233,11 +256,13 @@ Within each sprint, a MoSCoW method is used to further prioritize user stories. 
 
 - [x] Plan Sprint 2 (Must do)
 
+### Completed 10th of July 2023. ✅ 
+
+---
+
 ## Backend
 
-- Schedualed to be complete 14th of July 2023
-
-- Completed 12th July 2023
+### Schedualed to be complete 14th of July 2023
 
 - [x] Create a repository for the api in Github (Must do)
 
@@ -253,36 +278,65 @@ Within each sprint, a MoSCoW method is used to further prioritize user stories. 
 
 - [x] Deploy the Djano REST API (Should do)
 
+- [x] Plan sprint 3 (Must do)
+
+### Completed 12th July 2023 ✅ 
+
+--- 
+
 ## Frontend
 
-- Schedualed to be complete 24th of July 2023
-
-- Completed on
+### Schedualed to be complete 24th of July 2023
 
 - [x] Create a repository for the Explore Sthlm (Should do)
 
 - [x] Start a React project in Gitpod (Could do)
 
-- [ ] Test deploy project on Heroku (Could do)
+- [x] Test deploy project on Heroku (Could do)
 
-- [ ] Install component library (Could do)
+- [x] Install component library (Could do)
 
-- [ ] Design and implement navigation bar (Could do)
+- [x] Design and implement navigation bar (Could do)
 
-- [ ] Do so navigation bar and authorization works (Could do)
+- [x] Do so navigation bar and authorization works (Could do)
 
 - [ ] Design and implement footer (Could do)
 
-- [ ] Test deploy project on Heroku (Must do)
+- [x] Test deploy project on Heroku (Must do)
 
-- [ ] Install component library (Must do)
+- [x] Install component library (Must do)
 
-- [ ] Design and implement navigation bar (Must do)
+- [x] Design and implement navigation bar (Must do)
 
-- [ ] Do so navigation bar and authorization works (Must do)
+- [x] Do so navigation bar and authorization works (Must do)
 
 - [ ] Design and implement footer (Must do)
 
+### Completed XXth July 2023 ✅ 
+
+---
+
+## Testing
+
+### Schedualed to be complete 26th of july 2023
+
+- [ ] Test backend
+
+- [ ] Test Frontend
+
+### Completed XXth July 2023 ✅ 
+
+---
+
+## Documentation / README.md
+
+### Schedualed to be complete 28th of july 2023
+
+- [ ] Frontend README.md
+
+- [ ] Backend README.md
+
+### Completed XXth July 2023 ✅ 
 
 [Back up](#table-of-content)
 
