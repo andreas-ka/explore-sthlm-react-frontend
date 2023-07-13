@@ -5,7 +5,7 @@
 ![Screenshot](src/assets/logo.png)
 
 ---
-This project has it's own backend API. Here is a link to the repository for [Explore-Sthlm-Api](https://github.com/andreas-ka/explore-sthlm-api)
+This project has it's own backend API. Here is a link to the repository for [Explore-Sthlm-API](https://github.com/andreas-ka/explore-sthlm-api)
 
 Live website
 
@@ -164,6 +164,8 @@ As the site owner i thought i would be fun and a great way to see whats happenin
 #### Design Choices
 
 #### Colour
+
+![screenshot](src/assets/color-palette.png)
 
 #### Fonts and Typography
 
@@ -439,6 +441,8 @@ You can clone the repository by following these steps:
 ## Credits
 
 ### Media
+
+- Upload image from [flaticon](https://www.flaticon.com/free-icon/upload_126477)
 
 ...
 

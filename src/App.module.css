@@ -2,7 +2,11 @@
   font-family: "Roboto", sans-serif;
   background-color: #343a40;
   min-height: 100vh;
-  color: #ffffff;
+  color: #000000;
+}
+
+.text-black {
+  color: black;
 }
 
 .Main {
