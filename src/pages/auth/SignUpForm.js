@@ -4,6 +4,7 @@ import { Link, useHistory } from "react-router-dom";
 import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
+import signupimage from "../../assets/signup-image.png";
 
 import {
   Form,
@@ -119,7 +120,7 @@ const SignUpForm = () => {
 
         <Container className={`mt-3 ${appStyles.Content}`}>
           <Link className={styles.Link} to="/signin">
-            Already have an account? <span>Sign in</span>
+            <p>Already have an account? <span>Sign in</span></p>
           </Link>
         </Container>
       </Col>
@@ -129,7 +130,7 @@ const SignUpForm = () => {
       >
         <Image
           className={`${appStyles.FillerImage}`}
-          src={"https://codeinstitute.s3.amazonaws.com/AdvancedReact/hero2.jpg"}
+          src={signupimage}
         />
       </Col>
     </Row>

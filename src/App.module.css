@@ -12,14 +12,17 @@
 .Content {
   background-color: #ffffff;
   padding: 10px;
-  border-radius: 2px;
+  border-radius: 5px;
   border: 1px solid #dadadf;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.3);
 }
 
 .FillerImage {
   object-fit: cover;
   height: 100%;
   width: 100%;
+  border-radius: 5px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.3);
 }
 
 .Image {

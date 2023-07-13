@@ -4,9 +4,9 @@
     border-radius: 100px;
     border-color: transparent;
     padding: 4px 10px;
-    margin-left: 2px;
-    margin-right: 2px;
     min-width: 75px;
+    display: block;
+    margin: auto;
   }
   
   .Button:hover {
@@ -64,8 +64,8 @@
   }
   
   .Bright {
-    background-color: #2ed9ff;
-    color: #2142b2;
+    background-color: #ff851c;
+    color: #ffffff;
   }
 
   .ButtonContainer {
