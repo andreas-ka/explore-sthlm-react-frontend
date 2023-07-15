@@ -1,13 +1,16 @@
 import React from "react";
 import styles from "../../styles/Event.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import btnStyles from "../../styles/Button.module.css";
 import {
   Card,
   Media,
   OverlayTrigger,
   Tooltip,
   ListGroup,
+  button,
 } from "react-bootstrap";
+import { axiosRes } from '../../api/axiosDefaults';
 import { Link } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 
@@ -30,10 +33,30 @@ const Event = (props) => {
     image,
     created_at,
     eventPage,
+    attend_count,
+    attending_id,
+    average_rating,
+    setEvents,
   } = props;
 
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
+
+  const handleAttend = async () => {
+    try {
+        const { data } = await axiosRes.post('/attending/', {event: id});
+        setEvents((prevEvents) => ({
+            ...prevEvents,
+            results: prevEvents.results.map((event) => {
+                return event.id === id
+                ? {...event, attending_count: event.attending_count + 1, attending_id: data.id}
+                : event;
+            })
+        }))
+    } catch (err) {
+        // console.log(err);
+    }
+  };
 
   return (
     <Card bg="warning" className={styles.Event}>
@@ -53,8 +76,13 @@ const Event = (props) => {
         <Card.Img src={image} alt={title} />
       </Link>
       <Card.Body>
-        <Card.Title>{title} <span className="float-right">Rating: {ratings_count}</span></Card.Title>
-        <Card.Text>{description}</Card.Text>
+        <Card.Title>{title} 
+        <span className="float-right">Rating: {ratings_count}</span>
+        </Card.Title>
+        <Card.Text>{description}<span className="float-right">
+          <button className={`${btnStyles.Button} ${btnStyles.NotWide} ${btnStyles.Bright}`}
+              type="submit"
+            >Attend</button></span></Card.Text>
       </Card.Body>
       <ListGroup variant="flush">
         <ListGroup.Item>Location: {event_location}</ListGroup.Item>
@@ -65,4 +93,5 @@ const Event = (props) => {
     </Card>
   );
 };
+
 export default Event;

@@ -444,6 +444,8 @@ You can clone the repository by following these steps:
 
 - Upload image from [flaticon](https://www.flaticon.com/free-icon/upload_126477)
 
+- No results icon from [veryicon](https://www.veryicon.com/icons/commerce-shopping/jkd_wap/no-result.html)
+
 ...
 
 ### Django Documentation:
