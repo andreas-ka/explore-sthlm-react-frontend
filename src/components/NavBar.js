@@ -10,8 +10,8 @@ import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
 
 const NavBar = () => {
 
-  const currentLoggedInUser = useCurrentUser();
-  const setCurrentLoggedInUser = useSetCurrentUser();
+  const currentUser = useCurrentUser();
+  const setCurrentUser = useSetCurrentUser();
 
   const {expanded, setExpanded, ref} = useClickOutsideToggle();
 
@@ -19,7 +19,7 @@ const NavBar = () => {
   const handleSignOut = async () => {
     try {
       await axios.post('dj-rest-auth/logout/')
-      setCurrentLoggedInUser(null);
+      setCurrentUser(null);
     }
     catch (err) {
       console.log(err);
@@ -37,7 +37,7 @@ const NavBar = () => {
   );
 
   /* Icons displaying if a user is logged in */
-  const LoggedInIcons = <>
+  const loggedInIcons = <>
     <NavLink
         className={`${styles.NavLink} ${styles.NavLinkHover}`}
         activeClassName={styles.Active}
@@ -64,12 +64,12 @@ const NavBar = () => {
   </NavLink>
   <NavLink
     className={`${styles.NavLink} ${styles.NavLinkHover}`}
-    to={`/profile/${currentLoggedInUser?.profile_id}`}>
-    <Avatar src={currentLoggedInUser?.profile_image} text="Profile" height={39}/>
+    to={`/profile/${currentUser?.profile_id}`}>
+    <Avatar src={currentUser?.profile_image} text="Profile" height={39}/>
   </NavLink>
     </>;
   /* Icons displaying if a user is not logged in */
-  const notLoggedInIcons = (
+  const loggedOutIcons = (
     <>
       <NavLink
         className={`${styles.NavLink} ${styles.NavLinkHover}`}
@@ -102,7 +102,7 @@ const NavBar = () => {
             <img src={logo} alt="logo" height="45" />
           </Navbar.Brand>
         </NavLink>
-        {currentLoggedInUser && addEventIcon}
+        {currentUser && addEventIcon}
         <Navbar.Toggle 
         ref={ref}
         onClick={() => setExpanded(!expanded)} 
@@ -116,7 +116,7 @@ const NavBar = () => {
               to="/">
               <i className="fas fa-home fa-fw"></i> <span className="ml-2"> Home</span>
             </NavLink>
-            {currentLoggedInUser ? LoggedInIcons : notLoggedInIcons}
+            {currentUser ? loggedInIcons : loggedOutIcons}
           </Nav>
         </Navbar.Collapse>
       </Container>

@@ -23,7 +23,7 @@ grab the inputs and handleSubmit to send to the API.
 useHistory is imported to redirect users when login successful"
 */
 function SignInForm() {
-    const setCurrentLoggedInUser = useSetCurrentUser();
+    const setCurrentUser = useSetCurrentUser();
 
     const [signInData, setSignInData] = useState({
         username: "",
@@ -45,7 +45,7 @@ function SignInForm() {
         event.preventDefault();
         try {
             const {data} = await axios.post('/dj-rest-auth/login/', signInData);
-            setCurrentLoggedInUser(data.user)
+            setCurrentUser(data.user)
             history.push('/');
         } catch (err) {
             setErrors(err.response?.data);
@@ -77,7 +77,7 @@ function SignInForm() {
                 </Alert>
             ))}
 
-            <Form.Group controlId="Password">
+            <Form.Group controlId="password">
               <Form.Label className="d-none">Password</Form.Label>
               <Form.Control
                 className={styles.Input}

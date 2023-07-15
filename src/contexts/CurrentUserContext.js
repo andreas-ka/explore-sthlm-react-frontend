@@ -5,21 +5,21 @@ import { useHistory } from "react-router";
 
 
 /* Create the context to get user and be passed globally */
-export const currentLoggedInUserContext = createContext();
-export const setCurrentLoggedInUserContext = createContext();
+export const CurrentUserContext = createContext();
+export const SetCurrentUserContext = createContext();
 
-export const useCurrentUser = () => useContext(currentLoggedInUserContext)
-export const useSetCurrentUser = () => useContext(setCurrentLoggedInUserContext)
+export const useCurrentUser = () => useContext(CurrentUserContext);
+export const useSetCurrentUser = () => useContext(SetCurrentUserContext);
 
 export const CurrentUserProvider = ({children}) => {
-    const [currentLoggedInUser, setCurrentLoggedInUser] = useState(null);
+    const [currentUser, setCurrentUser] = useState(null);
     const history = useHistory();
 
   /* Gets the user from the API */
   const handleMount = async () => {
     try {
-      const { userdata } = await axiosRes.get("dj-rest-auth/user/");
-      setCurrentLoggedInUser(userdata);
+      const { data } = await axiosRes.get("dj-rest-auth/user/");
+      setCurrentUser(data);
     } catch (err) {
       console.log(err);
     }
@@ -37,7 +37,7 @@ export const CurrentUserProvider = ({children}) => {
         try {
           await axios.post("/dj-rest-auth/token/refresh/");
         } catch (err) {
-          setCurrentLoggedInUser((prevCurrentUser) => {
+          setCurrentUser((prevCurrentUser) => {
             if (prevCurrentUser) {
               history.push("/signin");
             }
@@ -59,7 +59,7 @@ export const CurrentUserProvider = ({children}) => {
           try {
             await axios.post("/dj-rest-auth/token/refresh/");
           } catch (err) {
-            setCurrentLoggedInUser((prevCurrentUser) => {
+            setCurrentUser((prevCurrentUser) => {
               if (prevCurrentUser) {
                 history.push("/signin");
               }
@@ -74,11 +74,10 @@ export const CurrentUserProvider = ({children}) => {
   }, [history]);
 
   return (
-    /* Pass the user context to the children componenents */
-    <currentLoggedInUserContext.Provider value={currentLoggedInUser}>
-    <setCurrentLoggedInUserContext.Provider value={setCurrentLoggedInUser}>
+    <CurrentUserContext.Provider value={currentUser}>
+      <SetCurrentUserContext.Provider value={setCurrentUser}>
         {children}
-    </setCurrentLoggedInUserContext.Provider>
-    </currentLoggedInUserContext.Provider>
+      </SetCurrentUserContext.Provider>
+    </CurrentUserContext.Provider>
   );
 };
