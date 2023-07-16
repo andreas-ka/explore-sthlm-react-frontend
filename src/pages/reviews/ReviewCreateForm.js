@@ -13,15 +13,11 @@ import { axiosRes } from "../../api/axiosDefaults";
 
 function ReviewCreateForm(props) {
   const { setEvents, setReviewComments, id, profileImage, profile_id } = props;
-
   const [errors, setErrors] = useState({});
   const history = useHistory();
   const [review, setReview] = useState("");
-  const [rating, setRating] = useState(0);
+  const [social_media, setSocial_media] = useState("");
 
-  const handleRating = (rate) => {
-    setRating(rate / 20);
-  };
 
   const handleChange = (event) => {
     setReview(event.target.value);
@@ -30,55 +26,59 @@ function ReviewCreateForm(props) {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
-
-    formData.append("event", event.id);
-    formData.append("rating", rating);
-    formData.append("body", review);
+    formData.append("event", id);
+    formData.append("review", review);
+    formData.append("social_media", social_media);
 
     try {
-        console.log("event", id);
-        console.log("rating", rating);
-        console.log("review", review);
-        const { data } = await axiosRes.post("/reviews/", formData);
-        setReviewComments((prevComments) => ({
-          ...prevComments,
-          results: [data, ...prevComments.results],
-        }));
-        setEvents((prevEvents) => ({
-          ...prevEvents,
-          results: prevEvents.results.map((event) => {
-            return event.id === id
-              ? { ...event, reviews_count: event.reviews_count + 1, average_rating: ((event.average_rating + rating) / event.reviews_count) }
-              : event;
-          }),
-        }));
+      const { data } = await axiosRes.post("/reviews/", formData);
+
+      setReviewComments((prevComments) => ({
+        ...prevComments,
+
+        results: [data, ...prevComments.results],
+      }));
+
+      setEvents((prevEvents) => ({
+        ...prevEvents,
+
+        results: prevEvents.results.map((event) => {
+          return event.id === id
+            ? {
+                ...event,
+                review_count: event.review_count + 1,
+              }
+            : event;
+        }),
+      }));
       setReview("");
       history.push(`/reviews`);
     } catch (err) {
-        for (const entry of formData.entries()) {
-            console.log(entry[0], entry[1]);
+      for (const entry of formData.entries()) {
+        console.log(entry[0], entry[1]);
+
         if (err.response?.status !== 401) {
-            setErrors(err.response?.data);
-        }}
+          setErrors(err.response?.data);
+        }
+      }
     }
   };
 
   return (
     <Form className="mt-2" onSubmit={handleSubmit}>
+      <Link to={`/profiles/${profile_id}`}>
+        <Avatar src={profileImage} />
+      </Link>
       <Form.Group>
-        <InputGroup>
-          <Link to={`/profiles/${profile_id}`}>
-            <Avatar src={profileImage} />
-          </Link>
-          <Form.Control
-            className={styles.Form}
-            placeholder="my comment..."
-            as="textarea"
-            value={review}
-            onChange={handleChange}
-            rows={2}
-          />
-        </InputGroup>
+        <Form.Control
+          className={styles.Form}
+          placeholder="My Review..."
+          as="textarea"
+          name="review"
+          value={review}
+          onChange={handleChange}
+          rows={2}
+        />
       </Form.Group>
       <button
         className={`${styles.Button} btn d-block ml-auto`}
