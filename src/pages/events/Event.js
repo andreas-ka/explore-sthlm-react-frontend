@@ -120,7 +120,7 @@ const Event = (props) => {
       <Card.Body>
         <Card.Title>
           {title}
-          <span className="float-right">Rating: {ratings_count}</span>
+          <span className="float-right">Reviews: {reviews_count} Rating: {ratings_count}</span>
         </Card.Title>
         <Card.Text>{description}</Card.Text>
         <div>
