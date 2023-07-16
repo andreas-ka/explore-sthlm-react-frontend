@@ -10,7 +10,7 @@ import {
   ListGroup,
   button,
 } from "react-bootstrap";
-import { axiosRes } from '../../api/axiosDefaults';
+import { axiosRes } from "../../api/axiosDefaults";
 import { Link } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 
@@ -34,7 +34,7 @@ const Event = (props) => {
     created_at,
     eventPage,
     attend_count,
-    attending_id,
+    attend_id,
     average_rating,
     setEvents,
   } = props;
@@ -44,17 +44,41 @@ const Event = (props) => {
 
   const handleAttend = async () => {
     try {
-        const { data } = await axiosRes.post('/attending/', {event: id});
-        setEvents((prevEvents) => ({
-            ...prevEvents,
-            results: prevEvents.results.map((event) => {
-                return event.id === id
-                ? {...event, attending_count: event.attending_count + 1, attending_id: data.id}
-                : event;
-            })
-        }))
+      const { data } = await axiosRes.post("/attend/", { event: id });
+      setEvents((prevEvents) => ({
+        ...prevEvents,
+        results: prevEvents.results.map((event) => {
+          return event.id === id
+            ? {
+                ...event,
+                attend_count: event.attend_count + 1,
+                attend_id: data.id,
+              }
+            : event;
+        }),
+      }));
     } catch (err) {
-        // console.log(err);
+      console.log(err);
+    }
+  };
+
+  const handleRemoveAttend = async () => {
+    try {
+      const { data } = await axiosRes.delete(`/attend/${attend_id}`);
+      setEvents((prevEvents) => ({
+        ...prevEvents,
+        results: prevEvents.results.map((event) => {
+          return event.id === id
+            ? {
+                ...event,
+                attend_count: event.attend_count - 1,
+                attend_id: null,
+              }
+            : event;
+        }),
+      }));
+    } catch (err) {
+      console.log(err);
     }
   };
 
@@ -76,17 +100,61 @@ const Event = (props) => {
         <Card.Img src={image} alt={title} />
       </Link>
       <Card.Body>
-        <Card.Title>{title} 
-        <span className="float-right">Rating: {ratings_count}</span>
+        <Card.Title>
+          {title}
+          <span className="float-right">Rating: {ratings_count}</span>
         </Card.Title>
-        <Card.Text>{description}<span className="float-right">
-          <button className={`${btnStyles.Button} ${btnStyles.NotWide} ${btnStyles.Bright}`}
-              type="submit"
-            >Attend</button></span></Card.Text>
+        <Card.Text>{description}</Card.Text>
+        <div>
+          {is_owner ? (
+            <OverlayTrigger
+            placement="top"
+            overlay={<Tooltip>You can't attend your own event</Tooltip>}>
+            <span className="float-right">
+            <button
+              className={`${btnStyles.Button} ${btnStyles.NotWide} ${btnStyles.Bright}`}
+              type="submit">
+              Attend
+            </button>
+            </span>
+            </OverlayTrigger>
+          ) : attend_id ? (
+            <span className="float-right">
+            <button onClick={handleRemoveAttend}
+              className={`${btnStyles.Button} ${btnStyles.NotWide} ${btnStyles.Bright}`}
+              type="submit">
+              Attend
+            </button>
+            </span>
+          ) : currentUser ? (
+            <span className="float-right">
+            <button onClick={handleAttend}
+              className={`${btnStyles.Button} ${btnStyles.NotWide} ${btnStyles.Bright}`}
+              type="submit">
+              Attend
+            </button>
+            </span>
+          ) : (
+            <OverlayTrigger
+            placement="top"
+            overlay={<Tooltip>Login in to show you are attending the event.</Tooltip>}>
+            <span className="float-right">
+            <button
+              className={`${btnStyles.Button} ${btnStyles.NotWide} ${btnStyles.Bright}`}
+              type="submit">
+              Attend
+            </button>
+            </span>
+            </OverlayTrigger>
+          )}
+          <span className="float-right">{attend_count}</span>
+        </div>
       </Card.Body>
       <ListGroup variant="flush">
         <ListGroup.Item>Location: {event_location}</ListGroup.Item>
-        <ListGroup.Item>Date: {start_date} to {end_date}</ListGroup.Item>
+        <ListGroup.Item>
+          Date: {start_date} to {end_date}
+        </ListGroup.Item>
         <ListGroup.Item>Category: {category}</ListGroup.Item>
         <ListGroup.Item>Cost: {cost} $</ListGroup.Item>
       </ListGroup>
