@@ -3,6 +3,7 @@
     color: #242a3d;
     padding-left: 40px;
     margin-bottom: 16px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.3);
   }
   
   .SearchIcon {

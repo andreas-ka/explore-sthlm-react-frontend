@@ -13,6 +13,8 @@ import Asset from "../../components/Asset";
 import Event from "./Event"
 
 import NoResults from "../../assets/no-result.png";
+import InfiniteScroll from "react-infinite-scroll-component";
+import { fetchMoreData } from "../../utils/utils";
 
 function EventsPage({ message, filter = ""}) {
   const [events, setEvents] = useState({ results: [] });
@@ -64,9 +66,17 @@ function EventsPage({ message, filter = ""}) {
         {hasLoaded ? (
           <>
             {events.results.length ? (
-              events.results.map((event) => (
-                <Event key={event.id} {...event} setEvents={setEvents} />
-              ))
+              <InfiniteScroll
+              children={
+                events.results.map((event) => (
+                  <Event key={event.id} {...event} setEvents={setEvents} />
+            ))} 
+              dataLength={events.results.length}
+              loader={<Asset />}
+              hasMore={!!events.next}
+              next={() => fetchMoreData(events, setEvents)}
+              />
+
             ) : (
               <Container className={appStyles.Content}>
                 <Asset src={NoResults} message={message} />

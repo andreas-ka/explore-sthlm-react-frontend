@@ -11,8 +11,9 @@ import {
   button,
 } from "react-bootstrap";
 import { axiosRes } from "../../api/axiosDefaults";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Avatar from "../../components/Avatar";
+import { DropdownMenu } from "../../components/DropDownMenu";
 
 const Event = (props) => {
   const {
@@ -39,6 +40,7 @@ const Event = (props) => {
     setEvents,
   } = props;
 
+  const history = useHistory();
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
 
@@ -82,6 +84,19 @@ const Event = (props) => {
     }
   };
 
+  const handleEdit = () => {
+    history.push(`/events/${id}/edit`);
+  };
+
+  const handleDelete = async () => {
+    try {
+      await axiosRes.delete(`/events/${id}/`);
+      history.goBack();
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <Card bg="warning" className={styles.Event}>
       <Card.Body>
@@ -92,11 +107,14 @@ const Event = (props) => {
           </Link>
           <div className="d-flex align-items-center">
             <span>{created_at}</span>
-            {is_owner && eventPage && "..."}
+            {is_owner && eventPage && <DropdownMenu
+            handleEdit={handleEdit}
+            handleDelete={handleDelete}
+            />}
           </div>
         </Media>
       </Card.Body>
-      <Link to={`/posts/${id}`}>
+      <Link to={`/events/${id}`}>
         <Card.Img src={image} alt={title} />
       </Link>
       <Card.Body>
@@ -121,9 +139,9 @@ const Event = (props) => {
           ) : attend_id ? (
             <span className="float-right">
             <button onClick={handleRemoveAttend}
-              className={`${btnStyles.Button} ${btnStyles.NotWide} ${btnStyles.Bright}`}
+              className={`${btnStyles.Button} ${btnStyles.NotWide} ${btnStyles.Attending}`}
               type="submit">
-              Attend
+              Attending
             </button>
             </span>
           ) : currentUser ? (

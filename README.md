@@ -395,6 +395,8 @@ To view the complete testing details and results, please [click here](TESTING.md
 
     - Axios
 
+    - React-infinite-scroll
+
 ---
 ## Deployment
 

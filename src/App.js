@@ -10,6 +10,7 @@ import EventPage from "./pages/events/EventPage";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import EventsPage from "./pages/events/EventsPage";
 import { useCurrentUser } from "./contexts/CurrentUserContext";
+import EventEditForm from "./pages/events/EventEditForm";
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
               <Route exact path="/signup" render={() => <SignUpForm />} />
               <Route exact path="/events/create" render={() => <EventCreateForm />} />
               <Route exact path="/events/:id" render={() => <EventPage />} />
+              <Route exact path="/events/:id/edit" render={() => <EventEditForm />} />
               <Route render={() => <p>Page not found!</p>} />
             </Switch>
           </Container>
