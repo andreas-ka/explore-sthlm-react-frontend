@@ -10,14 +10,33 @@ import btnStyles from "../../styles/Button.module.css"
 
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
+import { Rating } from "react-simple-star-rating";
 
 function CommentCreateForm(props) {
-  const { event, setEvent, setComments, profileImage, profile_id } = props;
+  const { event, setEvent, setComments, profileImage, profile_id, id, setEvents } = props;
   const [content, setContent] = useState("");
   const [errors, setErrors] = useState({});
+  const [rating, setRating] = useState(0);
 
   const handleChange = (event) => {
     setContent(event.target.value);
+  };
+
+  const handleRating = async (rate) => {
+    setRating(rate / 20);
+    try {
+      const { data } = await axiosRes.post("/ratings/", { event: id });
+      setEvents((prevEvents) => ({
+        ...prevEvents,
+        results: prevEvents.results.map((event) => {
+          return event.id === id
+            ? { ...event, ratings_count: event.ratings_count + 1, rating_id: data.id }
+            : event;
+        }),
+      }));
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -55,6 +74,7 @@ function CommentCreateForm(props) {
         <Link to={`/profiles/${profile_id}`}>
             <Avatar src={profileImage} />
           </Link>
+          <Rating onClick={handleRating} />
           <Form.Control
             className={styles.Form}
             placeholder="my comment..."
