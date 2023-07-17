@@ -13,7 +13,7 @@ import { axiosRes } from "../../api/axiosDefaults";
 import { Rating } from "react-simple-star-rating";
 
 function CommentCreateForm(props) {
-  const { event, setEvent, setComments, profileImage, profile_id, id, setEvents } = props;
+  const { event, setEvent, setComments, profileImage, profile_id } = props;
   const [content, setContent] = useState("");
   const [errors, setErrors] = useState({});
   const [rating, setRating] = useState(0);
@@ -22,22 +22,9 @@ function CommentCreateForm(props) {
     setContent(event.target.value);
   };
 
-  const handleRating = async (rate) => {
-    setRating(rate / 20);
-    try {
-      const { data } = await axiosRes.post("/ratings/", { event: id });
-      setEvents((prevEvents) => ({
-        ...prevEvents,
-        results: prevEvents.results.map((event) => {
-          return event.id === id
-            ? { ...event, ratings_count: event.ratings_count + 1, rating_id: data.id }
-            : event;
-        }),
-      }));
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  const handleRating = (rate) => {
+    setRating(rate)
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -58,7 +45,12 @@ function CommentCreateForm(props) {
           },
         ],
       }));
+      console.log(rating)
       setContent("");
+      await axiosRes.post("/ratings/", {
+        event: event,
+        rating: rating,
+      });
     } catch (err) {
       console.log(err);
       if (err.response?.status !== 401){

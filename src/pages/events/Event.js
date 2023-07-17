@@ -91,6 +91,7 @@ const Event = (props) => {
     }
   };
 
+
   return (
     <Card bg="warning" className={styles.Event}>
       <Card.Body>
