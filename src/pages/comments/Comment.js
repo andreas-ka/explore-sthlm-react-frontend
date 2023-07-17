@@ -2,9 +2,9 @@ import React from "react";
 import { Media } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Avatar from "../../components/Avatar";
-import styles from "../../styles/Review.module.css";
+import styles from "../../styles/Comment.module.css";
 
-const Review = (props) => {
+const Comment = (props) => {
   const { profile_id, profile_image, owner, updated_at, content } = props;
 
   return (
@@ -24,4 +24,4 @@ const Review = (props) => {
   );
 };
 
-export default Review;
+export default Comment;

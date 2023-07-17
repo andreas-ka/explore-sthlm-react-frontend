@@ -13,3 +13,7 @@
 .NavLinkHover i:hover {
     transition: color ease-in-out 0.3s;
 }
+
+.NavBar i {
+    color: white;
+}

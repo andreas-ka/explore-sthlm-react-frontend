@@ -7,7 +7,6 @@ import SignUpForm from "./pages/auth/SignUpForm";
 import SignInForm from "./pages/auth/SignInForm";
 import EventCreateForm from "./pages/events/EventCreateForm";
 import EventPage from "./pages/events/EventPage";
-import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import EventsPage from "./pages/events/EventsPage";
 import { useCurrentUser } from "./contexts/CurrentUserContext";
 import EventEditForm from "./pages/events/EventEditForm";

@@ -10,7 +10,7 @@ import Alert from "react-bootstrap/Alert";
 import styles from "../../styles/EventCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
-import Asset from "../../components/Asset";
+
 import { axiosReq } from "../../api/axiosDefaults";
 import { Image } from "react-bootstrap";
 import { useHistory } from "react-router";

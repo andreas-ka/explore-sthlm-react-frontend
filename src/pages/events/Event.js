@@ -8,7 +8,6 @@ import {
   OverlayTrigger,
   Tooltip,
   ListGroup,
-  button,
 } from "react-bootstrap";
 import { axiosRes } from "../../api/axiosDefaults";
 import { Link, useHistory } from "react-router-dom";
@@ -16,14 +15,14 @@ import Avatar from "../../components/Avatar";
 import { DropdownMenu } from "../../components/DropDownMenu";
 
 const Event = (props) => {
+  console.log(props)
   const {
     id,
     owner,
     profile_id,
     profile_image,
-    reviews_count,
+    comments_count,
     ratings_count,
-    rating_id,
     title,
     description,
     event_location,
@@ -36,7 +35,6 @@ const Event = (props) => {
     eventPage,
     attend_count,
     attend_id,
-    average_rating,
     setEvents,
   } = props;
 
@@ -66,16 +64,12 @@ const Event = (props) => {
 
   const handleRemoveAttend = async () => {
     try {
-      const { data } = await axiosRes.delete(`/attend/${attend_id}`);
+      await axiosRes.delete(`/attend/${attend_id}`);
       setEvents((prevEvents) => ({
         ...prevEvents,
         results: prevEvents.results.map((event) => {
           return event.id === id
-            ? {
-                ...event,
-                attend_count: event.attend_count - 1,
-                attend_id: null,
-              }
+            ? {...event, attend_count: event.attend_count - 1, attend_id: null}
             : event;
         }),
       }));
@@ -120,7 +114,8 @@ const Event = (props) => {
       <Card.Body>
         <Card.Title>
           {title}
-          <span className="float-right">Reviews: {reviews_count} Rating: {ratings_count}</span>
+          <span className="float-right"><i className="fa-regular fa-comments"></i> {comments_count} 
+          <i className="fa-regular fa-star"></i> {ratings_count}</span>
         </Card.Title>
         <Card.Text>{description}</Card.Text>
         <div>

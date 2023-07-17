@@ -32,7 +32,7 @@ const NavBar = () => {
       activeClassName={styles.Active}
       to="/events/create"
     >
-      <i class="fa-regular fa-square-plus fa-fw"></i><span className="ml-2"> Add Event</span>
+      <i className="fa-regular fa-square-plus fa-fw"></i><span className="ml-2"> Add Event</span>
     </NavLink>
   );
 
@@ -48,19 +48,19 @@ const NavBar = () => {
     className={`${styles.NavLink} ${styles.NavLinkHover}`}
     activeClassName={styles.Active}
     to="/reviews">
-    <i class="fa-regular fa-star-half-stroke fa-fw"></i><span className="ml-2"> Reviews</span>
+    <i className="fa-regular fa-star-half-stroke fa-fw"></i><span className="ml-2"> Reviews</span>
   </NavLink>
   <NavLink
     className={`${styles.NavLink} ${styles.NavLinkHover}`}
     activeClassName={styles.Active}
     to="/calendar">
-    <i class="fa-regular fa-calendar fa-fw"></i><span className="ml-2"> Calendar</span>
+    <i className="fa-regular fa-calendar fa-fw"></i><span className="ml-2"> Calendar</span>
   </NavLink>
   <NavLink
     className={`${styles.NavLink} ${styles.NavLinkHover}`}
     to="/"
     onClick={handleSignOut}>
-    <i class="fa-solid fa-right-from-bracket fa-fw"></i><span className="ml-2"> Sign out</span>
+    <i className="fa-solid fa-right-from-bracket fa-fw"></i><span className="ml-2"> Sign out</span>
   </NavLink>
   <NavLink
     className={`${styles.NavLink} ${styles.NavLinkHover}`}
