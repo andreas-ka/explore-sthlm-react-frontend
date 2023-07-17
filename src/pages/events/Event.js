@@ -15,7 +15,7 @@ import Avatar from "../../components/Avatar";
 import { DropdownMenu } from "../../components/DropDownMenu";
 
 const Event = (props) => {
-  console.log(props)
+  console.log(props);
   const {
     id,
     owner,
@@ -69,7 +69,11 @@ const Event = (props) => {
         ...prevEvents,
         results: prevEvents.results.map((event) => {
           return event.id === id
-            ? {...event, attend_count: event.attend_count - 1, attend_id: null}
+            ? {
+                ...event,
+                attend_count: event.attend_count - 1,
+                attend_id: null,
+              }
             : event;
         }),
       }));
@@ -91,7 +95,6 @@ const Event = (props) => {
     }
   };
 
-
   return (
     <Card bg="warning" className={styles.Event}>
       <Card.Body>
@@ -102,10 +105,12 @@ const Event = (props) => {
           </Link>
           <div className="d-flex align-items-center">
             <span>{created_at}</span>
-            {is_owner && eventPage && <DropdownMenu
-            handleEdit={handleEdit}
-            handleDelete={handleDelete}
-            />}
+            {is_owner && eventPage && (
+              <DropdownMenu
+                handleEdit={handleEdit}
+                handleDelete={handleDelete}
+              />
+            )}
           </div>
         </Media>
       </Card.Body>
@@ -115,50 +120,62 @@ const Event = (props) => {
       <Card.Body>
         <Card.Title>
           {title}
-          <span className="float-right"><i className="fa-regular fa-comments"></i> {comments_count} 
-          <i className="fa-regular fa-star"></i> {ratings_count}</span>
+          <span className="float-right">
+            <i className="fa-regular fa-comments"></i> {comments_count}
+            <i className="fa-regular fa-star"></i> {ratings_count}{" "}
+          </span>
         </Card.Title>
         <Card.Text>{description}</Card.Text>
         <div>
           {is_owner ? (
             <OverlayTrigger
-            placement="top"
-            overlay={<Tooltip>You can't attend your own event</Tooltip>}>
-            <span className="float-right">
-            <button
-              className={`${btnStyles.Button} ${btnStyles.NotWide} ${btnStyles.Bright}`}
-              type="submit">
-              Attend
-            </button>
-            </span>
+              placement="top"
+              overlay={<Tooltip>You can't attend your own event</Tooltip>}
+            >
+              <span className="float-right">
+                <button
+                  className={`${btnStyles.Button} ${btnStyles.NotWide} ${btnStyles.Bright}`}
+                  type="submit"
+                >
+                  Attend
+                </button>
+              </span>
             </OverlayTrigger>
           ) : attend_id ? (
             <span className="float-right">
-            <button onClick={handleRemoveAttend}
-              className={`${btnStyles.Button} ${btnStyles.NotWide} ${btnStyles.Attending}`}
-              type="submit">
-              Attending
-            </button>
+              <button
+                onClick={handleRemoveAttend}
+                className={`${btnStyles.Button} ${btnStyles.NotWide} ${btnStyles.Attending}`}
+                type="submit"
+              >
+                Attending
+              </button>
             </span>
           ) : currentUser ? (
             <span className="float-right">
-            <button onClick={handleAttend}
-              className={`${btnStyles.Button} ${btnStyles.NotWide} ${btnStyles.Bright}`}
-              type="submit">
-              Attend
-            </button>
+              <button
+                onClick={handleAttend}
+                className={`${btnStyles.Button} ${btnStyles.NotWide} ${btnStyles.Bright}`}
+                type="submit"
+              >
+                Attend
+              </button>
             </span>
           ) : (
             <OverlayTrigger
-            placement="top"
-            overlay={<Tooltip>Login in to show you are attending the event.</Tooltip>}>
-            <span className="float-right">
-            <button
-              className={`${btnStyles.Button} ${btnStyles.NotWide} ${btnStyles.Bright}`}
-              type="submit">
-              Attend
-            </button>
-            </span>
+              placement="top"
+              overlay={
+                <Tooltip>Login in to show you are attending the event.</Tooltip>
+              }
+            >
+              <span className="float-right">
+                <button
+                  className={`${btnStyles.Button} ${btnStyles.NotWide} ${btnStyles.Bright}`}
+                  type="submit"
+                >
+                  Attend
+                </button>
+              </span>
             </OverlayTrigger>
           )}
           <span className="float-right">{attend_count}</span>

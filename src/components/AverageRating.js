@@ -1,5 +1,8 @@
+import { useState } from "react";
 import { axiosRes } from "../api/axiosDefaults";
 
+
+const [rating, setRating] = useState();
 
 export const fetchRatings = async () => {
     try {
