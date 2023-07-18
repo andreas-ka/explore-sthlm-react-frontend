@@ -67,6 +67,20 @@
     color: #242a3d;
   }
   
+  .Orange,
+  .OrangeOutline:hover {
+    background-color: #ff851c;
+    color: #ffffff;
+  }
+
+  .Orange:hover,
+  .OrangeOutline {
+    background-color: #ffffff;
+    color: #ff851c;
+    border: 1px solid #ff851c;;
+  }
+  
+  
   .Bright {
     background-color: #ff851c;
     color: #ffffff;
