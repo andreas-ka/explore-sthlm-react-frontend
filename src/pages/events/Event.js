@@ -2,6 +2,7 @@ import React from "react";
 import styles from "../../styles/Event.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import btnStyles from "../../styles/Button.module.css";
+import star from "../../styles/Star.module.css"
 import {
   Card,
   Media,
@@ -13,16 +14,15 @@ import { axiosRes } from "../../api/axiosDefaults";
 import { Link, useHistory } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { DropdownMenu } from "../../components/DropDownMenu";
+import { Rating } from "react-simple-star-rating";
 
 const Event = (props) => {
-  console.log(props);
   const {
     id,
     owner,
     profile_id,
     profile_image,
     comments_count,
-    ratings_count,
     title,
     description,
     event_location,
@@ -36,6 +36,7 @@ const Event = (props) => {
     attend_count,
     attend_id,
     setEvents,
+    rating_average,
   } = props;
 
   const history = useHistory();
@@ -122,10 +123,12 @@ const Event = (props) => {
           {title}
           <span className="float-right">
             <i className="fa-regular fa-comments"></i> {comments_count}
-            <i className="fa-regular fa-star"></i> {ratings_count}{" "}
+            <i className="fa-regular fa-star"></i> {rating_average}{" "}
           </span>
+          <Rating className={star.Star} readonly initialValue={rating_average} size={25} />
         </Card.Title>
-        <Card.Text>{description}</Card.Text>
+        <Card.Text>{description}
+        </Card.Text>
         <div>
           {is_owner ? (
             <OverlayTrigger

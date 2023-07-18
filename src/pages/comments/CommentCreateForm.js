@@ -13,7 +13,7 @@ import { axiosRes } from "../../api/axiosDefaults";
 import { Rating } from "react-simple-star-rating";
 
 function CommentCreateForm(props) {
-  const { event, setEvent, setComments, profileImage, profile_id } = props;
+  const { event, setEvent, setComments, profileImage, profile_id, } = props;
   const [content, setContent] = useState("");
   const [errors, setErrors] = useState({});
   const [rating, setRating] = useState(0);
@@ -64,7 +64,7 @@ function CommentCreateForm(props) {
       <Form.Group>
         <InputGroup>
         <Link to={`/profiles/${profile_id}`}>
-            <Avatar src={profileImage} />
+            <Avatar src={profileImage} height={55} />
           </Link>
           <Rating onClick={handleRating} />
           <Form.Control

@@ -14,8 +14,10 @@ import CommentCreateForm from "../comments/CommentCreateForm";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 
-function EventPage() {
-  const { id } = useParams();
+
+function EventPage () {
+
+    const { id } = useParams();
     const [event, setEvent] = useState({ results: [] });
 
     const currentUser = useCurrentUser();
@@ -31,6 +33,7 @@ function EventPage() {
             ]);
             setEvent({ results: [event] });
             setComments(comments);
+            console.log(event);
           } catch (err) {
             // console.log(err);
           }
