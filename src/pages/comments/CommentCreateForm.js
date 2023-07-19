@@ -7,13 +7,15 @@ import Alert from "react-bootstrap/Alert";
 
 import styles from "../../styles/CommentForm.module.css";
 import btnStyles from "../../styles/Button.module.css"
+import { Row, Col } from "react-bootstrap";
 
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
 import { Rating } from "react-simple-star-rating";
 
+
 function CommentCreateForm(props) {
-  const { event, setEvent, setComments, profileImage, profile_id, } = props;
+  const { event, setEvent, setComments, profileImage, profile_id, rating_average, ratings_count } = props;
   const [content, setContent] = useState("");
   const [errors, setErrors] = useState({});
   const [rating, setRating] = useState(0);
@@ -41,16 +43,18 @@ function CommentCreateForm(props) {
         results: [
           {
             ...prevPost.results[0],
-            comments_count: prevPost.results[0].comments_count + 1,
+            comments_count: prevPost.results[0].comments_count + 1, 
+            rating_average: ((rating_average + rating) / ratings_count)
           },
         ],
       }));
-      console.log(rating)
+      console.log(rating_average)
       setContent("");
       await axiosRes.post("/ratings/", {
         event: event,
         rating: rating,
       });
+      console.log(rating_average)
     } catch (err) {
       console.log(err);
       if (err.response?.status !== 401){
@@ -61,12 +65,20 @@ function CommentCreateForm(props) {
 
   return (
     <Form className="mt-2" onSubmit={handleSubmit}>
+      <Form.Group as={Row} controlId="formHorizontalEmail">
+    <Form.Label column sm={2}>
+    <Link to={`/profiles/${profile_id}`}>
+            <Avatar src={profileImage} height={65} />
+          </Link>
+    </Form.Label>
+    <Col sm={10}>
+    <p className="float-right">
+          <Rating onClick={handleRating} />
+          </p>
+    </Col>
+  </Form.Group>
       <Form.Group>
         <InputGroup>
-        <Link to={`/profiles/${profile_id}`}>
-            <Avatar src={profileImage} height={55} />
-          </Link>
-          <Rating onClick={handleRating} />
           <Form.Control
             className={styles.Form}
             placeholder="my comment..."

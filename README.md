@@ -358,6 +358,8 @@ if 'CLIENT_ORIGIN_DEV' in os.environ:
         rf"{extracted_url}.(eu|us)\d+\.codeanyapp\.com$",
     ]
 
+- Had a bug with displaying average rating for events, fixed by changing serializer and add Avg to import on the backend.
+
 [Back up](#table-of-content)
 
 ---
@@ -396,6 +398,8 @@ To view the complete testing details and results, please [click here](TESTING.md
     - Axios
 
     - React-infinite-scroll
+
+    - react-star-rating
 
 ---
 ## Deployment
@@ -448,6 +452,8 @@ You can clone the repository by following these steps:
 
 - No results icon from [veryicon](https://www.veryicon.com/icons/commerce-shopping/jkd_wap/no-result.html)
 
+- Default user profile image from Code Institute.    
+
 ...
 
 ### Django Documentation:
@@ -472,6 +478,7 @@ You can clone the repository by following these steps:
 
 ### Other open-source projects and packages:
 
+- https://react-simple-star-rating.vercel.app/?path=/story/example--read-only-mode
 ....
 
 [Back up](#table-of-content)

@@ -97,7 +97,7 @@ const Event = (props) => {
   };
 
   return (
-    <Card bg="warning" className={styles.Event}>
+    <Card bg="secondary" className={styles.Event}>
       <Card.Body>
         <Media className="align-items-center justify-content-between">
           <Link to={`/profiles/${profile_id}`}>
@@ -122,10 +122,10 @@ const Event = (props) => {
         <Card.Title>
           {title}
           <span className="float-right">
-            <i className="fa-regular fa-comments"></i> {comments_count}
-            <i className="fa-regular fa-star"></i> {rating_average}{" "}
+            <i className="fa-regular fa-comments"></i> {comments_count}{" "}
+            <Rating className={star.Star} readonly initialValue={rating_average} size={25} />
+           ({rating_average})
           </span>
-          <Rating className={star.Star} readonly initialValue={rating_average} size={25} />
         </Card.Title>
         <Card.Text>{description}
         </Card.Text>
@@ -181,7 +181,9 @@ const Event = (props) => {
               </span>
             </OverlayTrigger>
           )}
-          <span className="float-right">{attend_count}</span>
+          <span className="float-right mr-2">
+            <i className="fa-solid fa-user-group"></i>
+            ({attend_count})</span>
         </div>
       </Card.Body>
       <ListGroup variant="flush">
