@@ -44,7 +44,7 @@ function CommentCreateForm(props) {
           {
             ...prevPost.results[0],
             comments_count: prevPost.results[0].comments_count + 1, 
-            rating_average: ((rating_average + rating) / ratings_count)
+            rating_average: prevPost.results[0].ratings_count + 1,
           },
         ],
       }));
