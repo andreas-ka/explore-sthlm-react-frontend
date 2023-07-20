@@ -10,6 +10,7 @@ import { useParams } from "react-router";
 import Comment from "../comments/Comment";
 import Event from "./Event";
 import Asset from "../../components/Asset";
+import EventRatingForm from "./EventRatingForm";
 
 import CommentCreateForm from "../comments/CommentCreateForm";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
@@ -17,9 +18,11 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
 
-function EventPage() {
+function EventPage(props) {
+
   const { id } = useParams();
   const [event, setEvent] = useState({ results: [] });
+
 
   const currentUser = useCurrentUser();
   const profile_image = currentUser?.profile_image;
@@ -48,6 +51,18 @@ function EventPage() {
       <Col className="py-2 p-0 p-lg-2" lg={8}>
       <PopularProfiles mobile /> 
         <Event {...event.results[0]} setEvents={setEvent} eventPage />
+        <Container className={`mb-3 ${appStyles.Content}`}>
+        {currentUser && currentUser.profile_id ? (
+            <EventRatingForm
+              profile_id={currentUser.profile_id}
+              event={id}
+              setEvent={setEvent}
+              currentUser={currentUser}
+            />
+          ) : (
+            <div>Loading...</div>
+          )}
+        </Container>
         <Container className={appStyles.Content}>
           {currentUser ? (
             <CommentCreateForm

@@ -74,14 +74,14 @@ const NavBar = () => {
       <NavLink
         className={`${styles.NavLink} ${styles.NavLinkHover}`}
         activeClassName={styles.Active}
-        to="signin"
+        to="/signin"
       >
         <i className="fas fa-sign-in-alt fa-fw"></i><span className="ml-2"> Sign in</span>
       </NavLink>
       <NavLink
         className={`${styles.NavLink} ${styles.NavLinkHover}`}
         activeClassName={styles.Active}
-        to="signup"
+        to="/signup"
       >
         <i className="fas fa-user-plus fa-fw"></i><span className="ml-2"> Sign up</span>
       </NavLink>

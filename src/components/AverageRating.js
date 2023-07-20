@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { axiosRes } from "../api/axiosDefaults";
+import React, { useState } from "react";
+import EventPage from "./EventPage";
 
 
 const [rating, setRating] = useState();
