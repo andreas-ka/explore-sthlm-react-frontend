@@ -1,28 +1,26 @@
-import React, { useEffect, useMemo, useState } from 'react';
-import dayjs from 'dayjs';
-import { Calendar, Views, dayjsLocalizer } from 'react-big-calendar';
+import React, { useEffect, useState } from 'react';
+
 import { axiosRes } from '../../api/axiosDefaults';
+import Calendar from 'react-awesome-calendar';
+import styles from "../../styles/Calendar.module.css";
 
-import timezone from 'dayjs/plugin/timezone'
-dayjs.extend(timezone)
 
-const djLocalizer = dayjsLocalizer(dayjs)
 
-const ColoredDateCellWrapper = ({ children }) =>
-  React.cloneElement(React.Children.only(children), {
-    style: {
-      backgroundColor: 'lightblue',
-    },
-  })
-
-  const EventCalendar = ({ ...props }) => {
+  const EventCalendar = () => {
     const [eventsData, setEventsData] = useState([]);
   
     useEffect(() => {
       const fetchEventData = async () => {
         try {
           const { data } = await axiosRes.get('/events/');
-          setEventsData(data);
+          const filteredData = data.results.map((event) => ({
+            id: event.id,
+            title: event.title,
+            start_date: event.start_date,
+            end_date: event.end_date,
+            category: event.category,
+          }));
+          setEventsData(filteredData);
         } catch (err) {
           console.log(err);
           // Handle the error
@@ -30,38 +28,39 @@ const ColoredDateCellWrapper = ({ children }) =>
       };
   
       fetchEventData();
-    }, []);
+    }, []); 
 
-  function Dayjs({ ...props }) {
-  const { components, defaultDate, max, views } = useMemo(
-    () => ({
-      components: {
-        timeSlotWrapper: ColoredDateCellWrapper,
-      },
-      defaultDate: new Date(2023, 4, 1),
-      max: dayjs().endOf('day').subtract(1, 'hours').toDate(),
-      views: Object.keys(Views).map((k) => Views[k]),
-    }),
-    []
-  )
+    const categoryColorMap = {
+      Family: '#57A639', // green
+      Music: '#9E9764', // Grey beige
+      Sport: '#E1CC4F', // yellow ivory
+      Culture: '#FF7514', // orange
+      Food: 'p#924E7D', // Purple violet
+      Shopping: '#B32428', // red
+      Sightseeing: '#3B83BD', // blue
+    };
 
+    const events =
+    eventsData.length > 0
+    ? eventsData.map((event) => ({
+        id: event.id,
+        color: categoryColorMap[event.category] || 'gray',
+        from: event.start_date, 
+        to: event.end_date, 
+        title: event.title,
+        category: event.category,
+      }))
+    : [];
+
+    console.log(events);
+  
+  
 
   return (
-    <div className="height600" {...props}>
+    <div className={styles.Calendar}>
       <Calendar
-        components={components}
-        defaultDate={defaultDate}
-        events={eventsData.map((event) => ({
-          title: event.title,
-          start: new Date(event.startdate),
-          end: new Date(event.enddate),
-        }))}
-        localizer={dayjsLocalizer(dayjs)}
-        max={max}
-        showMultiDayTimes
-        step={60}
-        views={views}
-      />
+                events={events}
+            />
     </div>
   );
 };

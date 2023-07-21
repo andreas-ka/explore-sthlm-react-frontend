@@ -1,1 +1,25 @@
-@import 'react-big-calendar/lib/sass/styles';
+.Calendar h1 {
+    color: white;
+}
+
+.modeButton button {
+    color: #ffffff !important;
+    font-size: 18px;
+}
+
+.Calendar.modeWrapper {
+    color: white !important;
+}
+
+.Calendar div {
+    color: #ffffff !important;
+}
+
+.Calendar button {
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.Calendar .modeButtonActive {
+    color: #ff3e52 !important;
+}

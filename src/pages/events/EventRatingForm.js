@@ -41,10 +41,11 @@ const EventRatingForm = (props) => {
           return event.id === id
             ? { ...event, 
                 ratings_count: event.ratings_count +1,
-                rating_average: ((event.rating_average + rating) / ratings_count) }
+                rating_average: ((event.rating_average + event.rating) / event.ratings_count) }
             : event;
         }),
       }));
+      setRating(rating);
     } catch (err) {
       console.log(err);
     }
