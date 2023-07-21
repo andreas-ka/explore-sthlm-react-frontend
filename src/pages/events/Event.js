@@ -124,7 +124,7 @@ const Event = (props) => {
           <span className="float-right">
             <i className="fa-regular fa-comments"></i> {comments_count}{" "}
             <Rating className={star.Star} readonly initialValue={rating_average} size={25} />
-            {(rating_average) || "(0)"}
+            {rating_average}
           </span>
         </Card.Title>
         <Card.Text>{description}

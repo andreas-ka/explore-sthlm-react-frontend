@@ -19,7 +19,12 @@ import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
 
 function EventPage(props) {
-
+  const {
+    owner,
+    setEvents,
+    rating_average,
+  } = props;
+  
   const { id } = useParams();
   const [event, setEvent] = useState({ results: [] });
 
@@ -37,7 +42,6 @@ function EventPage(props) {
         ]);
         setEvent({ results: [event] });
         setComments(comments);
-        console.log(event);
       } catch (err) {
         // console.log(err);
       }
@@ -71,6 +75,7 @@ function EventPage(props) {
               event={id}
               setEvent={setEvent}
               setComments={setComments}
+              rating_average={rating_average}
             />
           ) : comments.results.length ? (
             "Comments"

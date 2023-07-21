@@ -23,3 +23,6 @@
 .Calendar .modeButtonActive {
     color: #ff3e52 !important;
 }
+.Calendar > .dailyEventWrapper {
+    cursor: pointer !important;
+}

@@ -5,22 +5,18 @@ import { axiosRes } from "../../api/axiosDefaults";
 import { Form } from "react-bootstrap";
 import btnStyles from "../../styles/Button.module.css"
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
-import EventPage from "./EventPage";
 
-const EventRatingForm = (props) => {
+function EventRatingForm(props) {
   const { 
-    event, 
-    setEvent, 
-    setComments, 
-    profileImage, 
-    ratings_count, 
+    event,
+    setEvent,
     rating_average,
+    ratings_count,
     id,
-    is_owner,
-    owner,
      } = props;
+
   const [rating, setRating] = useState(0);
-  const [errors, setErrors] = useState({});
+
 
   const currentUser = useCurrentUser();
 
@@ -35,23 +31,25 @@ const EventRatingForm = (props) => {
         event,
         rating,
        });
+       console.log(event.rating_average);
       setEvent((prevEvent) => ({
         ...prevEvent,
         results: prevEvent.results.map((event) => {
           return event.id === id
             ? { ...event, 
-                ratings_count: event.ratings_count +1,
-                rating_average: ((event.rating_average + event.rating) / event.ratings_count) }
+              ratings_count: event.ratings_count + 1,
+              rating_average: ((event.rating_average * event.ratings_count) + rating) / (event.ratings_count), }
             : event;
         }),
       }));
+      console.log(event.rating_average);
       setRating(rating);
     } catch (err) {
       console.log(err);
     }
   };
   console.log(currentUser);
-  console.log(event.owner);
+  console.log(rating_average);
 
 
   return (

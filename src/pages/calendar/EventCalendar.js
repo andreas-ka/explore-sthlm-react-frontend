@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
+import { useHistory } from 'react-router-dom';
 import { axiosRes } from '../../api/axiosDefaults';
 import Calendar from 'react-awesome-calendar';
 import styles from "../../styles/Calendar.module.css";
@@ -8,6 +8,7 @@ import styles from "../../styles/Calendar.module.css";
 
   const EventCalendar = () => {
     const [eventsData, setEventsData] = useState([]);
+    const history = useHistory();
   
     useEffect(() => {
       const fetchEventData = async () => {
@@ -35,9 +36,14 @@ import styles from "../../styles/Calendar.module.css";
       Music: '#9E9764', // Grey beige
       Sport: '#E1CC4F', // yellow ivory
       Culture: '#FF7514', // orange
-      Food: 'p#924E7D', // Purple violet
+      Food: 'pink', // pink
       Shopping: '#B32428', // red
       Sightseeing: '#3B83BD', // blue
+    };
+
+    const handleClickEvent = (event) => {
+     
+      history.push(`/events/${event}`);
     };
 
     const events =
@@ -53,13 +59,13 @@ import styles from "../../styles/Calendar.module.css";
     : [];
 
     console.log(events);
-  
-  
+    
 
   return (
     <div className={styles.Calendar}>
       <Calendar
                 events={events}
+                onClickEvent={(event) => handleClickEvent(event)}         
             />
     </div>
   );

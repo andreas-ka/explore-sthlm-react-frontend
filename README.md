@@ -401,6 +401,8 @@ To view the complete testing details and results, please [click here](TESTING.md
 
     - react-star-rating
 
+    - react-awesome-calendar
+
 ---
 ## Deployment
 
@@ -452,7 +454,13 @@ You can clone the repository by following these steps:
 
 - No results icon from [veryicon](https://www.veryicon.com/icons/commerce-shopping/jkd_wap/no-result.html)
 
-- Default user profile image from Code Institute.    
+- Default user profile image from Code Institute.
+
+- Vasa Ship image from https://www.vasamuseetsrestaurang.se/fest-pa-museet/
+
+- Outdoor cinema image from https://bigcrowdfactory.com/post/utomhusbio-ralis-2023#:~:text=Sommaren%202023%20kommer%20R%C3%A5lambshovsparken%20eller,som%20du%20inte%20vill%20missa!
+
+- street food logo from https://www.visitstockholm.com/events/street-food-festival/2023-07-28/
 
 ...
 
@@ -474,7 +482,9 @@ You can clone the repository by following these steps:
 
 ### Various tutorials and YouTube channels:
 
-....
+- How to setups react-awesome-calendar
+https://codesandbox.io/s/mikeham98-react-awesome-calendar-b5reb?file=/src/App.jsx
+https://github.com/mikeham98/react-awesome-calendar
 
 ### Other open-source projects and packages:
 
