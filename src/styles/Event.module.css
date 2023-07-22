@@ -5,3 +5,6 @@
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.3);
   }
   
+  .Event a {
+    color: #000000;
+  }

@@ -1,7 +1,6 @@
 import React from "react";
 import ReactWeather, { useOpenWeather } from "react-open-weather";
-import appStyles from "../App.module.css";
-import { Container } from "react-bootstrap";
+
 
 const WeatherComponent = () => {
   

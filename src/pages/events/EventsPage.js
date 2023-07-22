@@ -11,8 +11,6 @@ import { useLocation } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import Asset from "../../components/Asset";
 import Event from "./Event";
-import ReactWeather, { useOpenWeather } from "react-open-weather";
-import WeatherComponent from "../../components/Weather";
 
 import NoResults from "../../assets/no-result.png";
 import InfiniteScroll from "react-infinite-scroll-component";

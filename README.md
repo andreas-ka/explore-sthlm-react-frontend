@@ -17,7 +17,56 @@ Am i responsive image
 
 ---
 
-Table of contents
+## Table of Contents
+
+- [Project Idea and description](#project-idea-and-description)
+    - [Project Idea](#project-objective)
+    - [Site owner goal](#site-owner-goal)
+    - [Site user goal](#site-user-goal)
+- [User Stories](#user-stories)
+    - [Profile and account management](#profile-and-account-management)
+    - [Event](#events)
+    - [Rating](#rating)
+    - [Comment](#comments)
+    - [Navigation and authentication](#navigation-and-authentication)
+- [Features](#features)
+    - [Navbar](#navbar)
+    - [Sign up](#sign-up)
+    - [Sign in](#sign-in)
+    - [Feed](#feed)
+    - [Events Data](#events--homepage)
+    - [Event detail](#detailed-event)
+    - [Profile](#profiles)
+    - [Follow / Followed](#follow---followed)
+    - [Comments](#comments)
+    - [Calendar](#calendar)
+    - [Weather widget](#weather)
+    - [Ratings](#ratings-data)
+    - [Categories](#categories)
+- [Structure](#structure)
+    - [Database](#database)
+    - [Wireframe](#wireframes)
+- [Typography and color scheme](#typography-and-color-scheme)
+- [Technologies Used](#technologies-used)
+    - [Languages](#languages)
+    - [Frameworks](#frameworks)
+    - [Database](#database-1)
+    - [Tools](#tools)
+- [Methodology](#methodology)
+    - [Agile Project Management](#agile-project-management-with-github-projects)
+    - [User Stories and github](#user-stories-as-github-issues)
+    - [### Bug Tracking](#bug-tracking)
+    - [### Iterative Development Approach](#iterative-development-approach)
+- [Planning & Documentation](#planning--documentation)
+    - [Backend](#backend)
+    - [Frontend](#frontend)
+    - [Testing](#testing)
+    - [Documentaion](#documentation--readmemd)
+- [Testing](#testing)
+- [Programs and tools used](#programs-and-tools-used)
+- [Deployment](#deployment)
+- [Credits](#credits)
+
 
 ---
 
@@ -52,8 +101,7 @@ People who are planning an event can share it and easily reach out to alot of pe
 The ones who are not planning an event and are here to found one to attend or get inspired can easily navigate the website, click attend on events and later found them in the calendar. Sort events by categorys and easy found out details about each event.
 
 ### Site owner goal
-As the site owner i thought i would be fun and a great way to see whats happening in my city. Deliver a way for people to reach out easily when they are planning an event.
-
+As the site owner i thought i would be fun and a great way to see whats happening in my city. Deliver a way for people to reach out easily when they are planning an event. All mayor sites only contains bigger events, my hopes for this page is to let people share smaller things, your friendly neighborhood flea sale and so on.
 
 ---
 
@@ -83,7 +131,9 @@ As the site owner i thought i would be fun and a great way to see whats happenin
 
 - [x] As a registered user i can update my event so that add or remove information about the event [#7](https://github.com/andreas-ka/explore-sthlm-react-frontend/issues/7)
 
-- [x] As a registered user i can **view details on a specific event ** so that i can get more information [#5](https://github.com/andreas-ka/explore-sthlm-react-frontend/issues/5)
+- [x] As a registered user i can **view details on a specific event ** so that i can get more information [#5](https://github.com/andreas-ka/explore-sthlm-react-frontend/issues/5)    
+
+- [x] As a non registered and registered user i can view the calendar so that i can see the upcoming events. [#5](https://github.com/andreas-ka/explore-sthlm-react-frontend/issues/24)
 
 ### Rating
 
@@ -93,7 +143,7 @@ As the site owner i thought i would be fun and a great way to see whats happenin
 
 - [x] As a logged in user i can rate an event so that show my opinion about the specific event [#20](https://github.com/andreas-ka/explore-sthlm-react-frontend/issues/20)
 
-### Reviews
+### Comments
 
 - [x] As a registered user i can delete my comment so that if it's not relevant anymore it dont show [#15](https://github.com/andreas-ka/explore-sthlm-react-frontend/issues/15)
 
@@ -103,7 +153,6 @@ As the site owner i thought i would be fun and a great way to see whats happenin
 
 - [x] As a registered user i can comments on posts so that i can interact with others and the creator of the post [#12](https://github.com/andreas-ka/explore-sthlm-react-frontend/issues/12)
 
-- [x] [#2]()
 
 ### Navigation and authentication
 
@@ -123,41 +172,87 @@ As the site owner i thought i would be fun and a great way to see whats happenin
 
 ## Features
 
-### Existing features
+### Navbar
+- Made with bootstrap, collapses on smaller devices. The links change depending on user state, logged in or logged out.
 
-#### Navbar
+### Sign up
+- Sign up page consists of 3 fields for username, password and confirm password, if username already exist, password to weak or if
+passwords dont match you get an alert. 
 
-#### Sign up
+### Sign in
+- Same as sign up page you get warning if the provided credentials are not a match.
 
-#### Sign in
+### Feed
+- Feed only shows the posts from the users that you are following.
 
-#### Feed
+### Events / homepage
+- Starting page that includes alot of features, it shows the weather, a search bar and a selector for ctaegories.
+The events are all shown in column and uses infinite scroll to load on demand. It also shows statistics for the event, 
+how many comments it has, what rating and lets you as a registered user click the attend button to show that you are
+attending the event.
 
-#### Events
+### Detailed event
+- On the detail page for event can you comment and rate if you are not the owner, the owner can comment and also
+edit and delete their event. The event post shows the same features as on the events / homepage. 
 
-#### Profiles
+### Profiles
+- Profile page shows statistics for the user, how many events published, following and how many followers. Below the profile
+you can see the users events.
 
-#### Follow - Followed
+### Follow - Followed
+- Is showed on every profile, containing all the statistics for the user.
 
-#### Searchbar
+### Searchbar
+- Let's you search for username and title for the events.
 
-#### Reviews
+### Comments
+- Comments kan be made if you are a registered user, the comment display your profile image, timestamp for when
+you did the comment and also the content.
+
+### Calendar
+- Made with react-awesome-calendar and shows all the events in different color depending on category. The events can be shown in year,
+month and day. In day view you can click the event and get to the detail view of that event.
+
+### Weather
+- Used react-open-weather to show the current weather in Stockholm, could be good information when you are planning your day.
+
+### Ratings data
+- Is made with react-star-rating and let's you rate event from 1-5 using stars, on every event you see the average rating for that event.
+
+### Categories
+- Used a selector that lets you filter events based on the category.
 
 ---
 
 ### Structure
 
-#### Database
+### Database
 
-![Screenshot](src/assets/drawSQL.png)
+![Screenshot](src/images/drawSQL.png)
 
 [Back up](#table-of-content)
 
-### Skeleton
+### Wireframes
 
-#### Wireframes
+#### Homepage.    
+![Screenshot](src/images/Wireframe_index.png)    
 
----
+#### Event detail view.     
+![Screenshot](src/images/Wireframe_detail_event.png)     
+
+#### Calendar view.    
+![Screenshot](src/images/Wireframe_calendar.png)     
+
+#### Sign up.     
+![Screenshot](src/images/Wireframe_signup.png)     
+
+#### Sign in.     
+![Screenshot](src/images/Wireframe_signin.png)     
+
+#### Profile.     
+![Screenshot](src/images/Wireframe_profile.png)  
+
+
 
 ## Typography and color scheme
 
@@ -226,6 +321,8 @@ The Explore Sthlm project has been developed using agile principles, enabling ef
 ### Agile Project Management with GitHub Projects
 
 GitHub Projects has been utilized to facilitate agile project management. User stories and bugs have been organized as GitHub issues, allowing for a clear and structured approach to development. The project board in GitHub Projects serves as a Kanban board, providing an overview of the project's progress.
+
+![screenshot](src/images/Kanban_example.png)
 
 ### User Stories as GitHub Issues
 
@@ -312,7 +409,19 @@ Within each sprint, a MoSCoW method is used to further prioritize user stories. 
 
 - [x] Do so navigation bar and authorization works (Must do)
 
-- [ ] Design and implement footer (Must do)
+- [x] Implement posting events (must do)
+
+- [x] Add Profile with edit and delete function (must do)
+
+- [x] Implement follow and following on the website (must do)
+
+- [x] Add the comments and rating section for events (must do)
+
+- [x] Find calendar library and implement on site (could do)
+
+- [x] 
+
+- [x] 
 
 ### Completed XXth July 2023 ✅ 
 
@@ -344,21 +453,10 @@ Within each sprint, a MoSCoW method is used to further prioritize user stories. 
 
 ---
 
-## Bugs
+## Bugs and issues
 
-### Known bugs
+All bugs are documented as issues and are best to be seen in the project. [Link Here](https://github.com/users/andreas-ka/projects/12)
 
-### Fixed bugs
-
-- Had problem with the signup form and sending the post. Had missed a step in the tutorial regarding CLIENT_ORIGIN_DEV.   
-if 'CLIENT_ORIGIN_DEV' in os.environ:
-    extracted_url = re.match(r'^([^.]+)', os.environ.get('CLIENT_ORIGIN_DEV', ''), re.IGNORECASE).group(0)
-
-    CORS_ALLOWED_ORIGIN_REGEXES = [
-        rf"{extracted_url}.(eu|us)\d+\.codeanyapp\.com$",
-    ]
-
-- Had a bug with displaying average rating for events, fixed by changing serializer and add Avg to import on the backend.
 
 [Back up](#table-of-content)
 
@@ -382,29 +480,40 @@ To view the complete testing details and results, please [click here](TESTING.md
 
 # Programs and tools used
 
-## Extensions
-    - ESLint with prettier [Link](https://gist.github.com/ianmeigh/8e603b91a38d7829d959402bfcf29d3d)
+## Software
 
-## Packages
+[React Bootstrap 4.6](https://react-bootstrap-v4.netlify.app/)
 
-    - ES7 Snippets
+[Balsamiq](https://balsamiq.com/)
 
-    - React Router dom 5.3
+[Github](https://github.com/)
 
-    - Eslint
+[Heroku](https://heroku.com/)
 
-    - Prettier
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
 
-    - Axios https://www.npmjs.com/package/axios
+[LogoMaker](https://www.logomaker.com/) for logo and favicon.
 
-    - React-infinite-scroll
+## Libraries
 
-    - react-star-rating https://www.npmjs.com/package/react-star-ratings
+[React Router dom 5.3](https://reactrouter.com/en/main)
 
-    - react-awesome-calendar https://www.npmjs.com/package/react-awesome-calendar
+[Eslint](https://eslint.org/)
 
-    - React Open Weather [site](https://www.npmjs.com/package/react-open-weather)
+[Prettier](https://prettier.io/)
+
+[Axios](https://www.npmjs.com/package/axios)
+
+[React-infinite-scroll](https://www.npmjs.com/package/react-infinite-scroll-component)
+
+[react-star-rating](https://www.npmjs.com/package/react-star-ratings)
+
+[react-awesome-calendar](https://www.npmjs.com/package/react-awesome-calendar)
+
+[React Open Weather](https://www.npmjs.com/package/react-open-weather)
+
 ---
+
 ## Deployment
 
 The website was deployed using Heroku by following these steps:
@@ -465,20 +574,6 @@ You can clone the repository by following these steps:
 
 - Avatars for user from [Freepik](https://img.freepik.com/free-vector/avatars-set-cartoon-style_1284-18338.jpg?size=626&ext=jpg&ga=GA1.1.1776497350.1681300148&semt=sph)
 
-### Django Documentation:
-
-...
-
-### W3 Schools:
-
-...
-
-### Stackoverflow:
-
-...
-
-### Geeksforgeeks:
-
 ...
 
 ### Various tutorials and YouTube channels:
@@ -486,10 +581,6 @@ You can clone the repository by following these steps:
 - How to setups react-awesome-calendar
 https://codesandbox.io/s/mikeham98-react-awesome-calendar-b5reb?file=/src/App.jsx
 https://github.com/mikeham98/react-awesome-calendar
-
-### Other open-source projects and packages:
-
-- https://react-simple-star-rating.vercel.app/?path=/story/example--read-only-mode
 ....
 
 [Back up](#table-of-content)

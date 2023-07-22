@@ -47,8 +47,8 @@ const NavBar = () => {
     <NavLink
     className={`${styles.NavLink} ${styles.NavLinkHover}`}
     activeClassName={styles.Active}
-    to="/reviews">
-    <i className="fa-regular fa-star-half-stroke fa-fw"></i><span className="ml-2"> Reviews</span>
+    to="/ratings">
+    <i className="fa-regular fa-star-half-stroke fa-fw"></i><span className="ml-2"> Ratings</span>
   </NavLink>
   <NavLink
     className={`${styles.NavLink} ${styles.NavLinkHover}`}
