@@ -97,7 +97,7 @@ const Event = (props) => {
   };
 
   return (
-    <Card bg="secondary" className={styles.Event}>
+    <Card bg="light" className={styles.Event}>
       <Card.Body>
         <Media className="align-items-center justify-content-between">
           <Link to={`/profiles/${profile_id}`}>

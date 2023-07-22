@@ -395,14 +395,15 @@ To view the complete testing details and results, please [click here](TESTING.md
 
     - Prettier
 
-    - Axios
+    - Axios https://www.npmjs.com/package/axios
 
     - React-infinite-scroll
 
-    - react-star-rating
+    - react-star-rating https://www.npmjs.com/package/react-star-ratings
 
-    - react-awesome-calendar
+    - react-awesome-calendar https://www.npmjs.com/package/react-awesome-calendar
 
+    - React Open Weather [site](https://www.npmjs.com/package/react-open-weather)
 ---
 ## Deployment
 
@@ -456,13 +457,13 @@ You can clone the repository by following these steps:
 
 - Default user profile image from Code Institute.
 
-- Vasa Ship image from https://www.vasamuseetsrestaurang.se/fest-pa-museet/
+- Vasa Ship image from [LINK](https://www.vasamuseetsrestaurang.se/fest-pa-museet/)
 
-- Outdoor cinema image from https://bigcrowdfactory.com/post/utomhusbio-ralis-2023#:~:text=Sommaren%202023%20kommer%20R%C3%A5lambshovsparken%20eller,som%20du%20inte%20vill%20missa!
+- Outdoor cinema image from [LINK](https://bigcrowdfactory.com/post/utomhusbio-ralis-2023#:~:text=Sommaren%202023%20kommer%20R%C3%A5lambshovsparken%20eller,som%20du%20inte%20vill%20missa!)
 
-- street food logo from https://www.visitstockholm.com/events/street-food-festival/2023-07-28/
+- Street food logo from [LINK](https://www.visitstockholm.com/events/street-food-festival/2023-07-28/)
 
-...
+- Avatars for user from [Freepik](https://img.freepik.com/free-vector/avatars-set-cartoon-style_1284-18338.jpg?size=626&ext=jpg&ga=GA1.1.1776497350.1681300148&semt=sph)
 
 ### Django Documentation:
 

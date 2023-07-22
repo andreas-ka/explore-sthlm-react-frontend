@@ -11,6 +11,8 @@ import { useLocation } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import Asset from "../../components/Asset";
 import Event from "./Event";
+import ReactWeather, { useOpenWeather } from "react-open-weather";
+import WeatherComponent from "../../components/Weather";
 
 import NoResults from "../../assets/no-result.png";
 import InfiniteScroll from "react-infinite-scroll-component";
@@ -24,6 +26,7 @@ function EventsPage({ message, filter = "" }) {
 
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("");
+
 
   useEffect(() => {
     const fetchEvents = async () => {
@@ -64,7 +67,8 @@ function EventsPage({ message, filter = "" }) {
             className="mr-sm-2"
             placeholder="Search events"
           />
-          <Form.Control className={styles.formmargin}
+          <Form.Control
+            className={styles.formmargin}
             size="sm"
             as="select"
             placeholder="Choose..."
@@ -75,13 +79,13 @@ function EventsPage({ message, filter = "" }) {
               {" "}
               Browse Categories{" "}
             </option>
-            <option>Culture</option>
-            <option>Music & Concerts</option>
-            <option>Sightseeing</option>
-            <option>Family</option>
-            <option>Food & Drink</option>
-            <option>Shopping</option>
-            <option>Sports</option>
+            <option value="Culture">Culture</option>
+            <option value="Music">Music & Concerts</option>
+            <option value="Sightseeing">Sightseeing</option>
+            <option value="Family">Family</option>
+            <option value="Food">Food & Drink</option>
+            <option value="Shopping">Shopping</option>
+            <option value="Sport">Sports</option>
           </Form.Control>
         </Form>
 

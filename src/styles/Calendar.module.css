@@ -26,3 +26,7 @@
 .Calendar > .dailyEventWrapper {
     cursor: pointer !important;
 }
+
+.Calendar .eventTitle {
+    font-size: 0.8em;
+}
