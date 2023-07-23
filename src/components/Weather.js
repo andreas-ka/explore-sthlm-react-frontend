@@ -2,6 +2,7 @@ import React from "react";
 import ReactWeather, { useOpenWeather } from "react-open-weather";
 
 
+// Weather widget that's showing the current weather in Stockholm
 const WeatherComponent = () => {
   
     

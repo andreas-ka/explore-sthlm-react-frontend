@@ -1,11 +1,11 @@
 .Container {
-    min-height: 343px;
-  }
+  min-height: 343px;
+}
 
 .Container p {
-    color: black;
+  color: black;
 }
 
 .Form p {
-    color: black;
+  color: black;
 }

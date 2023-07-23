@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 
+// Bootstrap
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
@@ -7,6 +8,7 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Alert from "react-bootstrap/Alert";
 
+// Styles and CSS
 import styles from "../../styles/EventCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
@@ -15,6 +17,9 @@ import { axiosReq } from "../../api/axiosDefaults";
 import { Image } from "react-bootstrap";
 import { useHistory } from "react-router";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+
+// Shows when you want to edit your event, fetches the event so the fields are
+// prefilled and then posts the new updated event to the API
 
 function EventEditForm() {
   const [eventData, setEventData] = useState({
@@ -45,22 +50,35 @@ function EventEditForm() {
 
   useEffect(() => {
     const handleMount = async () => {
-        try {
-            const { data } = await axiosReq.get(`/events/${id}/`);
-            const {title, description, event_location, start_date, end_date, category, cost, image, is_owner} = data;
+      try {
+        const { data } = await axiosReq.get(`/events/${id}/`);
+        const {
+          title,
+          description,
+          event_location,
+          start_date,
+          end_date,
+          category,
+          cost,
+          image,
+          is_owner,
+        } = data;
 
-            is_owner ? setEventData({
-              title, 
-              description, 
+        is_owner
+          ? setEventData({
+              title,
+              description,
               event_location,
               start_date,
-              end_date, 
-              category, 
-              cost, 
-              image}) : history.push('/')
-        } catch (err) {
-            // console.log(err);
-        }
+              end_date,
+              category,
+              cost,
+              image,
+            })
+          : history.push("/");
+      } catch (err) {
+        // console.log(err);
+      }
     };
 
     handleMount();
@@ -95,8 +113,8 @@ function EventEditForm() {
     formData.append("category", category);
     formData.append("cost", cost);
     if (imageInput?.current?.files[0]) {
-        formData.append("image", imageInput.current.files[0]);
-      }
+      formData.append("image", imageInput.current.files[0]);
+    }
     try {
       await axiosReq.put(`/events/${id}`, formData);
       history.push(`/events/${id}`);
@@ -258,17 +276,17 @@ function EventEditForm() {
             className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
           >
             <Form.Group className="text-center">
-                  <figure>
-                    <Image className={appStyles.Image} src={image} rounded />
-                  </figure>
-                  <div>
-                    <Form.Label
-                      className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Bright} btn`}
-                      htmlFor="image-upload"
-                    >
-                      Change the image
-                    </Form.Label>
-                  </div>
+              <figure>
+                <Image className={appStyles.Image} src={image} rounded />
+              </figure>
+              <div>
+                <Form.Label
+                  className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Bright} btn`}
+                  htmlFor="image-upload"
+                >
+                  Change the image
+                </Form.Label>
+              </div>
 
               <Form.File
                 id="image-upload"

@@ -1,10 +1,10 @@
 .Event {
-    border: 1px solid #000000;
-    border-radius: 2px;
-    margin-bottom: 16px;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.3);
-  }
-  
-  .Event a {
-    color: #000000;
-  }
+  border: 1px solid #000000;
+  border-radius: 2px;
+  margin-bottom: 16px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.3);
+}
+
+.Event a {
+  color: #000000;
+}

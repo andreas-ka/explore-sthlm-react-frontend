@@ -1,32 +1,32 @@
 .Calendar h1 {
-    color: white;
+  color: white;
 }
 
 .modeButton button {
-    color: #ffffff !important;
-    font-size: 18px;
+  color: #ffffff !important;
+  font-size: 18px;
 }
 
 .Calendar.modeWrapper {
-    color: white !important;
+  color: white !important;
 }
 
 .Calendar div {
-    color: #ffffff !important;
+  color: #ffffff !important;
 }
 
 .Calendar button {
-    color: #ffffff;
-    font-size: 18px;
+  color: #ffffff;
+  font-size: 18px;
 }
 
 .Calendar .modeButtonActive {
-    color: #ff3e52 !important;
+  color: #ff3e52 !important;
 }
 .Calendar > .dailyEventWrapper {
-    cursor: pointer !important;
+  cursor: pointer !important;
 }
 
 .Calendar .eventTitle {
-    font-size: 0.8em;
+  font-size: 0.8em;
 }

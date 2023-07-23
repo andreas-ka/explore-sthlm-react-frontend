@@ -1,21 +1,26 @@
 import React, { useEffect, useState } from "react";
 
+// Bootstrap
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 
+// Styles and CSS
 import appStyles from "../../App.module.css";
 import styles from "../../styles/EventsPage.module.css";
+
+// Components, Axios and other tools
 import { useLocation } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import Asset from "../../components/Asset";
-import Event from "./Event";
-
 import NoResults from "../../assets/no-result.png";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
+import Event from "./Event";
 import PopularProfiles from "../profiles/PopularProfiles";
+
+/* Shows the events, also a Search bar and category select option */
 
 function EventsPage({ message, filter = "" }) {
   const [events, setEvents] = useState({ results: [] });
@@ -24,7 +29,6 @@ function EventsPage({ message, filter = "" }) {
 
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("");
-
 
   useEffect(() => {
     const fetchEvents = async () => {

@@ -1,12 +1,23 @@
 import React, { useState } from "react";
+
+// Bootstrap components
 import { Media } from "react-bootstrap";
+
 import { Link } from "react-router-dom";
 import Avatar from "../../components/Avatar";
+
+// Styles CSS
 import styles from "../../styles/Comment.module.css";
+
+// Current user context
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { axiosRes } from "../../api/axiosDefaults";
+
+// Components and form
 import { DropdownMenu } from "../../components/DropDownMenu";
 import CommentEditForm from "./CommentEditForm";
+
+// The comment page/module that displays the comment section on events
 
 const Comment = (props) => {
   const {

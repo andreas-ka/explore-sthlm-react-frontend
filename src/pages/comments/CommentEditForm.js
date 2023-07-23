@@ -1,9 +1,14 @@
 import React, { useState } from "react";
 
+// Bootstrap components
 import Form from "react-bootstrap/Form";
+
 import { axiosRes } from "../../api/axiosDefaults";
 
+// Styles CSS
 import styles from "../../styles/CommentCreateEditForm.module.css";
+
+// Retrvives the comment and let you edit it.
 
 function CommentEditForm(props) {
   const { id, content, setShowEditForm, setComments } = props;

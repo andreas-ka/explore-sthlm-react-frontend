@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 
+// Styles and CSS
 import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
+
 import signupimage from "../../assets/signup-image.png";
+
+/* Signup page and form for the website */
 
 import {
   Form,

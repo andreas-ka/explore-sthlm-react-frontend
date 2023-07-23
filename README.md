@@ -107,7 +107,7 @@ As the site owner i thought i would be fun and a great way to see whats happenin
 
 ## User Stories
 
-- These are all the User Storys for this project, they are also found [here](https://github.com/users/andreas-ka/projects/12) on my porjects kanban board.
+- These are all the User Storys for this project, they are also found [here](https://github.com/users/andreas-ka/projects/12) on my projects kanban board.
 
 ### Profile and account management
 

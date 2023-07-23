@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useHistory, useParams } from "react-router-dom";
 
+// Bootstrap
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Image from "react-bootstrap/Image";
@@ -9,14 +10,19 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Alert from "react-bootstrap/Alert";
 
+// Contexts and Axios
 import { axiosReq } from "../../api/axiosDefaults";
 import {
   useCurrentUser,
   useSetCurrentUser,
 } from "../../contexts/CurrentUserContext";
 
+// Styles and CSS
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
+
+// The profile edit form, grabs the profile id and info, 
+// let's you edit it and the submit again to the APi with the updated info
 
 const ProfileEditForm = () => {
   const currentUser = useCurrentUser();

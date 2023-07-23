@@ -1,11 +1,18 @@
 import React from "react";
+
+// Bootstrap
 import { Container } from "react-bootstrap";
+
+// Styles and cSS
 import appStyles from "../../App.module.css";
+
+// Assets, Profiledata context, also the weather widget library
 import Asset from "../../components/Asset";
 import { useProfileData } from "../../contexts/ProfileDataContext";
 import Profile from "./Profile";
 import WeatherComponent from "../../components/Weather";
 
+// Display the most popular profiles and also the weatherwidget
 
 const PopularProfiles = ({ mobile }) => {
   const { popularProfiles } = useProfileData();

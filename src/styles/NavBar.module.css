@@ -1,23 +1,23 @@
 .NavLink {
-    padding: 5px;
+  padding: 5px;
 }
 
 .Active i {
-    color: #ff851c;
+  color: #ff851c;
 }
 
 .NavLinkHover:hover {
-    color: #ff851c;
-  }
+  color: #ff851c;
+}
 
 .NavLinkHover i:hover {
-    transition: color ease-in-out 0.3s;
+  transition: color ease-in-out 0.3s;
 }
 
 .NavBar i {
-    color: white;
+  color: white;
 }
 
 a {
-    color: white;
+  color: white;
 }

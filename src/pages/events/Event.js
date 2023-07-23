@@ -1,8 +1,11 @@
 import React from "react";
+
+// Styles and CSS
 import styles from "../../styles/Event.module.css";
-import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import btnStyles from "../../styles/Button.module.css";
-import star from "../../styles/Star.module.css"
+import star from "../../styles/Star.module.css";
+
+// Bootstrap
 import {
   Card,
   Media,
@@ -10,11 +13,20 @@ import {
   Tooltip,
   ListGroup,
 } from "react-bootstrap";
+
 import { axiosRes } from "../../api/axiosDefaults";
 import { Link, useHistory } from "react-router-dom";
 import Avatar from "../../components/Avatar";
+
+// Context and component
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { DropdownMenu } from "../../components/DropDownMenu";
+
+// Star rating library
 import { Rating } from "react-simple-star-rating";
+
+// Event construct, with Card layout, Attend / remove attend and edit/delete for events.
+// Props are being set
 
 const Event = (props) => {
   const {
@@ -123,12 +135,16 @@ const Event = (props) => {
           {title}
           <span className="float-right">
             <i className="fa-regular fa-comments"></i> {comments_count}{" "}
-            <Rating className={star.Star} readonly initialValue={rating_average} size={25} />
+            <Rating
+              className={star.Star}
+              readonly
+              initialValue={rating_average}
+              size={25}
+            />
             {rating_average}
           </span>
         </Card.Title>
-        <Card.Text>{description}
-        </Card.Text>
+        <Card.Text>{description}</Card.Text>
         <div>
           {is_owner ? (
             <OverlayTrigger
@@ -182,8 +198,8 @@ const Event = (props) => {
             </OverlayTrigger>
           )}
           <span className="float-right mr-2">
-            <i className="fa-solid fa-user-group"></i>
-            ({attend_count})</span>
+            <i className="fa-solid fa-user-group"></i>({attend_count})
+          </span>
         </div>
       </Card.Body>
       <ListGroup variant="flush">

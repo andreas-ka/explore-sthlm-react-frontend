@@ -1,33 +1,35 @@
 import React, { useEffect, useState } from "react";
 
+// Bootstrap
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 
+// Styles and CSS
 import appStyles from "../../App.module.css";
-import { axiosReq } from "../../api/axiosDefaults";
-import { useParams } from "react-router";
+
+// Components
 import Comment from "../comments/Comment";
 import Event from "./Event";
-import Asset from "../../components/Asset";
 import EventRatingForm from "./EventRatingForm";
-
 import CommentCreateForm from "../comments/CommentCreateForm";
+import PopularProfiles from "../profiles/PopularProfiles";
+
+// Axios, user context and utils
+import { axiosReq } from "../../api/axiosDefaults";
+import { useParams } from "react-router";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
-import PopularProfiles from "../profiles/PopularProfiles";
+import Asset from "../../components/Asset";
+
+// Gets the event info, id and comments and passing it down as props
 
 function EventPage(props) {
-  const {
-    owner,
-    setEvents,
-    rating_average,
-  } = props;
-  
+  const { rating_average } = props;
+
   const { id } = useParams();
   const [event, setEvent] = useState({ results: [] });
-
 
   const currentUser = useCurrentUser();
   const profile_image = currentUser?.profile_image;
@@ -53,10 +55,10 @@ function EventPage(props) {
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
-      <PopularProfiles mobile /> 
+        <PopularProfiles mobile />
         <Event {...event.results[0]} setEvents={setEvent} eventPage />
         <Container className={`mb-3 ${appStyles.Content}`}>
-        {currentUser && currentUser.profile_id ? (
+          {currentUser && currentUser.profile_id ? (
             <EventRatingForm
               profile_id={currentUser.profile_id}
               event={id}
@@ -81,20 +83,20 @@ function EventPage(props) {
             "Comments"
           ) : null}
           {comments.results.length ? (
-          <InfiniteScroll
-            children={comments.results.map((comment) => (
-              <Comment
-                key={comment.id}
-                {...comment}
-                setEvent={setEvent}
-                setComments={setComments}
-              />
-            ))}
-            dataLength={comments.results.length}
-            loader={<Asset spinner />}
-            hasMore={!!comments.next}
-            next={() => fetchMoreData(comments, setComments)}
-          />
+            <InfiniteScroll
+              children={comments.results.map((comment) => (
+                <Comment
+                  key={comment.id}
+                  {...comment}
+                  setEvent={setEvent}
+                  setComments={setComments}
+                />
+              ))}
+              dataLength={comments.results.length}
+              loader={<Asset spinner />}
+              hasMore={!!comments.next}
+              next={() => fetchMoreData(comments, setComments)}
+            />
           ) : currentUser ? (
             <span>No comments yet, be the first to comment!</span>
           ) : (
@@ -103,7 +105,7 @@ function EventPage(props) {
         </Container>
       </Col>
       <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
-      <PopularProfiles />
+        <PopularProfiles />
       </Col>
     </Row>
   );

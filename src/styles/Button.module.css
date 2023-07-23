@@ -1,97 +1,78 @@
 .Button {
-    font-size: 0.8rem;
-    align-self: center;
-    border-radius: 100px;
-    border-color: transparent;
-    padding: 4px 10px;
-    min-width: 75px;
-    display: block;
-    margin: auto;
-  }
-  
-  .Button:hover {
-    opacity: 0.8;
-    border-color: transparent;
-    cursor: pointer;
-  }
-  
-  /* .Button:hover:active {
-    background-color: #2142b2 !important;
-  }
-  
-  .Button:active {
-    background-color: #2142b2 !important;
-  }
-  
-  .Button:focus {
-    background-color: #ffec46;
-  }*/
-  
-  .Wide {
-    padding: 10px 50px;
-    width: 50%;
-  }
+  font-size: 0.8rem;
+  align-self: center;
+  border-radius: 100px;
+  border-color: transparent;
+  padding: 4px 10px;
+  min-width: 75px;
+  display: block;
+  margin: auto;
+}
 
-  .NotWide {
-    padding: 10px 50px;
-  }
-  
-  .Blue,
-  .BlueOutline:hover,
-  .Bright:hover {
-    background-color: #2142b2;
-    color: #ffffff;
-  }
-  
-  .BlueOutline,
-  .Blue:hover {
-    /* border: 1px solid #2142b2; */
-    background-color: #ffffff;
-    color: #343a40;
-  }
-  
-  .Black,
-  .BlackOutline:hover {
-    /* background-color: #242a3d;
-    color: white; */
-    background-color: #242a3d;
-    color: aliceblue;
-  }
-  
-  .Black:hover,
-  .BlackOutline {
-    /* background-color: #dadadf;
-    color: #242a3d;
-    border-color: #242a3d; */
-    background-color: aliceblue;
-    color: #242a3d;
-  }
-  
-  .Orange,
-  .OrangeOutline:hover {
-    background-color: #ff851c;
-    color: #ffffff;
-  }
+.Button:hover {
+  opacity: 0.8;
+  border-color: transparent;
+  cursor: pointer;
+}
 
-  .Orange:hover,
-  .OrangeOutline {
-    background-color: #ffffff;
-    color: #ff851c;
-    border: 1px solid #ff851c;;
-  }
-  
-  
-  .Bright {
-    background-color: #ff851c;
-    color: #ffffff;
-    margin-bottom: 10px;
-  }
+.Wide {
+  padding: 10px 50px;
+  width: 50%;
+}
 
-  .Attending {
-    background-color: #1eb600;
-    color: #ffffff;
-  }
+.NotWide {
+  padding: 10px 50px;
+}
 
-  .ButtonContainer {
-    text-align: center;
-  }
+.Blue,
+.BlueOutline:hover,
+.Bright:hover {
+  background-color: #2142b2;
+  color: #ffffff;
+}
+
+.BlueOutline,
+.Blue:hover {
+  background-color: #ffffff;
+  color: #343a40;
+}
+
+.Black,
+.BlackOutline:hover {
+  background-color: #242a3d;
+  color: aliceblue;
+}
+
+.Black:hover,
+.BlackOutline {
+  background-color: aliceblue;
+  color: #242a3d;
+}
+
+.Orange,
+.OrangeOutline:hover {
+  background-color: #ff851c;
+  color: #ffffff;
+}
+
+.Orange:hover,
+.OrangeOutline {
+  background-color: #ffffff;
+  color: #ff851c;
+  border: 1px solid #ff851c;
+}
+
+.Bright {
+  background-color: #ff851c;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.Attending {
+  background-color: #1eb600;
+  color: #ffffff;
+}
+
+.ButtonContainer {
+  text-align: center;
+}

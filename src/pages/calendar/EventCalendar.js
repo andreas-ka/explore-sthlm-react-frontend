@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { axiosRes } from '../../api/axiosDefaults';
+
+// The calendar library
 import Calendar from 'react-awesome-calendar';
+
+// Styles CSS
 import styles from "../../styles/Calendar.module.css";
 
-
+/* Calendar page, fetch the event data from the api and then
+maps trough them and show them in the calendar in different
+colors depending on the category for the event */
 
   const EventCalendar = () => {
     const [eventsData, setEventsData] = useState([]);

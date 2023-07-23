@@ -1,14 +1,22 @@
+// Styles and CSS
 import styles from "./App.module.css";
 import NavBar from "./components/NavBar";
+
+// Bootstrap
 import Container from "react-bootstrap/Container";
+
 import { Route, Switch } from "react-router-dom";
 import "./api/axiosDefaults";
+
+// current user context
+import { useCurrentUser } from "./contexts/CurrentUserContext";
+
+// Components import
 import SignUpForm from "./pages/auth/SignUpForm";
 import SignInForm from "./pages/auth/SignInForm";
 import EventCreateForm from "./pages/events/EventCreateForm";
 import EventPage from "./pages/events/EventPage";
 import EventsPage from "./pages/events/EventsPage";
-import { useCurrentUser } from "./contexts/CurrentUserContext";
 import EventEditForm from "./pages/events/EventEditForm";
 import TopRatings from "./pages/ratings/TopRatings";
 import EventCalendar from "./pages/calendar/EventCalendar";

@@ -3,6 +3,7 @@ import React from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import { useHistory } from "react-router";
 
+// Dropdown menu for edit or delete events, comments.
 const ArrowDown = React.forwardRef(({ onClick }, ref) => (
     <i
     className="fa-solid fa-square-caret-down"
