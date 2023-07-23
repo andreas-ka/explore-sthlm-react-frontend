@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 
 // Bootstrap
-import { Button } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
 
 // Sets the profile, shows follow or unfollow button
 

@@ -10,13 +10,16 @@ import Container from "react-bootstrap/Container";
 import appStyles from "../../App.module.css";
 import styles from "../../styles/EventsPage.module.css";
 
-// Components, Axios and other tools
+// Components, Contexts, Axios and other tools
 import { useLocation } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import Asset from "../../components/Asset";
 import NoResults from "../../assets/no-result.png";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
+
+// Components
 import Event from "./Event";
 import PopularProfiles from "../profiles/PopularProfiles";
 
@@ -26,11 +29,13 @@ function EventsPage({ message, filter = "" }) {
   const [events, setEvents] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
+  const currentUser = useCurrentUser();
 
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("");
 
   useEffect(() => {
+    // fetch event for searchbar and selecter
     const fetchEvents = async () => {
       try {
         const { data } = await axiosReq.get(
@@ -39,7 +44,7 @@ function EventsPage({ message, filter = "" }) {
         setEvents(data);
         setHasLoaded(true);
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       }
     };
 
@@ -51,7 +56,7 @@ function EventsPage({ message, filter = "" }) {
     return () => {
       clearTimeout(timer);
     };
-  }, [filter, query, category, pathname]);
+  }, [filter, query, category, pathname, currentUser]);
 
   return (
     <Row className="h-100">

@@ -102,6 +102,7 @@ function EventEditForm() {
   };
 
   const handleSubmit = async (event) => {
+    // Updates the event data if user choose to edit
     event.preventDefault();
     const formData = new FormData();
 
@@ -119,10 +120,6 @@ function EventEditForm() {
       await axiosReq.put(`/events/${id}`, formData);
       history.push(`/events/${id}`);
     } catch (err) {
-      console.log(err.response);
-      for (const entry of formData.entries()) {
-        console.log(entry[0], entry[1]);
-      }
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);
       }

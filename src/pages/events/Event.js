@@ -6,13 +6,11 @@ import btnStyles from "../../styles/Button.module.css";
 import star from "../../styles/Star.module.css";
 
 // Bootstrap
-import {
-  Card,
-  Media,
-  OverlayTrigger,
-  Tooltip,
-  ListGroup,
-} from "react-bootstrap";
+import Card from "react-bootstrap/Card";
+import Media from "react-bootstrap/Media";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
+import ListGroup from "react-bootstrap/ListGroup";
 
 import { axiosRes } from "../../api/axiosDefaults";
 import { Link, useHistory } from "react-router-dom";
@@ -56,6 +54,7 @@ const Event = (props) => {
   const is_owner = currentUser?.username === owner;
 
   const handleAttend = async () => {
+    // Posts to the API when user press Attend, add to attend_count
     try {
       const { data } = await axiosRes.post("/attend/", { event: id });
       setEvents((prevEvents) => ({
@@ -71,11 +70,12 @@ const Event = (props) => {
         }),
       }));
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 
   const handleRemoveAttend = async () => {
+    // Delete the users attend and removes it from attend_count
     try {
       await axiosRes.delete(`/attend/${attend_id}`);
       setEvents((prevEvents) => ({
@@ -91,11 +91,12 @@ const Event = (props) => {
         }),
       }));
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 
   const handleEdit = () => {
+    // Edit and delete functions for the events
     history.push(`/events/${id}/edit`);
   };
 
@@ -104,7 +105,7 @@ const Event = (props) => {
       await axiosRes.delete(`/events/${id}/`);
       history.goBack();
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 

@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 // Bootstrap
-import { Form } from "react-bootstrap";
+import Form from "react-bootstrap/Form";
 
 // Styles and CSS
 import btnStyles from "../../styles/Button.module.css";

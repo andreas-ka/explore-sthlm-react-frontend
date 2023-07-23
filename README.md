@@ -384,7 +384,7 @@ Within each sprint, a MoSCoW method is used to prioritize user stories further. 
 
 ## Frontend
 
-### Schedualed to be complete 24th of July 2023
+### Schedualed to be complete 19th of July 2023
 
 - [x] Create a repository for the Explore Sthlm (Should do)
 
@@ -410,6 +410,10 @@ Within each sprint, a MoSCoW method is used to prioritize user stories further. 
 
 - [x] Implement posting events (must do)
 
+### Completed 18th July 2023 ✅ 
+
+### Schedualed to be complete 25th of July 2023
+
 - [x] Add Profile with edit and delete function (must do)
 
 - [x] Implement follow and following on the website (must do)
@@ -418,14 +422,18 @@ Within each sprint, a MoSCoW method is used to prioritize user stories further. 
 
 - [x] Find calendar library and implement on site (could do)
 
+- [x] Add weather widget (could do)
 
-### Completed XXth July 2023 ✅ 
+- [x] Add the Feed and Top Ratings pages with functionality (must do)
+
+
+### Completed 23th July 2023 ✅ 
 
 ---
 
 ## Testing
 
-### Schedualed to be complete 26th of july 2023
+### Schedualed to be complete 27th of july 2023
 
 - [ ] Test backend
 
@@ -506,47 +514,42 @@ To view the complete testing details and results, please [click here](TESTING.md
 
 [react-awesome-calendar](https://www.npmjs.com/package/react-awesome-calendar)
 
-[React Open Weather](https://www.npmjs.com/package/react-open-weather)
+[React Open Weather](https://www.npmjs.com/package/react-open-weather) with OpenWeather API
 
 ---
 
 ## Deployment
 
+### Frontend and Backend 
+
 The website was deployed using Heroku by following these steps:
 
 1. Set DEBUG to False in the settings.py file.
-
 2. Commit and push your code to the GitHub repository.
-
-3. Clear the 'static' folder in Cloudinary to ensure the latest static files are used during deployment. This step is essential to avoid potential conflicts between cached versions of static files and the updated versions being deployed. Clearing the 'static' folder ensures that the latest versions of static files are used during deployment, preventing any eTag errors or inconsistencies.
+3. Clear the 'static' folder in Cloudinary to ensure the latest static files are used during deployment. This step is essential to avoid potential conflicts between cached versions of static files and the updated versions being deployed. Clearing the 'static' folder ensures that the latest versions of static files are used during deployment, preventing any errors or inconsistencies.
 
 4. Navigate to the project's deploy page in Heroku.
-
 5. Choose the manual deployment option to deploy the latest code changes. 
 
-You can for fork the repository by following these steps:
+#### You can for fork the repository by following these steps:
 
 1. Go to the GitHub repository
-
 2. Click on Fork button in upper right hand corner
-
 3. Wait for the forking process to complete. Once done, you will have a copy of the repository in your GitHub account.
 
-You can clone the repository by following these steps: 
+#### You can clone the repository by following these steps: 
 
 1. Go to the GitHub repository
-
 2. Locate the Code button above the list of files and click it
-
 3. Select your preferred method for cloning: HTTPS, SSH, or GitHub CLI, and click the copy button to copy the repository URL to your clipboard.
-
 4. Open Git Bash (or your preferred terminal).
-
 5. Change the current working directory to the location where you want the cloned directory to be created.
-
 6. Type the command **'git clone'** followed by the URL you copied in step 3. The command should look like this: **git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY**.
-
 7. Press Enter to create your local clone.
+
+
+### Linking with the API/backend
+- You will need to ensure you have set the axios.defaults.baseURL in the api/axiosDefaults.jsx file to the url of your deployed version of th API. You should then update the CLIENT_ORIGIN config variable in your deployed version of the API to ensure you will be able to make authenticated requests to this API.
 
 [Back up](#table-of-content)
 

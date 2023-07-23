@@ -19,6 +19,7 @@ import axios from "axios";
 import signinimage from "../../assets/signin-image.png";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 import { useRedirect } from "../../hooks/useRedirect";
+import { setTokenTimestamp } from "../../utils/utils";
 
 
 /* Signin form for the site, using handleChange to
@@ -49,7 +50,8 @@ function SignInForm() {
         event.preventDefault();
         try {
             const {data} = await axios.post('/dj-rest-auth/login/', signInData);
-            setCurrentUser(data.user)
+            setCurrentUser(data.user);
+            setTokenTimestamp(data);
             history.goBack();
         } catch (err) {
             setErrors(err.response?.data);

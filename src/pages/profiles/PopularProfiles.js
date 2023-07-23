@@ -1,9 +1,9 @@
 import React from "react";
 
 // Bootstrap
-import { Container } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
 
-// Styles and cSS
+// Styles and CSS
 import appStyles from "../../App.module.css";
 
 // Assets, Profiledata context, also the weather widget library

@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import Alert from "react-bootstrap/Alert";
-import { Row, Col } from "react-bootstrap";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 // Styles and css imports
 import styles from "../../styles/CommentForm.module.css";
@@ -46,7 +47,7 @@ function CommentCreateForm(props) {
       }));
       setContent("");
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       if (err.response?.status !== 401){
         setErrors(err.response?.data)
       }

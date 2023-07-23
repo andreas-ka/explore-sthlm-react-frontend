@@ -7,7 +7,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Alert from "react-bootstrap/Alert";
-import { Image } from "react-bootstrap";
+import Image from "react-bootstrap/Image";
 
 import Upload from "../../assets/upload.png";
 
@@ -36,6 +36,7 @@ function EventCreateForm() {
     cost: "",
     image: "",
   });
+
   const {
     title,
     description,
@@ -59,6 +60,7 @@ function EventCreateForm() {
   };
 
   const handleChangeImage = (event) => {
+    // If user wants to change the image
     if (event.target.files.length) {
       URL.revokeObjectURL(image);
       setEventData({
@@ -69,6 +71,7 @@ function EventCreateForm() {
   };
 
   const handleSubmit = async (event) => {
+    // Form submit for events
     event.preventDefault();
     const formData = new FormData();
 
@@ -84,10 +87,6 @@ function EventCreateForm() {
       const { data } = await axiosReq.post("/events/", formData);
       history.push(`/events/${data.id}`);
     } catch (err) {
-      console.log(err.response);
-      for (const entry of formData.entries()) {
-        console.log(entry[0], entry[1]);
-      }
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);
       }

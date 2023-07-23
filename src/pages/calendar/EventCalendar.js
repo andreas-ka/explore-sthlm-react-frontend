@@ -29,7 +29,7 @@ colors depending on the category for the event */
           }));
           setEventsData(filteredData);
         } catch (err) {
-          console.log(err);
+          // console.log(err);
           // Handle the error
         }
       };
@@ -63,8 +63,6 @@ colors depending on the category for the event */
         category: event.category,
       }))
     : [];
-
-    console.log(events);
     
 
   return (
