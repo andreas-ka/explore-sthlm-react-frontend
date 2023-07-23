@@ -1,4 +1,6 @@
-# Milestone project 5
+<a name="top"></a>
+
+# Milestone project 5 Frontend
 
   
 
@@ -76,15 +78,15 @@ Explore Sthlm, the website for people living in the capital city of Sweden but a
 
 The website allows users to explore a diverse range of events taking place across the city. From music concerts and art exhibitions to sports tournaments and food festivals, there's always something exciting to discover. With a user-friendly interface and powerful search options, finding events that match your interests has never been easier.
 
-Not only can you explore events, but you can also share promote your events to a wider audience. Whether you're organizing a small gathering or a large-scale festival, Explore Sthlm offers a space to showcase your event details and attract attendees.
+Not only can you explore events, but you can also share and promote your events to a broader audience. Whether organizing a small gathering or a large-scale festival, Explore Sthlm offers a space to showcase your event details and attract attendees.
 
-Engage with fellow event-goers by commenting/reviewing, rate, and sharing your favorite events. Connect with like-minded individuals, share recommendations, and build a vibrant community of event enthusiasts.
+Engage with fellow event-goers by commenting/reviewing, rating, and sharing your favorite events. Connect with like-minded individuals, share recommendations, and build a vibrant community of event enthusiasts.
 
 ---
 
 ### Project Objective
 
-The objective of this project and website was to create a fifth portfolio submission for Code Institutes fullstack developer program. Among following the projects assessment criteria, the website needed to be built using React, JSX (HTML, JavaScript and CSS) and appropriate frameworks and libraries, and connected to a separate backend API. The application needed to have complete CRUD (create, read, update and delete) functionality on the Front-End for users to work with data from an API.
+The objective of this project and website was the fifth portfolio submission for Code Institutes fullstack developer program. Among following the projects assessment criteria, the website needed to be built using React, JSX (HTML, JavaScript and CSS) and appropriate frameworks and libraries, and connected to a separate backend API. The application needed to have complete CRUD (create, read, update and delete) functionality on the Front-End for users to work with data from an API.
 
 I've chosen to create a project aimed toward my own interests to find inspiration, and chose to create a social networking website targeted towards people who are living or visiting Stockholm.
 
@@ -94,14 +96,14 @@ The project is partly based on the Code Institute Moments course material, using
 
 ### Site user goal
 
-This website is aimed at primarly two types, the one who wants to share an event, and the other who wants to find an event or something to do. Age is not an factor on this website, it's expected visitors would be in the range from 10-70.
+This website is aimed at primarly two types, the one who wants to share an event, and the other who wants to find something to do. Age is not a factor on website, it's expected visitors would be in the range from 10-70.
 
-People who are planning an event can share it and easily reach out to alot of people, describe the events detail, like location and cost for example. They can also see what people think of their previous events by the rating and reviews people who attended it have given. They also have a better understanding of how many people that will attend their event due to the attend button that's featured on each event.
+People who are planninging an event can share it primariy reach out o alot of people, describe the events detail, like location and cost for example. They can also see what people think of their previous events by the rating and reviews people who attended it have given. They also have a better understanding of how many people that will attend their event due to the attend button that's featured on each event.
 
 The ones who are not planning an event and are here to found one to attend or get inspired can easily navigate the website, click attend on events and later found them in the calendar. Sort events by categorys and easy found out details about each event.
 
 ### Site owner goal
-As the site owner i thought i would be fun and a great way to see whats happening in my city. Deliver a way for people to reach out easily when they are planning an event. All mayor sites only contains bigger events, my hopes for this page is to let people share smaller things, your friendly neighborhood flea sale and so on.
+As the site owner i thought i would be fun and a great way to see what's happening in my city. Deliver a way for people to reach out easily when they are planning an event. All major sites only contain bigger events, my hopes for this page is to let people share smaller things, your friendly neighborhood flea sale and so on.
 
 ---
 
@@ -173,20 +175,20 @@ As the site owner i thought i would be fun and a great way to see whats happenin
 ## Features
 
 ### Navbar
-- Made with bootstrap, collapses on smaller devices. The links change depending on user state, logged in or logged out.
+- Made with bootstrap, collapses on smaller devices. The links change depending on the user state, logged in or logged out.
 
 ### Sign up
 - Sign up page consists of 3 fields for username, password and confirm password, if username already exist, password to weak or if
 passwords dont match you get an alert. 
 
 ### Sign in
-- Same as sign up page you get warning if the provided credentials are not a match.
+- Same as the sign up page, you get a warning if the provided credentials are not a match.
 
 ### Feed
 - Feed only shows the posts from the users that you are following.
 
 ### Events / homepage
-- Starting page that includes alot of features, it shows the weather, a search bar and a selector for ctaegories.
+- Starting page that includes many features, it shows the weather, a search bar and a selector for categories.
 The events are all shown in column and uses infinite scroll to load on demand. It also shows statistics for the event, 
 how many comments it has, what rating and lets you as a registered user click the attend button to show that you are
 attending the event.
@@ -202,19 +204,19 @@ you can see the users events.
 ### Follow - Followed
 - Is showed on every profile, containing all the statistics for the user.
 
-### Searchbar
-- Let's you search for username and title for the events.
+### Search bar
+- Let you search for username and title for the events.
 
 ### Comments
-- Comments kan be made if you are a registered user, the comment display your profile image, timestamp for when
+- Comments can be made if you are a registered user, the comment display your profile image, timestamp for when
 you did the comment and also the content.
 
 ### Calendar
-- Made with react-awesome-calendar and shows all the events in different color depending on category. The events can be shown in year,
-month and day. In day view you can click the event and get to the detail view of that event.
+- Made with react-awesome-calendar and shows all the events in different colors depending on the category. The events can be shown in year,
+month and day. In the day view, you can click the event and get the detailed view of that event.
 
 ### Weather
-- Used react-open-weather to show the current weather in Stockholm, could be good information when you are planning your day.
+- Used react-open-weather to show the current weather in Stockholm, which could be good information when planning your day.
 
 ### Ratings data
 - Is made with react-star-rating and let's you rate event from 1-5 using stars, on every event you see the average rating for that event.
@@ -294,17 +296,17 @@ month and day. In day view you can click the event and get to the detail view of
 
 ### Tools
 
-- Git: A distributed version control system used for tracking changes in the project's source code.
+- Git: A distributed version control system tracking project source code changes.
 
-- GitHub: A web-based hosting service for version control repositories, used for storing and managing the project's source code.
+- GitHub: A web-based hosting service for version control repositories for storing and managing the project's source code.
 
 - Gitpod: An online integrated development environment (IDE) used for developing and testing the Recipe Collective project.
 
 - Heroku: A cloud platform that enables deployment and hosting of web applications. Heroku was used for deploying the Recipe Collective project to a live server.
 
-- Balsamiq: A wireframing tool used for creating mockups and prototypes of the Recipe Collective website.
+- Balsamiq: A wireframing tool for creating mockups and prototypes of the Recipe Collective website.
 
-- Lucidchart: Lucidchart is a web-based diagramming tool that offers a wide range of diagramming capabilities, including ER diagrams. It provides an intuitive interface and collaboration features, making it suitable for both individual and team use.
+- Lucidchart: Lucidchart is a web-based diagramming tool that offers a wide range of diagramming capabilities, including ER diagrams. It provides an intuitive interface and collaboration features, making it suitable for individual and team use.
 
 - Google Fonts: A collection of free and open-source fonts used for typography on the Recipe Collective website.
 
@@ -336,12 +338,9 @@ Bugs encountered during the development process have also been logged as GitHub 
 
 The Explore Sthlm project follows an iterative development approach, allowing for continuous improvement and progress while adhering to time constraints. The development process is structured into sprints, with each sprint typically lasting around 6 days.
 
-To ensure efficient prioritization, the project employs the MuSCoW (Must have, Should have, Could have, Won't have) method. User stories critical to the app's success are categorized as Must-haves, followed by Should-haves, Could-haves, and Won't-haves. You can refer to the [Kanban board]() to view the prioritization.
+To ensure efficient prioritization, the project employs the MuSCoW (Must have, Should have, Could have, Won't have) method. User stories critical to the app's success are categorized as Must-haves, followed by Should-haves, Could-haves, and Won't-haves. Refer to the [Kanban board]() to view the prioritization.
 
-Within each sprint, a MoSCoW method is used to further prioritize user stories. They are classified as Must Do, Should Do, Could Do, and Won't Do, representing the remaining user stories that will not be included in the sprints. This approach ensures a clear differentiation between the overall project prioritization and the prioritization within each sprint, minimizing any potential confusion.
- 
-
-## Planning & Documentation
+Within each sprint, a MoSCoW method is used to prioritize user stories further. They are classified as Must Do, Should Do, Could Do, and Won't Do, representing the remaining user stories that will not be included in the sprints. This approach ensures a clear differentiation between the overall project prioritization and the prioritization within each sprint, minimizing any potential confusig & Documentation
 
 ### Schedualed to be complete 11th of July 2023
 
@@ -405,7 +404,7 @@ Within each sprint, a MoSCoW method is used to further prioritize user stories. 
 
 - [x] Install component library (Must do)
 
-- [x] Design and implement navigation bar (Must do)
+- [x] Design and implement a navigation bar (Must do)
 
 - [x] Do so navigation bar and authorization works (Must do)
 
@@ -419,9 +418,6 @@ Within each sprint, a MoSCoW method is used to further prioritize user stories. 
 
 - [x] Find calendar library and implement on site (could do)
 
-- [x] 
-
-- [x] 
 
 ### Completed XXth July 2023 ✅ 
 
@@ -522,7 +518,7 @@ The website was deployed using Heroku by following these steps:
 
 2. Commit and push your code to the GitHub repository.
 
-3. Clear the 'static' folder in Cloudinary to ensure the latest static files are used during deployment. This step is important to avoid any potential conflicts between cached versions of static files and the updated versions being deployed. Clearing the 'static' folder ensures that the latest versions of static files are used during the deployment process, preventing any eTag errors or inconsistencies.
+3. Clear the 'static' folder in Cloudinary to ensure the latest static files are used during deployment. This step is essential to avoid potential conflicts between cached versions of static files and the updated versions being deployed. Clearing the 'static' folder ensures that the latest versions of static files are used during deployment, preventing any eTag errors or inconsistencies.
 
 4. Navigate to the project's deploy page in Heroku.
 
@@ -586,5 +582,8 @@ https://github.com/mikeham98/react-awesome-calendar
 [Back up](#table-of-content)
 
 ## Acknowledgements
+- My awesome wife Sandra, a copywriter by profession, helped me with the Objective text.
+- *HUGE* credit to Code Institute and their tutorial on how to build the Moments app, loads of code from that.
+- My Mentor @CluelessBiker for awesome support and feedback.
 
-[Back up](#table-of-content)
+[Back to Top](#top)
