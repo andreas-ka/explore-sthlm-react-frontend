@@ -10,7 +10,7 @@ import btnStyles from "../../styles/Button.module.css";
 // Context, rating library and Axios import
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { Rating } from "react-simple-star-rating";
-import { axiosRes } from "../../api/axiosDefaults";
+import { axiosReq, axiosRes } from "../../api/axiosDefaults";
 
 // Event rating form, shows the stars and then sends rating to the API
 
@@ -32,29 +32,27 @@ function EventRatingForm(props) {
         event,
         rating,
       });
-      console.log(event.rating_average);
       setEvent((prevEvent) => ({
         ...prevEvent,
         results: prevEvent.results.map((event) => {
-          return event.id === id
+          return event.id === parseInt(id)
             ? {
                 ...event,
                 ratings_count: event.ratings_count + 1,
                 rating_average:
-                  (event.rating_average * event.ratings_count + rating) /
-                  event.ratings_count,
+                (event.rating_average * event.ratings_count + rating) /
+                (event.ratings_count + 1)
+          
               }
             : event;
         }),
       }));
-      console.log(event.rating_average);
+
       setRating(rating);
     } catch (err) {
       console.log(err);
     }
   };
-  console.log(currentUser);
-  console.log(rating_average);
 
   return (
     <>

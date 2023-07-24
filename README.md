@@ -466,13 +466,25 @@ All bugs are documented as issues and are best to be seen in the project. [Link 
 
 ---
 
+## Reusable Components
+
+- Avatar
+Used on all events, also used in the navbar.
+
+- Spinner
+Shows on all loading screens, like on the homepage, feed and on profile page for example.
+
+[Back up](#table-of-content)
+
+---
+
 ## Testing
 
 Lighthouse
 
 CSS validator
 
-HTML Validator
+Eslint
 
 Code validation JSX
 
@@ -514,7 +526,10 @@ To view the complete testing details and results, please [click here](TESTING.md
 
 [react-awesome-calendar](https://www.npmjs.com/package/react-awesome-calendar)
 
-[React Open Weather](https://www.npmjs.com/package/react-open-weather) with OpenWeather API
+[React Open Weather](https://www.npmjs.com/package/react-open-weather) with OpenWeather API,
+i have done research about hiding API key in react and i make a note that using an env file in the frontend
+is not really the best option, it leaves it vunerable but after talking to my mentor she said it would be
+fine for this project. The Weather API key has 60 calls / minute.
 
 ---
 
@@ -588,5 +603,6 @@ https://github.com/mikeham98/react-awesome-calendar
 - My awesome wife Sandra, a copywriter by profession, helped me with the Objective text.
 - *HUGE* credit to Code Institute and their tutorial on how to build the Moments app, loads of code from that.
 - My Mentor @CluelessBiker for awesome support and feedback.
+- Tutor Sean for helping sort out the rating_average issue. Mega thanks!
 
 [Back to Top](#top)

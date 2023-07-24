@@ -35,6 +35,7 @@ function EventPage(props) {
   const profile_image = currentUser?.profile_image;
   const [comments, setComments] = useState({ results: [] });
 
+
   useEffect(() => {
     const handleMount = async () => {
       try {
@@ -62,6 +63,7 @@ function EventPage(props) {
             <EventRatingForm
               profile_id={currentUser.profile_id}
               event={id}
+              id={id}
               setEvent={setEvent}
               currentUser={currentUser}
             />
@@ -75,6 +77,7 @@ function EventPage(props) {
               profile_id={currentUser.profile_id}
               profileImage={profile_image}
               event={id}
+              id={id}
               setEvent={setEvent}
               setComments={setComments}
               rating_average={rating_average}

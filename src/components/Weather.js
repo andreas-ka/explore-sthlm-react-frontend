@@ -27,11 +27,11 @@ const WeatherComponent = () => {
     };
 
     const { data, isLoading, errorMessage } = useOpenWeather({
-        key: process.env.REACT_APP_WEATHER_API_KEY,
+        key: '7b5f855dea5801df1df9469b143c0742',
         lat: "57.64188017795392",
         lon: "18.292565198468033",
         lang: "en",
-        unit: "metric" // values are (metric, standard, imperial)
+        unit: "metric",
       });
 
   return (
