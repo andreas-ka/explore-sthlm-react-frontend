@@ -47,6 +47,7 @@ const Event = (props) => {
     attend_id,
     setEvents,
     rating_average,
+    ratings_count,
   } = props;
 
   const history = useHistory();

@@ -62,6 +62,7 @@ Am i responsive image
 - [Planning & Documentation](#planning--documentation)
     - [Backend](#backend)
     - [Frontend](#frontend)
+    - [Reusable Components](#reusable-components)
     - [Testing](#testing)
     - [Documentaion](#documentation--readmemd)
 - [Testing](#testing)
@@ -469,10 +470,19 @@ All bugs are documented as issues and are best to be seen in the project. [Link 
 ## Reusable Components
 
 - Avatar
-Used on all events, also used in the navbar.
+Used on all events, also used in the navbar. Very handy to just import and add to your 
+code instead of writing new code. 
 
-- Spinner
-Shows on all loading screens, like on the homepage, feed and on profile page for example.
+### Steps:
+
+- 1 Create your components folder inside the src folder
+- 2 Now create your component js file and add the code, example below:     
+![Screenshot](src/images/reusable_component1.png)      
+- 3 Import the component on the page you would like to use it:     
+![Screenshot](src/images/reusable_component2.png)   
+- 4 Add the component to your code, voila now it's done!     
+![Screenshot](src/images/reusable_component3.png)  
+
 
 [Back up](#table-of-content)
 
@@ -488,7 +498,7 @@ Eslint
 
 Code validation JSX
 
-To view the complete testing details and results, please [click here](TESTING.md). 
+To view the manual testing details and results, please [click here](TESTING.md). 
 
 [Back up](#table-of-content)
 

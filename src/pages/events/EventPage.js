@@ -25,8 +25,8 @@ import Asset from "../../components/Asset";
 
 // Gets the event info, id and comments and passing it down as props
 
-function EventPage(props) {
-  const { rating_average } = props;
+function EventPage() {
+  
 
   const { id } = useParams();
   const [event, setEvent] = useState({ results: [] });
@@ -77,10 +77,8 @@ function EventPage(props) {
               profile_id={currentUser.profile_id}
               profileImage={profile_image}
               event={id}
-              id={id}
               setEvent={setEvent}
               setComments={setComments}
-              rating_average={rating_average}
             />
           ) : comments.results.length ? (
             "Comments"

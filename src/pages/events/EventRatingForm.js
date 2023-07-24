@@ -32,22 +32,19 @@ function EventRatingForm(props) {
         event,
         rating,
       });
+      console.log(event.rating_average)
       setEvent((prevEvent) => ({
         ...prevEvent,
         results: prevEvent.results.map((event) => {
           return event.id === parseInt(id)
-            ? {
-                ...event,
-                ratings_count: event.ratings_count + 1,
-                rating_average:
-                (event.rating_average * event.ratings_count + rating) /
-                (event.ratings_count + 1)
-          
-              }
+            ? { ...event, 
+              rating_average: data.rating_average,
+              ratings_count: data.ratings_count,
+            }
             : event;
         }),
       }));
-
+      console.log(event.rating_average)
       setRating(rating);
     } catch (err) {
       console.log(err);
