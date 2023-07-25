@@ -48,6 +48,7 @@ const Event = (props) => {
     setEvents,
     rating_average,
     ratings_count,
+    averageRating,
   } = props;
 
   const history = useHistory();
@@ -144,6 +145,7 @@ const Event = (props) => {
               size={25}
             />
             {rating_average}
+            {averageRating}
           </span>
         </Card.Title>
         <Card.Text>{description}</Card.Text>

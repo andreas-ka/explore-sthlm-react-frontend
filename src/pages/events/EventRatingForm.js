@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 
-
 // Bootstrap
 import Form from "react-bootstrap/Form";
+import Modal from "react-bootstrap/Modal";
+import Button  from "react-bootstrap/Button";
 
 // Styles and CSS
 import btnStyles from "../../styles/Button.module.css";
@@ -20,7 +21,7 @@ function EventRatingForm(props) {
   const [rating, setRating] = useState(0);
   const [ratingsData, setRatingsData] = useState([]);
   const [averageRating, setAverageRating] = useState(0);
-
+  const [showModal, setShowModal] = useState(false);
 
   const currentUser = useCurrentUser();
 
@@ -35,22 +36,28 @@ function EventRatingForm(props) {
         const { data } = await axiosRes.get("/ratings/");
         console.log("all the ratings:", data.results);
         console.log("event:", id);
-        const ratingsForEvent = data.results.filter((rating) => rating.event === parseInt(id));
+        const ratingsForEvent = data.results.filter(
+          (rating) => rating.event === parseInt(id)
+        );
         setRatingsData(ratingsForEvent);
         console.log("ratings for event", id, ":", ratingsForEvent);
-  
 
-        const totalRatings = ratingsForEvent.reduce((acc, rating) => acc + rating.rating, 0);
-        const averageRating = ratingsForEvent.length ? totalRatings / ratingsForEvent.length : 0;
+        const totalRatings = ratingsForEvent.reduce(
+          (acc, rating) => acc + rating.rating,
+          0
+        );
+        const averageRating = ratingsForEvent.length
+          ? totalRatings / ratingsForEvent.length
+          : 0;
+        setAverageRating(averageRating);
         console.log("avg rating:", averageRating);
       } catch (error) {
         console.log(error);
       }
     };
-  
+
     fetchRatingsForEvent();
   }, [id]);
-  
 
   const handleRatingSubmit = async (e) => {
     e.preventDefault();
@@ -64,19 +71,23 @@ function EventRatingForm(props) {
         ...prevEvent,
         results: prevEvent.results.map((event) => {
           return event.id === parseInt(id)
-            ? { ...event, 
-              ratings_count: data.ratings_count,
-            }
+            ? {
+                ...event,
+                rating: event.rating,
+                ratings_count: event.ratings_count + 1,
+              }
             : event;
         }),
       }));
-      console.log(event.rating_average)
+      // Show modal and close it after 2 seconds.
+      setShowModal(true);
+      setTimeout(() => setShowModal(false), 2000);
+      console.log(event.rating_average);
       setRating(0);
     } catch (err) {
       console.log(err);
     }
   };
-
 
   return (
     <>
@@ -91,8 +102,21 @@ function EventRatingForm(props) {
         >
           Submit
         </button>
-        <div>avg result {event.rating_average} {averageRating}</div>
+        <div>avg result {averageRating}</div>
       </Form>
+      <Modal show={showModal} onHide={() => setShowModal(false)}>
+        <Modal.Header closeButton>
+          <Modal.Title>Rating</Modal.Title>
+        </Modal.Header>
+
+        <Modal.Body>
+          <p>Thank you, your rating has been registered.</p>
+        </Modal.Body>
+
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => setShowModal(false)}>Close</Button>
+        </Modal.Footer>
+      </Modal>
     </>
   );
 }

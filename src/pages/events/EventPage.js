@@ -36,6 +36,7 @@ function EventPage() {
   const [comments, setComments] = useState({ results: [] });
 
 
+
   useEffect(() => {
     const handleMount = async () => {
       try {
