@@ -1,5 +1,5 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
+
 
 // Bootstrap
 import Form from "react-bootstrap/Form";
@@ -15,9 +15,12 @@ import { axiosReq, axiosRes } from "../../api/axiosDefaults";
 // Event rating form, shows the stars and then sends rating to the API
 
 function EventRatingForm(props) {
-  const { event, setEvent, rating_average, id } = props;
+  const { event, setEvent, id } = props;
 
   const [rating, setRating] = useState(0);
+  const [ratingsData, setRatingsData] = useState([]);
+  const [averageRating, setAverageRating] = useState(0);
+
 
   const currentUser = useCurrentUser();
 
@@ -25,31 +28,57 @@ function EventRatingForm(props) {
     setRating(rate);
   };
 
+  // Fetch all the ratings, and calculate avg rating for that event in variable: averageRating
+  useEffect(() => {
+    const fetchRatingsForEvent = async () => {
+      try {
+        const { data } = await axiosRes.get("/ratings/");
+        console.log("all the ratings:", data.results);
+        console.log("event:", id);
+        const ratingsForEvent = data.results.filter((rating) => rating.event === parseInt(id));
+        setRatingsData(ratingsForEvent);
+        console.log("ratings for event", id, ":", ratingsForEvent);
+  
+
+        const totalRatings = ratingsForEvent.reduce((acc, rating) => acc + rating.rating, 0);
+        const averageRating = ratingsForEvent.length ? totalRatings / ratingsForEvent.length : 0;
+        console.log("avg rating:", averageRating);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+  
+    fetchRatingsForEvent();
+  }, [id]);
+  
+
   const handleRatingSubmit = async (e) => {
     e.preventDefault();
     try {
       const { data } = await axiosRes.post("/ratings/", {
         event,
         rating,
+        averageRating,
       });
-      console.log(event.rating_average)
+
       setEvent((prevEvent) => ({
         ...prevEvent,
         results: prevEvent.results.map((event) => {
           return event.id === parseInt(id)
             ? { ...event, 
-              rating_average: data.rating_average,
+              rating_average: averageRating,
               ratings_count: data.ratings_count,
             }
             : event;
         }),
       }));
       console.log(event.rating_average)
-      setRating(rating);
+      setRating(0);
     } catch (err) {
       console.log(err);
     }
   };
+
 
   return (
     <>
@@ -64,6 +93,7 @@ function EventRatingForm(props) {
         >
           Submit
         </button>
+        <div>avg result {event.rating_average}</div>
       </Form>
     </>
   );
