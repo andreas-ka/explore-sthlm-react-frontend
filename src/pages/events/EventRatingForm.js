@@ -58,7 +58,6 @@ function EventRatingForm(props) {
       const { data } = await axiosRes.post("/ratings/", {
         event,
         rating,
-        averageRating,
       });
 
       setEvent((prevEvent) => ({
@@ -66,7 +65,6 @@ function EventRatingForm(props) {
         results: prevEvent.results.map((event) => {
           return event.id === parseInt(id)
             ? { ...event, 
-              rating_average: averageRating,
               ratings_count: data.ratings_count,
             }
             : event;
@@ -93,7 +91,7 @@ function EventRatingForm(props) {
         >
           Submit
         </button>
-        <div>avg result {event.rating_average}</div>
+        <div>avg result {event.rating_average} {averageRating}</div>
       </Form>
     </>
   );

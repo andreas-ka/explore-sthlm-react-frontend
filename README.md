@@ -176,54 +176,89 @@ As the site owner i thought i would be fun and a great way to see what's happeni
 ## Features
 
 ### Navbar
-- Made with bootstrap, collapses on smaller devices. The links change depending on the user state, logged in or logged out.
+- Made with bootstrap, collapses on smaller devices. The links change depending on the user state, logged in or logged out.   
+Logged in:     
+![Screenshot](src/images/navbar_loggedin.png)   
+Not Logged in:    
+![Screenshot](src/images/navbar_notloggedin.png)   
 
 ### Sign up
 - Sign up page consists of 3 fields for username, password and confirm password, if username already exist, password to weak or if
-passwords dont match you get an alert. 
+passwords dont match you get an alert.    
+![Screenshot](src/images/signup_page.png)    
 
 ### Sign in
-- Same as the sign up page, you get a warning if the provided credentials are not a match.
+- Same as the sign up page, you get a warning if the provided credentials are not a match.    
+![Screenshot](src/images/signin_page.png)     
 
 ### Feed
-- Feed only shows the posts from the users that you are following.
+- Feed only shows the posts from the users that you are following.    
+Feed page if user not following other users.    
+![Screenshot](src/images/feed_no_follow.png)    
+Feed page if user follow other users:    
+![Screenshot](src/images/feed_following.png)    
 
 ### Events / homepage
 - Starting page that includes many features, it shows the weather, a search bar and a selector for categories.
 The events are all shown in column and uses infinite scroll to load on demand. It also shows statistics for the event, 
 how many comments it has, what rating and lets you as a registered user click the attend button to show that you are
-attending the event.
+attending the event.   
+![Screenshot](src/images/homepage_event.png)     
+
 
 ### Detailed event
 - On the detail page for event can you comment and rate if you are not the owner, the owner can comment and also
-edit and delete their event. The event post shows the same features as on the events / homepage. 
+edit and delete their event. The event post shows the same features as on the events / homepage.   
+![Screenshot](src/images/event_detail_rate_comment_attend.png)    
+![Screenshot](src/images/comments_event.png)   
+![Screenshot](src/images/rate_event.png)     
+![Screenshot](src/images/homepage_event.png)    
 
 ### Profiles
 - Profile page shows statistics for the user, how many events published, following and how many followers. Below the profile
-you can see the users events.
+you can see the users events. If you are logged in you can edit your profile shown in the image.    
+![Screenshot](src/images/profile_page.png)  
 
 ### Follow - Followed
-- Is showed on every profile, containing all the statistics for the user.
+- Is showed on every profile, containing all the statistics for the user.    
+![Screenshot](src/images/profile_statistics.png)  
 
 ### Search bar
-- Let you search for username and title for the events.
+- Let you search for username and title for the events.    
+Searchbar.    
+![Screenshot](src/images/searchbar.png)    
+Results when searching.    
+![Screenshot](src/images/search_event.png)    
+If their are no results in the search.     
+![Screenshot](src/images/search_noresults.png)  
 
 ### Comments
 - Comments can be made if you are a registered user, the comment display your profile image, timestamp for when
-you did the comment and also the content.
+you did the comment and also the content.    
+![Screenshot](src/images/comments_event.png)  
 
 ### Calendar
 - Made with react-awesome-calendar and shows all the events in different colors depending on the category. The events can be shown in year,
-month and day. In the day view, you can click the event and get the detailed view of that event.
+month and day. In the day view, you can click the event and get the detailed view of that event.    
+Month view in calendar.    
+![Screenshot](src/images/calendar_month.png)   
+Day view in calendar.    
+![Screenshot](src/images/calendar_day.png)  
 
 ### Weather
-- Used react-open-weather to show the current weather in Stockholm, which could be good information when planning your day.
+- Used react-open-weather to show the current weather in Stockholm, which could be good information when planning your day.    
+![Screenshot](src/images/weather_widget.png)  
 
 ### Ratings data
-- Is made with react-star-rating and let's you rate event from 1-5 using stars, on every event you see the average rating for that event.
+- Is made with react-star-rating and let's you rate event from 1-5 using stars, on every event you see the average rating for that event.    
+![Screenshot](src/images/rate_event.png)  
 
 ### Categories
-- Used a selector that lets you filter events based on the category.
+- Used a selector that lets you filter events based on the category.    
+Category selector.    
+![Screenshot](src/images/categories_selector.png)    
+Categories displaying in the dropdown.    
+![Screenshot](src/images/categories_shown.png)  
 
 ---
 
@@ -602,9 +637,11 @@ The website was deployed using Heroku by following these steps:
 
 ### Various tutorials and YouTube channels:
 
-- How to setups react-awesome-calendar
-https://codesandbox.io/s/mikeham98-react-awesome-calendar-b5reb?file=/src/App.jsx
-https://github.com/mikeham98/react-awesome-calendar
+- Use sum and reduce [Link](https://www.codingem.com/javascript-calculate-average/)
+
+- How to setups [react-awesome-calendar](https://codesandbox.io/s/mikeham98-react-awesome-calendar-b5reb?file=/src/App.jsx
+https://github.com/mikeham98/react-awesome-calendar)
+
 ....
 
 [Back up](#table-of-content)
