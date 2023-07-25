@@ -46,8 +46,6 @@ const Event = (props) => {
     attend_count,
     attend_id,
     setEvents,
-    rating_average,
-    ratings_count,
     averageRating,
   } = props;
 
@@ -141,10 +139,9 @@ const Event = (props) => {
             <Rating
               className={star.Star}
               readonly
-              initialValue={rating_average}
+              initialValue={averageRating}
               size={25}
             />
-            {rating_average}
             {averageRating}
           </span>
         </Card.Title>

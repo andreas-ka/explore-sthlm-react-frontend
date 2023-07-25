@@ -25,7 +25,7 @@ import PopularProfiles from "../profiles/PopularProfiles";
 
 /* Shows the events, also a Search bar and category select option */
 
-function EventsPage({ message, filter = "" }) {
+function EventsPage({ message, filter = "", averageRating }) {
   const [events, setEvents] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
@@ -42,6 +42,7 @@ function EventsPage({ message, filter = "" }) {
           `/events/?${filter}search=${query}&category=${category}`
         );
         setEvents(data);
+        console.log(data)
         setHasLoaded(true);
       } catch (err) {
         // console.log(err);
@@ -101,7 +102,10 @@ function EventsPage({ message, filter = "" }) {
             {events.results.length ? (
               <InfiniteScroll
                 children={events.results.map((event) => (
-                  <Event key={event.id} {...event} setEvents={setEvents} />
+                  <Event key={event.id} {...event} 
+                  setEvents={setEvents}
+                  averageRating={event.averageRating}
+                   />
                 ))}
                 dataLength={events.results.length}
                 loader={<Asset />}

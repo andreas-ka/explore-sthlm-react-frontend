@@ -34,31 +34,51 @@ function EventPage() {
   const currentUser = useCurrentUser();
   const profile_image = currentUser?.profile_image;
   const [comments, setComments] = useState({ results: [] });
+  const [averageRating, setAverageRating] = useState(0);
 
 
 
   useEffect(() => {
-    const handleMount = async () => {
+    const fetchData = async () => {
       try {
-        const [{ data: event }, { data: comments }] = await Promise.all([
+        const [
+          { data: event },
+          { data: comments },
+          { data: ratingsData },
+        ] = await Promise.all([
           axiosReq.get(`/events/${id}`),
           axiosReq.get(`/comments/?event=${id}`),
+          axiosReq.get("/ratings/"),
         ]);
         setEvent({ results: [event] });
         setComments(comments);
+  
+        // Calculate average rating for this event
+        const ratingsForEvent = ratingsData.results.filter(
+          (rating) => rating.event === parseInt(id)
+        );
+        const totalRatings = ratingsForEvent.reduce(
+          (acc, rating) => acc + rating.rating,
+          0
+        );
+        const averageRating =
+          ratingsForEvent.length ? totalRatings / ratingsForEvent.length : 0;
+        setAverageRating(averageRating);
       } catch (err) {
-        // console.log(err);
       }
     };
-
-    handleMount();
+  
+    fetchData();
   }, [id]);
 
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <PopularProfiles mobile />
-        <Event {...event.results[0]} setEvents={setEvent} eventPage />
+        <Event {...event.results[0]} 
+        setEvents={setEvent}
+        averageRating={averageRating}
+        eventPage />
         <Container className={`mb-3 ${appStyles.Content}`}>
           {currentUser && currentUser.profile_id ? (
             <EventRatingForm
@@ -67,6 +87,7 @@ function EventPage() {
               id={id}
               setEvent={setEvent}
               currentUser={currentUser}
+              averageRating={averageRating} 
             />
           ) : (
             <div>Loading...</div>

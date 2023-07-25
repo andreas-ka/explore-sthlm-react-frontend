@@ -9,7 +9,7 @@ const Footer = () => (
       <a
         href="https://www.facebook.com/andreas.krln"
         target="_blank"
-        rel="noopener"
+        rel="noreferrer"
         aria-label="Visit my facebook page, opens in new tab"
       >
         <i className="fab fa-facebook-f fa-xl"></i>
@@ -19,7 +19,7 @@ const Footer = () => (
         href="https://twitter.com/"
         role="button"
         target="_blank"
-        rel="noopener"
+        rel="noreferrer"
         aria-label="Visit Twitter, opens in new tab"
       >
         <i className="fab fa-twitter fa-xl"></i>
@@ -28,7 +28,7 @@ const Footer = () => (
       <a
         href="https://www.instagram.com/akarlsson_/?hl=en"
         target="_blank"
-        rel="noopener"
+        rel="noreferrer"
         aria-label="Visit my instagram page, opens in new tab"
       >
         <i className="fab fa-instagram fa-xl"></i>
@@ -37,7 +37,7 @@ const Footer = () => (
       <a
         href="https://www.linkedin.com/in/andreas-karlsson-48902249/"
         target="_blank"
-        rel="noopener"
+        rel="noreferrer"
         aria-label="Visit my Linkedin page, opens in new tab"
       >
         <i className="fab fa-linkedin-in fa-xl"></i>
@@ -46,7 +46,7 @@ const Footer = () => (
       <a
         href="https://github.com/andreas-ka"
         target="_blank"
-        rel="noopener"
+        rel="noreferrer"
         aria-label="Visit my Github page, opens in new tab"
       >
         <i className="fab fa-github fa-xl"></i>

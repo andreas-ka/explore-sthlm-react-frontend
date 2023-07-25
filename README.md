@@ -637,6 +637,8 @@ The website was deployed using Heroku by following these steps:
 
 ### Various tutorials and YouTube channels:
 
+- How to use target="_blank" in react correctly [Link](https://stackoverflow.com/questions/64004975/how-to-add-target-blank-on-react)
+
 - Use sum and reduce [Link](https://www.codingem.com/javascript-calculate-average/)
 
 - How to setups [react-awesome-calendar](https://codesandbox.io/s/mikeham98-react-awesome-calendar-b5reb?file=/src/App.jsx
