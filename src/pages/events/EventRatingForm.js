@@ -8,26 +8,23 @@ import Button  from "react-bootstrap/Button";
 // Styles and CSS
 import btnStyles from "../../styles/Button.module.css";
 
-// Context, rating library and Axios import
-import { useCurrentUser } from "../../contexts/CurrentUserContext";
+// rating library and Axios import
 import { Rating } from "react-simple-star-rating";
 import { axiosRes } from "../../api/axiosDefaults";
 
 // Event rating form, shows the stars and then sends rating to the API
-
 function EventRatingForm(props) {
-  const { event, setEvent, id, averageRating } = props;
+  const { event, setEvent, id, averageRating, updateAverageRating } = props;
 
   const [rating, setRating] = useState(0);
   const [showModal, setShowModal] = useState(false);
-
-  const currentUser = useCurrentUser();
 
   const handleRating = (rate) => {
     setRating(rate);
   };
 
   const handleRatingSubmit = async (e) => {
+    // Post new rating to database
     e.preventDefault();
     try {
       const { data } = await axiosRes.post("/ratings/", {
@@ -47,8 +44,10 @@ function EventRatingForm(props) {
             : event;
         }),
       }));
-      // Show modal and close it after 2 seconds.
+      updateAverageRating(data);
+      // Pass the rating to parent
       setShowModal(true);
+      // Show modal and close it after 2 seconds.
       setTimeout(() => setShowModal(false), 2000);
       console.log(event.rating_average);
       setRating(0);

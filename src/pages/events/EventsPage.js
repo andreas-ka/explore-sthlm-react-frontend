@@ -25,12 +25,11 @@ import PopularProfiles from "../profiles/PopularProfiles";
 
 /* Shows the events, also a Search bar and category select option */
 
-function EventsPage({ message, filter = "", averageRating }) {
+function EventsPage({ message, filter = "" }) {
   const [events, setEvents] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
   const currentUser = useCurrentUser();
-
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("");
 

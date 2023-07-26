@@ -36,8 +36,6 @@ function EventPage() {
   const [comments, setComments] = useState({ results: [] });
   const [averageRating, setAverageRating] = useState(0);
 
-
-
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -71,6 +69,16 @@ function EventPage() {
     fetchData();
   }, [id]);
 
+  const updateAverageRating = (newRating) => {
+    // calculate the new average rating
+    const totalRatings = averageRating * (event.results[0].ratings_count - 1);
+    const newAverageRating =
+      (totalRatings + newRating.rating) / event.results[0].ratings_count;
+
+    setAverageRating(newAverageRating);
+  };
+
+
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
@@ -82,12 +90,14 @@ function EventPage() {
         <Container className={`mb-3 ${appStyles.Content}`}>
           {currentUser && currentUser.profile_id ? (
             <EventRatingForm
+              // Passing props
               profile_id={currentUser.profile_id}
               event={id}
               id={id}
               setEvent={setEvent}
               currentUser={currentUser}
-              averageRating={averageRating} 
+              averageRating={averageRating}
+              updateAverageRating={updateAverageRating}
             />
           ) : (
             <div>Loading...</div>
@@ -96,6 +106,7 @@ function EventPage() {
         <Container className={appStyles.Content}>
           {currentUser ? (
             <CommentCreateForm
+              // Passing props
               profile_id={currentUser.profile_id}
               profileImage={profile_image}
               event={id}
@@ -109,6 +120,7 @@ function EventPage() {
             <InfiniteScroll
               children={comments.results.map((comment) => (
                 <Comment
+                  // Passing props
                   key={comment.id}
                   {...comment}
                   setEvent={setEvent}

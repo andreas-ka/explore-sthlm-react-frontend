@@ -26,7 +26,7 @@ const TopRatings = () => {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const { data } = await axios.get("/events/?ordering=-rating_average");
+        const { data } = await axios.get("/events/");
         setTopRatings(data);
       } catch (err) {
         // console.log(err);

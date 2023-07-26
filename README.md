@@ -37,7 +37,8 @@ Am i responsive image
     - [Sign in](#sign-in)
     - [Feed](#feed)
     - [Events Data](#events--homepage)
-    - [Event detail](#detailed-event)
+    - [Event Detail](#detailed-event)
+    - [Create Event](#create-event-form)
     - [Profile](#profiles)
     - [Follow / Followed](#follow---followed)
     - [Comments](#comments)
@@ -45,6 +46,7 @@ Am i responsive image
     - [Weather widget](#weather)
     - [Ratings](#ratings-data)
     - [Categories](#categories)
+    - [Footer](#footer)
 - [Structure](#structure)
     - [Database](#database)
     - [Wireframe](#wireframes)
@@ -205,6 +207,10 @@ how many comments it has, what rating and lets you as a registered user click th
 attending the event.   
 ![Screenshot](src/images/homepage_event.png)     
 
+### Create Event form
+- Let's you add all information about the event, add image, title, description, location, dates what category and cost of the event.    
+![Screenshot](src/images/create_event_page.png)     
+
 
 ### Detailed event
 - On the detail page for event can you comment and rate if you are not the owner, the owner can comment and also
@@ -259,6 +265,11 @@ Category selector.
 ![Screenshot](src/images/categories_selector.png)    
 Categories displaying in the dropdown.    
 ![Screenshot](src/images/categories_shown.png)  
+
+### Footer
+- I wanted to have footer so the users can easily come in contact with the site owner(me).    
+![Screenshot](src/images/footer_readme.png) 
+
 
 ---
 
@@ -378,7 +389,10 @@ To ensure efficient prioritization, the project employs the MuSCoW (Must have, S
 
 Within each sprint, a MoSCoW method is used to prioritize user stories further. They are classified as Must Do, Should Do, Could Do, and Won't Do, representing the remaining user stories that will not be included in the sprints. This approach ensures a clear differentiation between the overall project prioritization and the prioritization within each sprint, minimizing any potential confusig & Documentation
 
-### Schedualed to be complete 11th of July 2023
+## Sprints
+
+### SPRINT 1 - Schedualed to be complete 11th of July 2023
+### Completed 10th of July 2023. ✅ 
 
 - [x] Plan Sprint (Must do)
 
@@ -386,17 +400,14 @@ Within each sprint, a MoSCoW method is used to prioritize user stories further. 
 
 - [x] Design Database Schema (Should do)
 
-- [ ] Create the wireframes (Should do)
-
-- [x] Plan Sprint 2 (Must do)
-
-### Completed 10th of July 2023. ✅ 
+- [x] Create the wireframes (Should do)
 
 ---
 
 ## Backend
 
-### Schedualed to be complete 14th of July 2023
+### SPRINT 2 - Schedualed to be complete 14th of July 2023
+### Completed 12th July 2023 ✅ 
 
 - [x] Create a repository for the api in Github (Must do)
 
@@ -412,15 +423,13 @@ Within each sprint, a MoSCoW method is used to prioritize user stories further. 
 
 - [x] Deploy the Djano REST API (Should do)
 
-- [x] Plan sprint 3 (Must do)
-
-### Completed 12th July 2023 ✅ 
 
 --- 
 
 ## Frontend
 
-### Schedualed to be complete 19th of July 2023
+### SPRINT 3 - Schedualed to be complete 19th of July 2023
+### Completed 18th July 2023 ✅ 
 
 - [x] Create a repository for the Explore Sthlm (Should do)
 
@@ -434,7 +443,7 @@ Within each sprint, a MoSCoW method is used to prioritize user stories further. 
 
 - [x] Do so navigation bar and authorization works (Could do)
 
-- [ ] Design and implement footer (Could do)
+- [x] Design and implement footer (Could do)
 
 - [x] Test deploy project on Heroku (Must do)
 
@@ -446,48 +455,51 @@ Within each sprint, a MoSCoW method is used to prioritize user stories further. 
 
 - [x] Implement posting events (must do)
 
-### Completed 18th July 2023 ✅ 
+---
 
-### Schedualed to be complete 25th of July 2023
+### SPRINT 4 - Schedualed to be complete 25th of July 2023
+### Completed 23th July 2023 ✅ 
 
 - [x] Add Profile with edit and delete function (must do)
 
 - [x] Implement follow and following on the website (must do)
 
-- [x] Add the comments and rating section for events (must do)
+- [x] Add the comments section for events (must do)
 
 - [x] Find calendar library and implement on site (could do)
 
 - [x] Add weather widget (could do)
 
-- [x] Add the Feed and Top Ratings pages with functionality (must do)
+- [x] Add the Feed page(must do)
 
+---
 
-### Completed 23th July 2023 ✅ 
+### SPRINT 5 - Schedualed to be complete 29th of July 2023
+### Completed th July 2023 ✅ 
 
+- [] Add the rating section for events (must do)
+
+- [] Spellcheck code
+
+- [] Remove all console.logs
+
+- [] Clean database of testing results
+
+- [] Finish all documentation on Frontend README.md
+
+- [] Finish all documentation on Backend README.md
 ---
 
 ## Testing
 
-### Schedualed to be complete 27th of july 2023
+### SPRINT 6 - Schedualed to be complete 31th of july 2023
+### Completed XXth July 2023 ✅ 
 
 - [ ] Test backend
 
 - [ ] Test Frontend
 
-### Completed XXth July 2023 ✅ 
-
 ---
-
-## Documentation / README.md
-
-### Schedualed to be complete 28th of july 2023
-
-- [ ] Frontend README.md
-
-- [ ] Backend README.md
-
-### Completed XXth July 2023 ✅ 
 
 [Back up](#table-of-content)
 
@@ -580,36 +592,51 @@ fine for this project. The Weather API key has 60 calls / minute.
 
 ## Deployment
 
-### Frontend and Backend 
+### Frontend
+
+1. Create a new repository on GitHub with CI's react template.   
+2. Click the Gitpod button to open the new repository in GitPod.   
+3. Once the IDE has loaded, run the terminal command npx create-react-app . --use-npm to install React.    
+4. After it has finished installing run the command npm start to check the app is working.   
+5. Add a Procfile in the root directory.   
+6. Add the following code into the Procfile - web: serve -s build.   
+7. Git add, commit and push changes to GitHub.   
+8. Log-in or sign-up to Heroku and open the dashboard.   
+9. Click on the 'New' button to add a new app, name the app and choose a region.   
+10. Click the 'Create app' button to create the app.   
+11. Click the deploy tab on the app menu.   
+12. Scroll down to deployment method and click the GitHub option and search for the React GitHub repository name, click the 'Connect' button.   
+13. Once the repository is connected, click the 'Deploy branch' button - make sure the master / main branch is selected.   
+14. If the build is successful, click the 'Open app' button to view the deployed app on Heroku.   
+
+### Backend 
 
 The website was deployed using Heroku by following these steps:
 
-1. Set DEBUG to False in the settings.py file.
-2. Commit and push your code to the GitHub repository.
-3. Clear the 'static' folder in Cloudinary to ensure the latest static files are used during deployment. This step is essential to avoid potential conflicts between cached versions of static files and the updated versions being deployed. Clearing the 'static' folder ensures that the latest versions of static files are used during deployment, preventing any errors or inconsistencies.
-
-4. Navigate to the project's deploy page in Heroku.
-5. Choose the manual deployment option to deploy the latest code changes. 
+1. Set DEBUG to False in the settings.py file.    
+2. Commit and push your code to the GitHub repository.   
+3. Clear the 'static' folder in Cloudinary to ensure the latest static files are used during deployment. This step is essential to avoid potential conflicts between cached versions of static files and the updated versions being deployed. Clearing the 'static' folder ensures that the latest versions of static files are used during deployment, preventing any errors or inconsistencies.     
+4. Navigate to the project's deploy page in Heroku.    
+5. Choose the manual deployment option to deploy the latest code changes.   
 
 #### You can for fork the repository by following these steps:
 
-1. Go to the GitHub repository
-2. Click on Fork button in upper right hand corner
-3. Wait for the forking process to complete. Once done, you will have a copy of the repository in your GitHub account.
+1. Go to the GitHub repository.   
+2. Click on Fork button in upper right hand corner.   
+3. Wait for the forking process to complete. Once done, you will have a copy of the repository in your GitHub account.    
 
 #### You can clone the repository by following these steps: 
 
-1. Go to the GitHub repository
-2. Locate the Code button above the list of files and click it
-3. Select your preferred method for cloning: HTTPS, SSH, or GitHub CLI, and click the copy button to copy the repository URL to your clipboard.
-4. Open Git Bash (or your preferred terminal).
-5. Change the current working directory to the location where you want the cloned directory to be created.
-6. Type the command **'git clone'** followed by the URL you copied in step 3. The command should look like this: **git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY**.
-7. Press Enter to create your local clone.
-
+1. Go to the GitHub repository.   
+2. Locate the Code button above the list of files and click it.   
+3. Select your preferred method for cloning: HTTPS, SSH, or GitHub CLI, and click the copy button to copy the repository URL to your clipboard.   
+4. Open Git Bash (or your preferred terminal).   
+5. Change the current working directory to the location where you want the cloned directory to be created.   
+6. Type the command **'git clone'** followed by the URL you copied in step 3. The command should look like this: **git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY**.    
+7. Press Enter to create your local clone.   
 
 ### Linking with the API/backend
-- You will need to ensure you have set the axios.defaults.baseURL in the api/axiosDefaults.jsx file to the url of your deployed version of th API. You should then update the CLIENT_ORIGIN config variable in your deployed version of the API to ensure you will be able to make authenticated requests to this API.
+- You will need to ensure you have set the axios.defaults.baseURL in the api/axiosDefaults.jsx file to the url of your deployed version of th API. You should then update the CLIENT_ORIGIN config variable in your deployed version of the API to ensure you will be able to make authenticated requests to this API.    
 
 [Back up](#table-of-content)
 
@@ -633,18 +660,22 @@ The website was deployed using Heroku by following these steps:
 
 - Avatars for user from [Freepik](https://img.freepik.com/free-vector/avatars-set-cartoon-style_1284-18338.jpg?size=626&ext=jpg&ga=GA1.1.1776497350.1681300148&semt=sph)
 
-...
 
 ### Various tutorials and YouTube channels:
 
 - How to use target="_blank" in react correctly [Link](https://stackoverflow.com/questions/64004975/how-to-add-target-blank-on-react)
 
-- Use sum and reduce [Link](https://www.codingem.com/javascript-calculate-average/)
+- Use sum and reduce [codingem](https://www.codingem.com/javascript-calculate-average/) [upmostly](https://upmostly.com/tutorials/how-to-reduce-an-array-in-react)
 
-- How to setups [react-awesome-calendar](https://codesandbox.io/s/mikeham98-react-awesome-calendar-b5reb?file=/src/App.jsx
-https://github.com/mikeham98/react-awesome-calendar)
+- How to setup react awesome calendar 
+[codesandbox](https://codesandbox.io/s/mikeham98-react-awesome-calendar-b5reb?file=/src/App.jsx) and
+[Github-repo-for-calendar](https://github.com/mikeham98/react-awesome-calendar)
 
-....
+- Install Eslint with Prettier [Link](https://gist.github.com/ianmeigh/8e603b91a38d7829d959402bfcf29d3d)
+
+- Passing props in react: [pluralsight](https://www.pluralsight.com/guides/how-to-pass-data-between-react-components) [freecodecamp](https://www.freecodecamp.org/news/pass-data-between-components-in-react/)
+
+
 
 [Back up](#table-of-content)
 
