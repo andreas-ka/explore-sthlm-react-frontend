@@ -8,6 +8,8 @@ import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
 import Media from "react-bootstrap/Media";
 
+import MapContainer from "../../components/MapContainer";
+
 import axios from "axios";
 import Asset from "../../components/Asset";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
@@ -40,6 +42,7 @@ const TopRatings = () => {
     <Container className="mt-5">
       {topRatings.results.length ? (
         <>
+        <MapContainer />
           <div className="text-center text-white mb-5">
             <h1>Top Rating events</h1>
           </div>

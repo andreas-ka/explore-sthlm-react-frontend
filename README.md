@@ -663,6 +663,8 @@ The website was deployed using Heroku by following these steps:
 
 ### Various tutorials and YouTube channels:
 
+- Setup google maps for react [guide](https://medium.com/scalereal/integration-of-google-maps-with-react-part-1-86c075ab452a)
+
 - How to use target="_blank" in react correctly [Link](https://stackoverflow.com/questions/64004975/how-to-add-target-blank-on-react)
 
 - Use sum and reduce [codingem](https://www.codingem.com/javascript-calculate-average/) [upmostly](https://upmostly.com/tutorials/how-to-reduce-an-array-in-react)
