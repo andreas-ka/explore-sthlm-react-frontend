@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { axiosRes } from '../../api/axiosDefaults';
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 // The calendar library
 import Calendar from 'react-awesome-calendar';
 
 // Styles CSS
 import styles from "../../styles/Calendar.module.css";
+import Button from 'react-bootstrap/Button';
 
 /* Calendar page, fetch the event data from the api and then
 maps trough them and show them in the calendar in different
@@ -14,9 +16,13 @@ colors depending on the category for the event */
 
   const EventCalendar = () => {
     const [eventsData, setEventsData] = useState([]);
+    const [userEvents, setUserEvents] = useState([]);
+    const [showUserEvents, setShowUserEvents] = useState(false);
     const history = useHistory();
+    const currentUser = useCurrentUser();
   
     useEffect(() => {
+      // fetch all events data
       const fetchEventData = async () => {
         try {
           const { data } = await axiosRes.get('/events/');
@@ -30,7 +36,6 @@ colors depending on the category for the event */
           setEventsData(filteredData);
         } catch (err) {
           // console.log(err);
-          // Handle the error
         }
       };
   
@@ -52,7 +57,8 @@ colors depending on the category for the event */
       history.push(`/events/${event}`);
     };
 
-    const events =
+    // Set the array for all events
+    const allEvents =
     eventsData.length > 0
     ? eventsData.map((event) => ({
         id: event.id,
@@ -63,15 +69,84 @@ colors depending on the category for the event */
         category: event.category,
       }))
     : [];
+
+    // Set array for the logged in users event they are attending
+    const myEvent = 
+    userEvents.length > 0
+    ? userEvents.map((event) => ({
+        id: event.id,
+        color: categoryColorMap[event.category] || 'gray',
+        from: event.start_date, 
+        to: event.end_date, 
+        title: event.title,
+        category: event.category,
+      }))
+    : [];
+    
+
+    const handleAllEventsClick = () => {
+      setShowUserEvents(false); // all events
+    };
+  
+    const handleUserEventsClick = async () => {
+      // check if currentUser has a profile, if they do check for events
+      if (!currentUser || !currentUser.profile_id) {
+        console.log("User is not logged in or doesn't have a profile ID.");
+        return;
+      }
+    
+      try {
+        const { data } = await axiosRes.get(`/attend/`);
+        const userEvents = data.results
+        .filter((attend) => attend.owner === currentUser.username)
+        .map((attend) => ({
+          id: attend.id,
+          owner: attend.owner,
+          event: attend.event,
+        }));
+
+        setUserEvents(userEvents);
+
+        // Filter all event.id to match users attend.event
+        const myEvents = eventsData.filter((eventData) =>
+        userEvents.some((userEvent) => userEvent.event === eventData.id)
+        );
+
+        setUserEvents(myEvents);
+        setShowUserEvents(true); // show user events
+      } catch (err) {
+        // console.error(err);
+
+      }
+    };
     
 
   return (
-    <div className={styles.Calendar}>
-      <Calendar
-                events={events}
-                onClickEvent={(event) => handleClickEvent(event)}         
-            />
+    <>
+    <div className='text-center'>
+      <Button className='m-2' onClick={handleAllEventsClick}>
+        All Events
+      </Button>
+      <Button className='m-2' onClick={handleUserEventsClick}>
+        My Events
+      </Button>
     </div>
+    {showUserEvents ? (
+      <div className={styles.Calendar}>
+        <Calendar
+          events={myEvent}
+          onClickEvent={(event) => handleClickEvent(event)}         
+        />
+      </div>
+    ) : (
+      <div className={styles.Calendar}>
+        <Calendar
+          events={allEvents}
+          onClickEvent={(event) => handleClickEvent(event)}         
+        />
+      </div>
+    )}
+    </>
   );
 };
 

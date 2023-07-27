@@ -675,6 +675,9 @@ The website was deployed using Heroku by following these steps:
 
 - Passing props in react: [pluralsight](https://www.pluralsight.com/guides/how-to-pass-data-between-react-components) [freecodecamp](https://www.freecodecamp.org/news/pass-data-between-components-in-react/)
 
+- Show / Hide div [stackoverflow](https://stackoverflow.com/questions/67088602/how-to-hide-div-on-click-in-react)
+
+- How to use Show in JavaScript [w3schools](https://www.w3schools.com/jsref/jsref_some.asp)
 
 
 [Back up](#table-of-content)
