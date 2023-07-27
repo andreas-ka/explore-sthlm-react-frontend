@@ -1,3 +1,4 @@
+/* Calendar styling */
 .Calendar h1 {
   color: white;
 }
@@ -29,4 +30,18 @@
 
 .Calendar .eventTitle {
   font-size: 0.8em;
+}
+
+/* Button styling */
+.BtnCalendar {
+  background-color: #ff851c;
+  color: #ffffff;
+  font-size: 0.8rem;
+  border-radius: 100px;
+  border-color: transparent;
+  min-width: 75px;
+}
+
+h1 {
+  color: white;
 }

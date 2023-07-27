@@ -9,6 +9,7 @@ import Calendar from 'react-awesome-calendar';
 // Styles CSS
 import styles from "../../styles/Calendar.module.css";
 import Button from 'react-bootstrap/Button';
+import btnStyles from "../../styles/Calendar.module.css"
 
 /* Calendar page, fetch the event data from the api and then
 maps trough them and show them in the calendar in different
@@ -44,7 +45,7 @@ colors depending on the category for the event */
 
     const categoryColorMap = {
       Family: '#57A639', // green
-      Music: '#9E9764', // Grey beige
+      Music: 'purple', // purple
       Sport: '#E1CC4F', // yellow ivory
       Culture: '#FF7514', // orange
       Food: 'pink', // pink
@@ -91,7 +92,6 @@ colors depending on the category for the event */
     const handleUserEventsClick = async () => {
       // check if currentUser has a profile, if they do check for events
       if (!currentUser || !currentUser.profile_id) {
-        console.log("User is not logged in or doesn't have a profile ID.");
         return;
       }
     
@@ -124,10 +124,12 @@ colors depending on the category for the event */
   return (
     <>
     <div className='text-center'>
-      <Button className='m-2' onClick={handleAllEventsClick}>
+      <h1>Event Calendar</h1>
+      <p className='text-white'>Show all events or the ones you are attending.</p>
+      <Button className={`${btnStyles.BtnCalendar} m-2`} onClick={handleAllEventsClick}>
         All Events
       </Button>
-      <Button className='m-2' onClick={handleUserEventsClick}>
+      <Button className={`${btnStyles.BtnCalendar} m-2`} onClick={handleUserEventsClick}>
         My Events
       </Button>
     </div>

@@ -109,6 +109,18 @@ const Event = (props) => {
     }
   };
 
+  // Colors for all the events, shown on top of event image
+  const categoryColorMap = {
+    Family: '#57A639', // green
+    Music: 'purple', // purple
+    Sport: '#E1CC4F', // yellow ivory
+    Culture: '#FF7514', // orange
+    Food: 'pink', // pink
+    Shopping: '#B32428', // red
+    Sightseeing: '#3B83BD', // blue
+  };
+  const categoryColor = categoryColorMap[category] || 'gray';
+
   return (
     <Card bg="light" className={styles.Event}>
       <Card.Body>
@@ -128,9 +140,15 @@ const Event = (props) => {
           </div>
         </Media>
       </Card.Body>
+      <div className={styles.Category}>
       <Link to={`/events/${id}`}>
         <Card.Img src={image} alt={title} />
+        <h5 className={styles.CategoryTag} 
+        style={{ backgroundColor: categoryColor }}>
+          {category}
+          </h5>
       </Link>
+      </div>
       <Card.Body>
         <Card.Title>
           {title}
@@ -208,7 +226,6 @@ const Event = (props) => {
         <ListGroup.Item>
           Date: {start_date} to {end_date}
         </ListGroup.Item>
-        <ListGroup.Item>Category: {category}</ListGroup.Item>
         <ListGroup.Item>Cost: {cost} $</ListGroup.Item>
       </ListGroup>
     </Card>

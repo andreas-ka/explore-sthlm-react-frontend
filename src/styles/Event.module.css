@@ -8,3 +8,24 @@
 .Event a {
   color: #000000;
 }
+
+.Category {
+  margin: 3%;
+  position: relative;
+}
+
+.CategoryTag {
+  position: absolute;
+    top: 15px;
+    left: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.3);
+    border-radius: 2px;
+}
+
+h5 {
+  color: white;
+}

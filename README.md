@@ -677,7 +677,7 @@ The website was deployed using Heroku by following these steps:
 
 - Show / Hide div [stackoverflow](https://stackoverflow.com/questions/67088602/how-to-hide-div-on-click-in-react)
 
-- How to use Show in JavaScript [w3schools](https://www.w3schools.com/jsref/jsref_some.asp)
+- How to use Show in JavaScript [w3schools](https://www.w3schools.com/jsref/jsref_some.asp) and [javascripttutorial.net](https://www.javascripttutorial.net/javascript-array-some/)
 
 
 [Back up](#table-of-content)
