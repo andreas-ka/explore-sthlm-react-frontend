@@ -4,29 +4,65 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import Button  from "react-bootstrap/Button";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
 
 // Styles and CSS
 import btnStyles from "../../styles/Button.module.css";
 
 // rating library and Axios import
 import { Rating } from "react-simple-star-rating";
-import { axiosRes } from "../../api/axiosDefaults";
+import { axiosRes, axiosReq } from "../../api/axiosDefaults";
+
+// Context
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 // Event rating form, shows the stars and then sends rating to the API
 function EventRatingForm(props) {
-  const { event, setEvent, id, averageRating, updateAverageRating } = props;
+  const { event, setEvent, id, owner } = props;
 
   const [rating, setRating] = useState(0);
   const [showModal, setShowModal] = useState(false);
+  const [noRateModal, setNoRateModal] = useState(false);
+  const [ownerRateModal, setOwnerRateModal] = useState(false);
+  const currentUser = useCurrentUser();
+
 
   const handleRating = (rate) => {
     setRating(rate);
   };
-
+  console.log(event.owner)
   const handleRatingSubmit = async (e) => {
     // Post new rating to database
     e.preventDefault();
     try {
+      const { data: ratingsData } = await axiosReq.get(`/ratings/`);
+  
+      // check if the current user has already rated the event
+      const userRating = ratingsData.results.find(
+        (rating) =>
+          rating.owner === currentUser?.username
+      );
+
+      const isEventOwner = currentUser?.username === event.owner;
+      console.log(owner)
+
+      // if the current user has already rated the event
+      if (userRating) {
+        setNoRateModal(true);
+        setTimeout(() => setNoRateModal(false), 3000);
+        return;
+      }
+
+      if (isEventOwner) {
+        setOwnerRateModal(true);
+        setTimeout(() => setOwnerRateModal(false), 3000);
+        console.log("Sorry, you cannot rate your own event.");
+        return;
+      }
+
+  
+      // Post new rating to database
       const { data } = await axiosRes.post("/ratings/", {
         event,
         rating,
@@ -44,12 +80,11 @@ function EventRatingForm(props) {
             : event;
         }),
       }));
-      updateAverageRating(data);
+
       // Pass the rating to parent
       setShowModal(true);
       // Show modal and close it after 2 seconds.
       setTimeout(() => setShowModal(false), 2000);
-      console.log(event.rating_average);
       setRating(0);
     } catch (err) {
       console.log(err);
@@ -69,7 +104,6 @@ function EventRatingForm(props) {
         >
           Submit
         </button>
-        <div>avg result {averageRating}</div>
       </Form>
       <Modal show={showModal} onHide={() => setShowModal(false)}>
         <Modal.Header closeButton>
@@ -81,7 +115,33 @@ function EventRatingForm(props) {
         </Modal.Body>
 
         <Modal.Footer>
-          <Button variant="secondary" onClick={() => setShowModal(false)}>Close</Button>
+          <Button variant="secondary" onClick={() => setNoRateModal(false)}>Close</Button>
+        </Modal.Footer>
+      </Modal>
+      <Modal show={noRateModal} onHide={() => setNoRateModal(false)}>
+        <Modal.Header closeButton>
+          <Modal.Title>Rating</Modal.Title>
+        </Modal.Header>
+
+        <Modal.Body>
+          <p>Sorry, it seems you have already rated this event, you can only rate a event once...</p>
+        </Modal.Body>
+
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => setNoRateModal(false)}>Close</Button>
+        </Modal.Footer>
+      </Modal>
+      <Modal show={ownerRateModal} onHide={() => setOwnerRateModal(false)}>
+        <Modal.Header closeButton>
+          <Modal.Title>Rating</Modal.Title>
+        </Modal.Header>
+
+        <Modal.Body>
+          <p>Sorry, you can't rate your won event.</p>
+        </Modal.Body>
+
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => setOwnerRateModal(false)}>Close</Button>
         </Modal.Footer>
       </Modal>
     </>

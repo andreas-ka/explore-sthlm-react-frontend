@@ -42,26 +42,13 @@ function EventPage() {
         const [
           { data: event },
           { data: comments },
-          { data: ratingsData },
         ] = await Promise.all([
           axiosReq.get(`/events/${id}`),
           axiosReq.get(`/comments/?event=${id}`),
-          axiosReq.get("/ratings/"),
         ]);
         setEvent({ results: [event] });
         setComments(comments);
   
-        // Calculate average rating for this event
-        const ratingsForEvent = ratingsData.results.filter(
-          (rating) => rating.event === parseInt(id)
-        );
-        const totalRatings = ratingsForEvent.reduce(
-          (acc, rating) => acc + rating.rating,
-          0
-        );
-        const averageRating =
-          ratingsForEvent.length ? totalRatings / ratingsForEvent.length : 0;
-        setAverageRating(averageRating);
       } catch (err) {
       }
     };
@@ -69,9 +56,11 @@ function EventPage() {
     fetchData();
   }, [id]);
 
+
+
   const updateAverageRating = (newRating) => {
     // calculate the new average rating
-    const totalRatings = averageRating * (event.results[0].ratings_count - 1);
+    const totalRatings = averageRating * event.results[0].ratings_count;
     const newAverageRating =
       (totalRatings + newRating.rating) / event.results[0].ratings_count;
 
@@ -84,8 +73,9 @@ function EventPage() {
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <PopularProfiles mobile />
         <Event {...event.results[0]} 
+        id={id}
         setEvents={setEvent}
-        averageRating={averageRating}
+        averageRating={averageRating.toFixed(2)}
         eventPage />
         <Container className={`mb-3 ${appStyles.Content}`}>
           {currentUser && currentUser.profile_id ? (
@@ -96,7 +86,7 @@ function EventPage() {
               id={id}
               setEvent={setEvent}
               currentUser={currentUser}
-              averageRating={averageRating}
+              averageRating={averageRating.toFixed(2)}
               updateAverageRating={updateAverageRating}
             />
           ) : (
@@ -120,7 +110,6 @@ function EventPage() {
             <InfiniteScroll
               children={comments.results.map((comment) => (
                 <Comment
-                  // Passing props
                   key={comment.id}
                   {...comment}
                   setEvent={setEvent}

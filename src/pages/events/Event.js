@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 // Styles and CSS
 import styles from "../../styles/Event.module.css";
@@ -12,7 +12,8 @@ import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 import ListGroup from "react-bootstrap/ListGroup";
 
-import { axiosRes } from "../../api/axiosDefaults";
+
+import { axiosRes, axiosReq } from "../../api/axiosDefaults";
 import { Link, useHistory } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 
@@ -46,12 +47,12 @@ const Event = (props) => {
     attend_count,
     attend_id,
     setEvents,
-    averageRating,
   } = props;
 
   const history = useHistory();
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
+  const [averageRating, setAverageRating] = useState(0);
 
   const handleAttend = async () => {
     // Posts to the API when user press Attend, add to attend_count
@@ -73,6 +74,33 @@ const Event = (props) => {
       // console.log(err);
     }
   };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const [
+          { data: ratingsData },
+        ] = await Promise.all([
+          axiosReq.get(`/ratings/`),
+        ]);
+  
+        // Calculate average rating for this event
+        const ratingsForEvent = ratingsData.results.filter(
+          (rating) => rating.event === parseInt(id)
+        );
+        const totalRatings = ratingsForEvent.reduce(
+          (acc, rating) => acc + rating.rating,
+          0
+        );
+        const averageRating =
+          ratingsForEvent.length ? totalRatings / ratingsForEvent.length : 0;
+        setAverageRating(averageRating);
+      } catch (err) {
+      }
+    };
+  
+    fetchData();
+  }, [id]);
 
   const handleRemoveAttend = async () => {
     // Delete the users attend and removes it from attend_count
@@ -157,10 +185,10 @@ const Event = (props) => {
             <Rating
               className={star.Star}
               readonly
-              initialValue={averageRating}
+              initialValue={averageRating.toFixed(1)}
               size={25}
             />
-            {averageRating}
+            {averageRating.toFixed(1)}
           </span>
         </Card.Title>
         <Card.Text>{description}</Card.Text>
