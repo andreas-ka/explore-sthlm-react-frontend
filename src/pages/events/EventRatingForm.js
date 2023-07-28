@@ -4,8 +4,6 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import Button  from "react-bootstrap/Button";
-import OverlayTrigger from "react-bootstrap/OverlayTrigger";
-import Tooltip from "react-bootstrap/Tooltip";
 
 // Styles and CSS
 import btnStyles from "../../styles/Button.module.css";
@@ -31,7 +29,7 @@ function EventRatingForm(props) {
   const handleRating = (rate) => {
     setRating(rate);
   };
-  console.log(event.owner)
+
   const handleRatingSubmit = async (e) => {
     // Post new rating to database
     e.preventDefault();
@@ -44,8 +42,7 @@ function EventRatingForm(props) {
           rating.owner === currentUser?.username
       );
 
-      const isEventOwner = currentUser?.username === event.owner;
-      console.log(owner)
+      const isEventOwner = currentUser?.username === owner;
 
       // if the current user has already rated the event
       if (userRating) {
@@ -57,7 +54,6 @@ function EventRatingForm(props) {
       if (isEventOwner) {
         setOwnerRateModal(true);
         setTimeout(() => setOwnerRateModal(false), 3000);
-        console.log("Sorry, you cannot rate your own event.");
         return;
       }
 
@@ -87,7 +83,7 @@ function EventRatingForm(props) {
       setTimeout(() => setShowModal(false), 2000);
       setRating(0);
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 
@@ -120,7 +116,7 @@ function EventRatingForm(props) {
       </Modal>
       <Modal show={noRateModal} onHide={() => setNoRateModal(false)}>
         <Modal.Header closeButton>
-          <Modal.Title>Rating</Modal.Title>
+          <Modal.Title >Rating</Modal.Title>
         </Modal.Header>
 
         <Modal.Body>
