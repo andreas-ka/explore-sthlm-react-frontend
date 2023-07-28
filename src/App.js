@@ -18,7 +18,7 @@ import EventCreateForm from "./pages/events/EventCreateForm";
 import EventPage from "./pages/events/EventPage";
 import EventsPage from "./pages/events/EventsPage";
 import EventEditForm from "./pages/events/EventEditForm";
-import TopRatings from "./pages/ratings/TopRatings";
+import EventMap from "./pages/map/EventMap";
 import EventCalendar from "./pages/calendar/EventCalendar";
 import ProfilePage from "./pages/profiles/ProfilePage";
 import UsernameForm from "./pages/profiles/UsernameForm";
@@ -66,7 +66,7 @@ function App() {
             path="/events/:id/edit"
             render={() => <EventEditForm />}
           />
-          <Route exact path="/ratings" render={() => <TopRatings />} />
+          <Route exact path="/eventmap" render={() => <EventMap />} />
           <Route exact path="/calendar" render={() => <EventCalendar />} />
           <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
           <Route

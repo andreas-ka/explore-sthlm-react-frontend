@@ -62,10 +62,10 @@ const NavBar = () => {
       <NavLink
         className={`${styles.NavLink} ${styles.NavLinkHover}`}
         activeClassName={styles.Active}
-        to="/ratings"
+        to="/eventmap"
       >
-        <i className="fa-regular fa-star-half-stroke fa-fw"></i>
-        <span className="ml-2"> Ratings</span>
+        <i className="fa-solid fa-location-dot fa-fw"></i>
+        <span className="ml-2"> Event Map</span>
       </NavLink>
       <NavLink
         className={`${styles.NavLink} ${styles.NavLinkHover}`}

@@ -588,6 +588,7 @@ i have done research about hiding API key in react and i make a note that using 
 is not really the best option, it leaves it vunerable but after talking to my mentor she said it would be
 fine for this project. The Weather API key has 60 calls / minute.
 
+[react-geocode](https://www.npmjs.com/package/react-geocode) To make adress into coordinates
 ---
 
 ## Deployment
@@ -662,6 +663,8 @@ The website was deployed using Heroku by following these steps:
 
 
 ### Various tutorials and YouTube channels:
+
+- Fix dependencies error when deploying [Link](https://stackoverflow.com/questions/64573177/unable-to-resolve-dependency-tree-error-when-installing-npm-packages)
 
 - Setup google maps for react [guide](https://medium.com/scalereal/integration-of-google-maps-with-react-part-1-86c075ab452a)
 
