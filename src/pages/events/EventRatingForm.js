@@ -7,6 +7,7 @@ import Button  from "react-bootstrap/Button";
 
 // Styles and CSS
 import btnStyles from "../../styles/Button.module.css";
+import styles from "../../styles/Modal.module.css"
 
 // rating library and Axios import
 import { Rating } from "react-simple-star-rating";
@@ -103,11 +104,11 @@ function EventRatingForm(props) {
       </Form>
       <Modal show={showModal} onHide={() => setShowModal(false)}>
         <Modal.Header closeButton>
-          <Modal.Title>Rating</Modal.Title>
+          <Modal.Title >Rating</Modal.Title>
         </Modal.Header>
 
         <Modal.Body>
-          <p>Thank you, your rating has been registered.</p>
+          <p className={styles.Psuccess}>Thank you, your rating has been registered.</p>
         </Modal.Body>
 
         <Modal.Footer>
@@ -116,7 +117,7 @@ function EventRatingForm(props) {
       </Modal>
       <Modal show={noRateModal} onHide={() => setNoRateModal(false)}>
         <Modal.Header closeButton>
-          <Modal.Title >Rating</Modal.Title>
+          <Modal.Title>Rating</Modal.Title>
         </Modal.Header>
 
         <Modal.Body>
@@ -129,7 +130,7 @@ function EventRatingForm(props) {
       </Modal>
       <Modal show={ownerRateModal} onHide={() => setOwnerRateModal(false)}>
         <Modal.Header closeButton>
-          <Modal.Title>Rating</Modal.Title>
+          <Modal.Title >Rating</Modal.Title>
         </Modal.Header>
 
         <Modal.Body>
