@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 
+//CSS
+import styles from "../../styles/MapContainer.module.css"
+
 // Bootstrap
 import Container from "react-bootstrap/Container";
 
@@ -12,7 +15,6 @@ import Geocode from "react-geocode";
 // Grabs all the events, order them by rating, highest at the top.
 
 const EventMap = () => {
-  const [originalLocations, setOriginalLocations] = useState({ results: [] });
   const [eventLocations, setEventLocations] = useState([]);
 
   Geocode.setApiKey(process.env.REACT_APP_GOOGLE_MAPS_API_KEY);
@@ -22,23 +24,21 @@ const EventMap = () => {
     const fetchEvents = async () => {
       try {
         const { data } = await axios.get("/events/");
-        const locations = data.results.map((event) => event.event_location);
-        setOriginalLocations(locations);
-
+        // get the event locations
         const updatedLocations = await Promise.all(
-          locations.map(async (location) => {
+          data.results.map(async (event) => {
             try {
+              const location = event.event_location;
+              // react-geocode to get the latitude and longitude of the location
               const response = await Geocode.fromAddress(location);
               const { lat, lng } = response.results[0].geometry.location;
-              return { location, lat, lng };
+              return { ...event, location, lat, lng };
             } catch (error) {
-              console.log(`Error fetching geolocation for "${location}":`, error);
+              console.log("Error fetching geolocation", error);
               return null;
             }
           })
         );
-
-
         setEventLocations(updatedLocations);
       } catch (err) {
         // console.log(err);
@@ -49,11 +49,14 @@ const EventMap = () => {
   }, []);
 
   return (
-    <Container className="mt-5">
+    <Container className="text-center">
       <>
-        <div></div>
+        <div className="p-5 text-center text-white"><h1>Showing all events on the map</h1></div>
+        <div className={styles.CenterMap}>
         <MapContainer
         eventLocations={eventLocations} />
+        </div>
+        
       </>
     </Container>
   );

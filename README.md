@@ -661,12 +661,19 @@ The website was deployed using Heroku by following these steps:
 
 - Avatars for user from [Freepik](https://img.freepik.com/free-vector/avatars-set-cartoon-style_1284-18338.jpg?size=626&ext=jpg&ga=GA1.1.1776497350.1681300148&semt=sph)
 
+- Icons are from [Fontawesome](https://fontawesome.com/)
 
-### Various tutorials and YouTube channels:
+### Various credits, tutorials and YouTube channels:
 
 - Fix dependencies error when deploying [Link](https://stackoverflow.com/questions/64573177/unable-to-resolve-dependency-tree-error-when-installing-npm-packages)
 
-- Setup google maps for react [guide](https://medium.com/scalereal/integration-of-google-maps-with-react-part-1-86c075ab452a)
+#### Google Maps setup
+- This was alot harder than i previous thought, thanks to my friend Stefan for helping with setting up the whole fetching data
+and passing it to the EventMap.
+- Setup google maps for react [guide](https://medium.com/scalereal/integration-of-google-maps-with-react-part-1-86c075ab452a)      
+- Google Geocoding [Setup](https://developers.google.com/maps/documentation/javascript/geocoding)    
+- Goggle maps [InfoWindows](https://developers.google.com/maps/documentation/javascript/examples/infowindow-simple) [Stackoverflow](https://stackoverflow.com/questions/66387750/how-to-add-an-infowindow-to-my-markers-in-google-maps-react)    
+- Youtube video on how to add Info Windows from [WittCode](https://www.youtube.com/watch?v=tNHCs_wv21Y)
 
 - How to use target="_blank" in react correctly [Link](https://stackoverflow.com/questions/64004975/how-to-add-target-blank-on-react)
 
@@ -682,7 +689,7 @@ The website was deployed using Heroku by following these steps:
 
 - Show / Hide div [stackoverflow](https://stackoverflow.com/questions/67088602/how-to-hide-div-on-click-in-react)
 
-- How to use Show in JavaScript [w3schools](https://www.w3schools.com/jsref/jsref_some.asp) and [javascripttutorial.net](https://www.javascripttutorial.net/javascript-array-some/)
+- How to use Some in JavaScript [w3schools](https://www.w3schools.com/jsref/jsref_some.asp) and [javascripttutorial.net](https://www.javascripttutorial.net/javascript-array-some/)
 
 
 [Back up](#table-of-content)
@@ -691,6 +698,6 @@ The website was deployed using Heroku by following these steps:
 - My awesome wife Sandra, a copywriter by profession, helped me with the Objective text.
 - *HUGE* credit to Code Institute and their tutorial on how to build the Moments app, loads of code from that.
 - My Mentor @CluelessBiker for awesome support and feedback.
-- Tutor Sean for helping sort out the rating_average issue. Mega thanks!
+- My good friend Stefan, a senior developer for advice and tips
 
 [Back to Top](#top)

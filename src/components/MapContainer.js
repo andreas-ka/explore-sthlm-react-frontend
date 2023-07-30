@@ -1,14 +1,24 @@
-import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
-import { useMemo } from "react";
+import { GoogleMap, InfoWindow, Marker, useLoadScript } from "@react-google-maps/api";
+import { useMemo, useState } from "react";
 import styles from "../styles/MapContainer.module.css";
 
 const MapContainer = ({ eventLocations }) => {
+  const [clickEvent, setClickedEvent] = useState(null);
   // passing in the location prop from EventMap.js
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
   });
   const center = useMemo(() => ({ lat: 59.331618, lng: 18.058443 }), []);
-  console.log(eventLocations)
+
+  // set own marker, same orange as website and fontawsome SVG
+  const customMarker = {
+    path: "M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z",
+    fillColor: "#ff851c",
+    fillOpacity: 2,
+    strokeWeight: 1,
+    rotation: 0,
+    scale: 0.05,
+  };
 
   return (
     <div className={styles.App}>
@@ -20,13 +30,28 @@ const MapContainer = ({ eventLocations }) => {
           center={center}
           zoom={10}
         >
-          { /* Mapping the location location data, and add marker to each adress */ }
+          { /* map the location location data, and add marker to each adress */ }
           {eventLocations.map((locationData, index) => (
             <Marker
               key={index}
               position={{ lat: locationData.lat, lng: locationData.lng }}
+              icon={customMarker}
+              onClick={() => setClickedEvent(locationData)}
             />
           ))}
+          {clickEvent && (
+            <InfoWindow
+            position={{ lat: clickEvent.lat, lng: clickEvent.lng }}
+            onCloseClick={() => setClickedEvent(null)}
+            >
+              <div className="font-weight-bold">
+                Category: {clickEvent.category}<br />
+                Title: {clickEvent.title}<br />
+                {clickEvent.start_date} - {clickEvent.end_date}
+              </div>
+            </InfoWindow>
+          )}
+        
         </GoogleMap>
       )}
     </div>
