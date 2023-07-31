@@ -1,4 +1,7 @@
+// React hooks
 import React, { useRef, useState } from "react";
+import { useHistory } from "react-router";
+import { useRedirect } from "../../hooks/useRedirect";
 
 // Bootstrap
 import Form from "react-bootstrap/Form";
@@ -9,18 +12,15 @@ import Container from "react-bootstrap/Container";
 import Alert from "react-bootstrap/Alert";
 import Image from "react-bootstrap/Image";
 
-import Upload from "../../assets/upload.png";
-
 // Styles and CSS
 import styles from "../../styles/EventCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 
+// Upload image, Asset and Axios
+import Upload from "../../assets/upload.png";
 import Asset from "../../components/Asset";
 import { axiosReq } from "../../api/axiosDefaults";
-
-import { useHistory } from "react-router";
-import { useRedirect } from "../../hooks/useRedirect";
 
 // Event create form, posts the new event to the API
 

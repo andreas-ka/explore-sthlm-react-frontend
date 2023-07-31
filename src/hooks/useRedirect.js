@@ -1,4 +1,7 @@
+// Axios
 import axios from "axios";
+
+// React hooks
 import { useEffect } from "react";
 import { useHistory } from "react-router";
 

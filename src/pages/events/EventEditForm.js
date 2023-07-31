@@ -1,4 +1,7 @@
+// React hooks
 import React, { useRef, useState, useEffect } from "react";
+import { useHistory } from "react-router";
+import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 
 // Bootstrap
 import Form from "react-bootstrap/Form";
@@ -7,16 +10,15 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Alert from "react-bootstrap/Alert";
+import { Image } from "react-bootstrap";
 
 // Styles and CSS
 import styles from "../../styles/EventCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 
+// Axios
 import { axiosReq } from "../../api/axiosDefaults";
-import { Image } from "react-bootstrap";
-import { useHistory } from "react-router";
-import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 
 // Shows when you want to edit your event, fetches the event so the fields are
 // prefilled and then posts the new updated event to the API

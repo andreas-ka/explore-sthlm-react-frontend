@@ -1,6 +1,9 @@
 import React from "react";
+
+// Css styles
 import styles from "../styles/Footer.module.css";
 
+// Footer with socialmedia icons for website owner
 const Footer = () => (
   <footer
     className={`page-footer font-small fixed-bottom text-white ${styles.Footer}`}

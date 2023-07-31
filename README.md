@@ -138,7 +138,9 @@ As the site owner i thought i would be fun and a great way to see what's happeni
 
 - [x] As a registered user i can **view details on a specific event ** so that i can get more information [#5](https://github.com/andreas-ka/explore-sthlm-react-frontend/issues/5)    
 
-- [x] As a non registered and registered user i can view the calendar so that i can see the upcoming events. [#5](https://github.com/andreas-ka/explore-sthlm-react-frontend/issues/24)
+- [x] As a non registered and registered user i can view the calendar so that i can see the upcoming events. [#24](https://github.com/andreas-ka/explore-sthlm-react-frontend/issues/24)
+
+- [x] As a non registered and registered user i can view the a Google map with the events so i can see what events are closest to me. [#38](https://github.com/andreas-ka/explore-sthlm-react-frontend/issues/38)
 
 ### Rating
 
@@ -385,123 +387,21 @@ Bugs encountered during the development process have also been logged as GitHub 
 
 The Explore Sthlm project follows an iterative development approach, allowing for continuous improvement and progress while adhering to time constraints. The development process is structured into sprints, with each sprint typically lasting around 6 days.
 
-To ensure efficient prioritization, the project employs the MuSCoW (Must have, Should have, Could have, Won't have) method. User stories critical to the app's success are categorized as Must-haves, followed by Should-haves, Could-haves, and Won't-haves. Refer to the [Kanban board]() to view the prioritization.
+To ensure efficient prioritization, the project employs the MuSCoW (Must have, Should have, Could have, Won't have) method. User stories critical to the app's success are categorized as Must-haves, followed by Should-haves, Could-haves, and Won't-haves. 
 
-Within each sprint, a MoSCoW method is used to prioritize user stories further. They are classified as Must Do, Should Do, Could Do, and Won't Do, representing the remaining user stories that will not be included in the sprints. This approach ensures a clear differentiation between the overall project prioritization and the prioritization within each sprint, minimizing any potential confusig & Documentation
+### Iterations
+- Planning.   
+Iteration [1](https://github.com/users/andreas-ka/projects/13)      
 
-## Sprints
+- Backend.    
+Iteration [2](https://github.com/users/andreas-ka/projects/15)     
 
-### SPRINT 1 - Schedualed to be complete 11th of July 2023
-### Completed 10th of July 2023. ✅ 
+- Frontend.     
+Iteration [3](https://github.com/users/andreas-ka/projects/17)    
+Iteration [4](https://github.com/users/andreas-ka/projects/18)     
+Iteration [5](https://github.com/users/andreas-ka/projects/19)    
+Iteration [6](https://github.com/users/andreas-ka/projects/20)     
 
-- [x] Plan Sprint (Must do)
-
-- [x] Create and write readme.md (Must do)
-
-- [x] Design Database Schema (Should do)
-
-- [x] Create the wireframes (Should do)
-
----
-
-## Backend
-
-### SPRINT 2 - Schedualed to be complete 14th of July 2023
-### Completed 12th July 2023 ✅ 
-
-- [x] Create a repository for the api in Github (Must do)
-
-- [x] Start a django project in Gitpod (Must do)
-
-- [x] Install necessary libraries and dependencies (Must do)
-
-- [x] Create an ElephantSQL database and connect it to the API (Must do)
-
-- [x] Connect image uploads to Cloudinary (Must do)
-
-- [x] Add filtering (Should do)
-
-- [x] Deploy the Djano REST API (Should do)
-
-
---- 
-
-## Frontend
-
-### SPRINT 3 - Schedualed to be complete 19th of July 2023
-### Completed 18th July 2023 ✅ 
-
-- [x] Create a repository for the Explore Sthlm (Should do)
-
-- [x] Start a React project in Gitpod (Could do)
-
-- [x] Test deploy project on Heroku (Could do)
-
-- [x] Install component library (Could do)
-
-- [x] Design and implement navigation bar (Could do)
-
-- [x] Do so navigation bar and authorization works (Could do)
-
-- [x] Design and implement footer (Could do)
-
-- [x] Test deploy project on Heroku (Must do)
-
-- [x] Install component library (Must do)
-
-- [x] Design and implement a navigation bar (Must do)
-
-- [x] Do so navigation bar and authorization works (Must do)
-
-- [x] Implement posting events (must do)
-
----
-
-### SPRINT 4 - Schedualed to be complete 25th of July 2023
-### Completed 23th July 2023 ✅ 
-
-- [x] Add Profile with edit and delete function (must do)
-
-- [x] Implement follow and following on the website (must do)
-
-- [x] Add the comments section for events (must do)
-
-- [x] Find calendar library and implement on site (could do)
-
-- [x] Add weather widget (could do)
-
-- [x] Add the Feed page(must do)
-
----
-
-### SPRINT 5 - Schedualed to be complete 29th of July 2023
-### Completed th July 2023 ✅ 
-
-- [] Add the rating section for events (must do)
-
-- [] Spellcheck code
-
-- [] Remove all console.logs
-
-- [] Clean database of testing results
-
-- [] Finish all documentation on Frontend README.md
-
-- [] Finish all documentation on Backend README.md
----
-
-## Testing
-
-### SPRINT 6 - Schedualed to be complete 31th of july 2023
-### Completed XXth July 2023 ✅ 
-
-- [ ] Test backend
-
-- [ ] Test Frontend
-
----
-
-[Back up](#table-of-content)
 
 ---
 
@@ -516,9 +416,21 @@ All bugs are documented as issues and are best to be seen in the project. [Link 
 
 ## Reusable Components
 
+Can be created and put in its own folder. These components can the be imported into your code
+and increase readability alot. You don't have to write the same code over and over again when for
+example showing something similiar on different pages. Below are examples in this project
+i used as components.
+
 - Avatar
 Used on all events, also used in the navbar. Very handy to just import and add to your 
-code instead of writing new code. 
+code instead of writing new code.  
+
+- Footer and NavBar
+Created once, write the code and then import it and then import it to App.js to then show on all pages.
+
+- Weather
+Shows the weather data for Stockholm and is imported and shown on several pages.
+
 
 ### Steps:
 

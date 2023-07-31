@@ -1,6 +1,7 @@
 import React from "react";
-import styles from "../styles/Avatar.module.css";
 
+// CSS Styles
+import styles from "../styles/Avatar.module.css";
 
 // Avatar for profile images
 const Avatar = ({ src, height = 45, text }) => {

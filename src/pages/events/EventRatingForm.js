@@ -1,13 +1,14 @@
+// React hooks
 import React, { useState } from "react";
 
 // Bootstrap
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
-import Button  from "react-bootstrap/Button";
+import Button from "react-bootstrap/Button";
 
 // Styles and CSS
 import btnStyles from "../../styles/Button.module.css";
-import styles from "../../styles/Modal.module.css"
+import styles from "../../styles/Modal.module.css";
 
 // rating library and Axios import
 import { Rating } from "react-simple-star-rating";
@@ -26,7 +27,6 @@ function EventRatingForm(props) {
   const [ownerRateModal, setOwnerRateModal] = useState(false);
   const currentUser = useCurrentUser();
 
-
   const handleRating = (rate) => {
     setRating(rate);
   };
@@ -36,11 +36,10 @@ function EventRatingForm(props) {
     e.preventDefault();
     try {
       const { data: ratingsData } = await axiosReq.get(`/ratings/`);
-  
+
       // check if the current user has already rated the event
       const userRating = ratingsData.results.find(
-        (rating) =>
-          rating.owner === currentUser?.username
+        (rating) => rating.owner === currentUser?.username
       );
 
       const isEventOwner = currentUser?.username === owner;
@@ -58,7 +57,6 @@ function EventRatingForm(props) {
         return;
       }
 
-  
       // Post new rating to database
       const { data } = await axiosRes.post("/ratings/", {
         event,
@@ -104,15 +102,19 @@ function EventRatingForm(props) {
       </Form>
       <Modal show={showModal} onHide={() => setShowModal(false)}>
         <Modal.Header closeButton>
-          <Modal.Title >Rating</Modal.Title>
+          <Modal.Title>Rating</Modal.Title>
         </Modal.Header>
 
         <Modal.Body>
-          <p className={styles.Psuccess}>Thank you, your rating has been registered.</p>
+          <p className={styles.Psuccess}>
+            Thank you, your rating has been registered.
+          </p>
         </Modal.Body>
 
         <Modal.Footer>
-          <Button variant="secondary" onClick={() => setNoRateModal(false)}>Close</Button>
+          <Button variant="secondary" onClick={() => setNoRateModal(false)}>
+            Close
+          </Button>
         </Modal.Footer>
       </Modal>
       <Modal show={noRateModal} onHide={() => setNoRateModal(false)}>
@@ -121,16 +123,21 @@ function EventRatingForm(props) {
         </Modal.Header>
 
         <Modal.Body>
-          <p>Sorry, it seems you have already rated this event, you can only rate a event once...</p>
+          <p>
+            Sorry, it seems you have already rated this event, you can only rate
+            a event once...
+          </p>
         </Modal.Body>
 
         <Modal.Footer>
-          <Button variant="secondary" onClick={() => setNoRateModal(false)}>Close</Button>
+          <Button variant="secondary" onClick={() => setNoRateModal(false)}>
+            Close
+          </Button>
         </Modal.Footer>
       </Modal>
       <Modal show={ownerRateModal} onHide={() => setOwnerRateModal(false)}>
         <Modal.Header closeButton>
-          <Modal.Title >Rating</Modal.Title>
+          <Modal.Title>Rating</Modal.Title>
         </Modal.Header>
 
         <Modal.Body>
@@ -138,7 +145,9 @@ function EventRatingForm(props) {
         </Modal.Body>
 
         <Modal.Footer>
-          <Button variant="secondary" onClick={() => setOwnerRateModal(false)}>Close</Button>
+          <Button variant="secondary" onClick={() => setOwnerRateModal(false)}>
+            Close
+          </Button>
         </Modal.Footer>
       </Modal>
     </>

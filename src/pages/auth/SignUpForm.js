@@ -1,3 +1,4 @@
+// React hooks
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 
@@ -6,10 +7,10 @@ import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 
+// Signup image
 import signupimage from "../../assets/signup-image.png";
 
 /* Signup page and form for the website */
-
 import {
   Form,
   Button,
@@ -23,7 +24,7 @@ import axios from "axios";
 import { useRedirect } from "../../hooks/useRedirect";
 
 const SignUpForm = () => {
-  useRedirect('loggedIn')
+  useRedirect("loggedIn");
   const [signUpData, setSignUpData] = useState({
     username: "",
     password1: "",
@@ -126,7 +127,9 @@ const SignUpForm = () => {
 
         <Container className={`mt-3 ${appStyles.Content}`}>
           <Link className={styles.Link} to="/signin">
-            <p>Already have an account? <span>Sign in</span></p>
+            <p>
+              Already have an account? <span>Sign in</span>
+            </p>
           </Link>
         </Container>
       </Col>
@@ -134,10 +137,7 @@ const SignUpForm = () => {
         md={6}
         className={`my-auto d-none d-md-block p-2 ${styles.SignUpCol}`}
       >
-        <Image
-          className={`${appStyles.FillerImage}`}
-          src={signupimage}
-        />
+        <Image className={`${appStyles.FillerImage}`} src={signupimage} />
       </Col>
     </Row>
   );

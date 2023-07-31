@@ -1,4 +1,6 @@
+// React hooks
 import React, { useEffect, useState } from "react";
+import { useHistory, useParams } from "react-router-dom";
 
 // Bootstrap
 import Alert from "react-bootstrap/Alert";
@@ -9,7 +11,6 @@ import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 
 // Contexts and Axios
-import { useHistory, useParams } from "react-router-dom";
 import { axiosRes } from "../../api/axiosDefaults";
 import {
   useCurrentUser,

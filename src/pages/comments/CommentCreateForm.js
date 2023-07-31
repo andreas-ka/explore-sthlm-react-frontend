@@ -1,3 +1,4 @@
+// React hooks
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -10,8 +11,9 @@ import Col from "react-bootstrap/Col";
 
 // Styles and css imports
 import styles from "../../styles/CommentForm.module.css";
-import btnStyles from "../../styles/Button.module.css"
+import btnStyles from "../../styles/Button.module.css";
 
+// Axios and avatar import
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
 
@@ -48,8 +50,8 @@ function CommentCreateForm(props) {
       setContent("");
     } catch (err) {
       // console.log(err);
-      if (err.response?.status !== 401){
-        setErrors(err.response?.data)
+      if (err.response?.status !== 401) {
+        setErrors(err.response?.data);
       }
     }
   };
@@ -93,6 +95,6 @@ function CommentCreateForm(props) {
       </Form>
     </>
   );
-};
+}
 
 export default CommentCreateForm;

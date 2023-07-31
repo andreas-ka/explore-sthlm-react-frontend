@@ -1,7 +1,10 @@
 import React from "react";
-import { Spinner } from "react-bootstrap";
-import styles from "../styles/Asset.module.css";
 
+// Bootstrap import
+import { Spinner } from "react-bootstrap";
+
+// Css styles
+import styles from "../styles/Asset.module.css";
 
 // Spinner asset for loading pages
 const Asset = ({ spinner, src, message }) => {

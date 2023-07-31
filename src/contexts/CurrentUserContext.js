@@ -1,3 +1,4 @@
+// React hooks
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import { useHistory } from "react-router";
 
@@ -8,7 +9,6 @@ import { axiosReq, axiosRes } from "../api/axiosDefaults";
 // JWT Tokens
 import { removeTokenTimestamp, shouldRefreshToken } from "../utils/utils";
 
-
 /* Create the context to get user and be passed globally */
 export const CurrentUserContext = createContext();
 export const SetCurrentUserContext = createContext();
@@ -16,9 +16,9 @@ export const SetCurrentUserContext = createContext();
 export const useCurrentUser = () => useContext(CurrentUserContext);
 export const useSetCurrentUser = () => useContext(SetCurrentUserContext);
 
-export const CurrentUserProvider = ({children}) => {
-    const [currentUser, setCurrentUser] = useState(null);
-    const history = useHistory();
+export const CurrentUserProvider = ({ children }) => {
+  const [currentUser, setCurrentUser] = useState(null);
+  const history = useHistory();
 
   /* Gets the user from the API */
   const handleMount = async () => {
@@ -59,7 +59,6 @@ export const CurrentUserProvider = ({children}) => {
         return Promise.reject(err);
       }
     );
-
 
     axiosRes.interceptors.response.use(
       (response) => response,

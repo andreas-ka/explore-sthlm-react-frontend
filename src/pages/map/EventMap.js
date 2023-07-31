@@ -1,18 +1,20 @@
+// React hooks
 import { useEffect, useState } from "react";
 
-//CSS
-import styles from "../../styles/MapContainer.module.css"
+// CSS styles
+import styles from "../../styles/MapContainer.module.css";
 
 // Bootstrap
 import Container from "react-bootstrap/Container";
 
+// Mapcontainer components and Axios
 import MapContainer from "../../components/MapContainer";
 import axios from "axios";
 
 // Library to convert adresses to coordinates
 import Geocode from "react-geocode";
 
-// Grabs all the events, order them by rating, highest at the top.
+// Fetch all event data and show the mapcontainer with the results
 
 const EventMap = () => {
   const [eventLocations, setEventLocations] = useState([]);
@@ -51,12 +53,50 @@ const EventMap = () => {
   return (
     <Container className="text-center">
       <>
-        <div className="p-5 text-center text-white"><h1>Showing all events on the map</h1></div>
-        <div className={styles.CenterMap}>
-        <MapContainer
-        eventLocations={eventLocations} />
+        <div className="p-3 text-center text-white">
+          <h1>Showing all events on the map</h1>
         </div>
-        
+        <div className="text-white">
+          <h3>Categories</h3>
+          <i
+            className="fa-solid fa-location-dot"
+            style={{ color: "#57A639" }}
+          ></i>{" "}
+          Family
+          <i
+            className="fa-solid fa-location-dot"
+            style={{ color: "#ffc0cb" }}
+          ></i>{" "}
+          Food & Drink
+          <i
+            className="fa-solid fa-location-dot"
+            style={{ color: "#3B83BD" }}
+          ></i>{" "}
+          Sightseeing
+          <i
+            className="fa-solid fa-location-dot"
+            style={{ color: "purple" }}
+          ></i>{" "}
+          Music
+          <i
+            className="fa-solid fa-location-dot"
+            style={{ color: "#E1CC4F" }}
+          ></i>{" "}
+          Sport
+          <i
+            className="fa-solid fa-location-dot"
+            style={{ color: "#FF7514" }}
+          ></i>{" "}
+          Culture
+          <i
+            className="fa-solid fa-location-dot"
+            style={{ color: "#B32428" }}
+          ></i>{" "}
+          Shopping
+        </div>
+        <div className={styles.CenterMap}>
+          <MapContainer eventLocations={eventLocations} />
+        </div>
       </>
     </Container>
   );

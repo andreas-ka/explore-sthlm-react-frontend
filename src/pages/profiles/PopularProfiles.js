@@ -1,3 +1,4 @@
+// React import
 import React from "react";
 
 // Bootstrap
@@ -24,8 +25,7 @@ const PopularProfiles = ({ mobile }) => {
           mobile && "d-lg-none text-center mt-5 mb-3"
         }`}
       >
-        <WeatherComponent
-      />
+        <WeatherComponent />
         {popularProfiles.results.length ? (
           <>
             <p>Most followed profiles.</p>

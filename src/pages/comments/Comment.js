@@ -1,9 +1,11 @@
+// React hooks
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 // Bootstrap components
 import { Media } from "react-bootstrap";
 
-import { Link } from "react-router-dom";
+// Avatar
 import Avatar from "../../components/Avatar";
 
 // Styles CSS

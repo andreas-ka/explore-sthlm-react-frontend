@@ -1,4 +1,6 @@
+// React hooks
 import React, { useEffect, useState } from "react";
+import { Link, useHistory } from "react-router-dom";
 
 // Styles and CSS
 import styles from "../../styles/Event.module.css";
@@ -12,9 +14,8 @@ import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 import ListGroup from "react-bootstrap/ListGroup";
 
-
+// Axios and avatar import
 import { axiosRes, axiosReq } from "../../api/axiosDefaults";
-import { Link, useHistory } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 
 // Context and component

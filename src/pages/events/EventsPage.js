@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router";
 
 // Bootstrap
 import Form from "react-bootstrap/Form";
@@ -11,7 +12,6 @@ import appStyles from "../../App.module.css";
 import styles from "../../styles/EventsPage.module.css";
 
 // Components, Contexts, Axios and other tools
-import { useLocation } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import Asset from "../../components/Asset";
 import NoResults from "../../assets/no-result.png";
@@ -41,7 +41,7 @@ function EventsPage({ message, filter = "" }) {
           `/events/?${filter}search=${query}&category=${category}`
         );
         setEvents(data);
-        console.log(data)
+        console.log(data);
         setHasLoaded(true);
       } catch (err) {
         // console.log(err);
@@ -101,10 +101,12 @@ function EventsPage({ message, filter = "" }) {
             {events.results.length ? (
               <InfiniteScroll
                 children={events.results.map((event) => (
-                  <Event key={event.id} {...event} 
-                  setEvents={setEvents}
-                  averageRating={event.averageRating}
-                   />
+                  <Event
+                    key={event.id}
+                    {...event}
+                    setEvents={setEvents}
+                    averageRating={event.averageRating}
+                  />
                 ))}
                 dataLength={events.results.length}
                 loader={<Asset />}

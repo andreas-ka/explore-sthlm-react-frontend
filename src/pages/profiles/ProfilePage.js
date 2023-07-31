@@ -1,4 +1,6 @@
+// React hooks
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router";
 
 // Bootstrap
 import Col from "react-bootstrap/Col";
@@ -14,14 +16,13 @@ import btnStyles from "../../styles/Button.module.css";
 
 // Contexts, Axios
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
-import { useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import {
   useProfileData,
   useSetProfileData,
 } from "../../contexts/ProfileDataContext";
 
-// Components
+// Components, Asset, infinitescroll, no result image.
 import Event from "../events/Event";
 import PopularProfiles from "./PopularProfiles";
 import Asset from "../../components/Asset";

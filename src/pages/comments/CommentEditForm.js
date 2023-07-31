@@ -1,8 +1,10 @@
+// React hooks
 import React, { useState } from "react";
 
 // Bootstrap components
 import Form from "react-bootstrap/Form";
 
+// Axios
 import { axiosRes } from "../../api/axiosDefaults";
 
 // Styles CSS
@@ -12,7 +14,6 @@ import styles from "../../styles/CommentCreateEditForm.module.css";
 
 function CommentEditForm(props) {
   const { id, content, setShowEditForm, setComments } = props;
-
   const [formContent, setFormContent] = useState(content);
 
   const handleChange = (event) => {
@@ -60,14 +61,14 @@ function CommentEditForm(props) {
           onClick={() => setShowEditForm(false)}
           type="button"
         >
-          cancel
+          Cancel
         </button>
         <button
           className={styles.Button}
           disabled={!content.trim()}
           type="submit"
         >
-          save
+          Save
         </button>
       </div>
     </Form>

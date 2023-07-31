@@ -1,4 +1,6 @@
+// React hooks
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router";
 
 // Bootstrap
 import Col from "react-bootstrap/Col";
@@ -17,7 +19,6 @@ import PopularProfiles from "../profiles/PopularProfiles";
 
 // Axios, user context and utils
 import { axiosReq } from "../../api/axiosDefaults";
-import { useParams } from "react-router";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
@@ -26,8 +27,6 @@ import Asset from "../../components/Asset";
 // Gets the event info, id and comments and passing it down as props
 
 function EventPage() {
-  
-
   const { id } = useParams();
   const [event, setEvent] = useState({ results: [] });
 
@@ -40,24 +39,17 @@ function EventPage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [
-          { data: event },
-          { data: comments },
-        ] = await Promise.all([
+        const [{ data: event }, { data: comments }] = await Promise.all([
           axiosReq.get(`/events/${id}`),
           axiosReq.get(`/comments/?event=${id}`),
         ]);
         setEvent({ results: [event] });
         setComments(comments);
-  
-      } catch (err) {
-      }
+      } catch (err) {}
     };
-  
+
     fetchData();
   }, [id]);
-
-
 
   const updateAverageRating = (newRating) => {
     // calculate the new average rating
@@ -68,16 +60,17 @@ function EventPage() {
     setAverageRating(newAverageRating);
   };
 
-
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <PopularProfiles mobile />
-        <Event {...event.results[0]} 
-        id={id}
-        setEvents={setEvent}
-        averageRating={averageRating.toFixed(2)}
-        eventPage />
+        <Event
+          {...event.results[0]}
+          id={id}
+          setEvents={setEvent}
+          averageRating={averageRating.toFixed(2)}
+          eventPage
+        />
         <Container className={`mb-3 ${appStyles.Content}`}>
           {currentUser && currentUser.profile_id ? (
             <EventRatingForm
@@ -92,7 +85,7 @@ function EventPage() {
               updateAverageRating={updateAverageRating}
             />
           ) : (
-            <div>Loading...</div>
+            <div>Create an account or login to rate the event...</div>
           )}
         </Container>
         <Container className={appStyles.Content}>

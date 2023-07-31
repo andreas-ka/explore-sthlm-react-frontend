@@ -1,3 +1,4 @@
+// React hooks
 import React, { useState, useEffect, useRef } from "react";
 import { useHistory, useParams } from "react-router-dom";
 
@@ -21,7 +22,7 @@ import {
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 
-// The profile edit form, grabs the profile id and info, 
+// The profile edit form, grabs the profile id and info,
 // let's you edit it and the submit again to the APi with the updated info
 
 const ProfileEditForm = () => {

@@ -4,21 +4,25 @@ import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
+
+// Asset logo
 import logo from "../assets/logo.png";
 
 // Styles and CSS
 import styles from "../styles/NavBar.module.css";
-import { NavLink } from "react-router-dom";
 
 // Contexts, JWT tokens, Axios, the Avatar component
+import { NavLink } from "react-router-dom";
 import {
   useCurrentUser,
   useSetCurrentUser,
 } from "../contexts/CurrentUserContext";
 import Avatar from "./Avatar";
 import axios from "axios";
-import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
 import { removeTokenTimestamp } from "../utils/utils";
+
+// Click outside hook
+import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
 
 const NavBar = () => {
   const currentUser = useCurrentUser();

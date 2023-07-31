@@ -1,14 +1,14 @@
+// React import
 import React from "react";
+import { Link } from "react-router-dom";
 
 // Styles and CSS
 import styles from "../../styles/Profile.module.css";
 import btnStyles from "../../styles/Button.module.css";
 
-// Contexts
+// Contexts and Avatar
 import { useSetProfileData } from "../../contexts/ProfileDataContext";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
-
-import { Link } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 
 // Bootstrap
