@@ -108,7 +108,7 @@ const EventCalendar = () => {
 
       setUserEvents(userEvents);
 
-      // Filter all event.id to match users attend.event
+      // filter all event.id to match users attend.event
       const myEvents = eventsData.filter((eventData) =>
         userEvents.some((userEvent) => userEvent.event === eventData.id)
       );
@@ -125,7 +125,7 @@ const EventCalendar = () => {
       <div className="text-center">
         <h1>Event Calendar</h1>
         <p className="text-white">
-          Show all events or the ones you are attending.
+          You need to be logged in to view your events you are attending.
         </p>
         <Button
           className={`${btnStyles.BtnCalendar} m-2`}

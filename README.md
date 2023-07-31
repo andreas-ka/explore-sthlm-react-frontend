@@ -15,7 +15,8 @@ View live website here: LINK
 
 ---
 
-Am i responsive image 
+### Am i responsive image 
+![Screenshot](/src/images/am_i_responsive.png)
 
 ---
 
@@ -47,6 +48,7 @@ Am i responsive image
     - [Ratings](#ratings-data)
     - [Categories](#categories)
     - [Footer](#footer)
+    - [Future](#future-features)
 - [Structure](#structure)
     - [Database](#database)
     - [Wireframe](#wireframes)
@@ -206,7 +208,7 @@ Feed page if user follow other users:
 - Starting page that includes many features, it shows the weather, a search bar and a selector for categories.
 The events are all shown in column and uses infinite scroll to load on demand. It also shows statistics for the event, 
 how many comments it has, what rating and lets you as a registered user click the attend button to show that you are
-attending the event.   
+attending the event. All events also shows the events category with its own color on the event image.   
 ![Screenshot](src/images/homepage_event.png)     
 
 ### Create Event form
@@ -273,6 +275,11 @@ Categories displaying in the dropdown.
 ![Screenshot](src/images/footer_readme.png) 
 
 
+## Future features
+- Add click function to popup on the map so you get to the event detail.   
+- Auto update rating when submitting a new one instead of the need to refresh page.   
+- Add a own review page for events, model already in place on backend.
+- Would like to have the option to add more images on events.
 ---
 
 ### Structure
@@ -311,7 +318,10 @@ Categories displaying in the dropdown.
 
 #### Colour
 
-![screenshot](src/assets/color-palette.png)
+![screenshot](src/assets/color-palette.png)    
+
+Categories palette.   
+![Screenshot](src/images/category_colors.png)      
 
 #### Fonts and Typography
 
@@ -401,7 +411,6 @@ Iteration [3](https://github.com/users/andreas-ka/projects/17)
 Iteration [4](https://github.com/users/andreas-ka/projects/18)     
 Iteration [5](https://github.com/users/andreas-ka/projects/19)    
 Iteration [6](https://github.com/users/andreas-ka/projects/20)     
-
 
 ---
 
