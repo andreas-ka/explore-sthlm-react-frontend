@@ -40,7 +40,10 @@ function EventRatingForm(props) {
       // check if user has already rated and to compare event with id i
       // convert id to integer
       const userRating = ratingsData.results.find((rating) => {
-        return rating.owner === currentUser?.username && rating.event === parseInt(id, 10);
+        return (
+          rating.owner === currentUser?.username &&
+          rating.event === parseInt(id, 10)
+        );
       });
 
       // if the current user has already rated the event

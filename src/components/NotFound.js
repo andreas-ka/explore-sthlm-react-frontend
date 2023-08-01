@@ -1,7 +1,7 @@
 import React from "react";
 
 // Import the no result image
-import NoResult from "../assets/no-result.png";
+import NoResult from "../assets/not_found.webp";
 
 // Css styles
 import styles from "../styles/NotFound.module.css";
@@ -14,8 +14,8 @@ const NotFound = () => {
   return (
     <div className={styles.NotFound}>
       <Asset
+      message={`Sorry, the page you're looking for doesn't seem to exist`}
         src={NoResult}
-        message={`Sorry, the page you're looking for doesn't seem to exist`}
       />
     </div>
   );

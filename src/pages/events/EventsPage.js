@@ -41,7 +41,6 @@ function EventsPage({ message, filter = "" }) {
           `/events/?${filter}search=${query}&category=${category}`
         );
         setEvents(data);
-        console.log(data);
         setHasLoaded(true);
       } catch (err) {
         // console.log(err);

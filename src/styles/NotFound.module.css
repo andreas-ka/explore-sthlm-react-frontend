@@ -1,3 +1,9 @@
 .NotFound {
-    margin-top: 25vh;
+    margin-top: 5vh;
+    color: #FFF;
   }
+
+.NotFound img {
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.3);
+  border-radius: 4px;
+}

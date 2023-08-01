@@ -419,6 +419,8 @@ Iteration [2](https://github.com/users/andreas-ka/projects/15)
 Iteration [3](https://github.com/users/andreas-ka/projects/17)    
 Iteration [4](https://github.com/users/andreas-ka/projects/18)     
 Iteration [5](https://github.com/users/andreas-ka/projects/19)    
+
+- Testing and deployment.   
 Iteration [6](https://github.com/users/andreas-ka/projects/20)     
 
 ---
