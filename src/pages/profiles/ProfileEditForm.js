@@ -121,7 +121,9 @@ const ProfileEditForm = () => {
   );
 
   return (
+    
     <Form onSubmit={handleSubmit}>
+      <div className="text-white text-center"><h2>Edit you profile</h2></div>
       <Row>
         <Col className="py-2 p-0 p-md-2 text-center" md={7} lg={6}>
           <Container className={appStyles.Content}>

@@ -477,8 +477,11 @@ Shows the weather data for Stockholm and is imported and shown on several pages.
 ## Testing
 
 Lighthouse
+- Lighthouse scores are in my TESTING.md that can be found [here](TESTING.md). 
 
-CSS validator
+CSS validator.   
+![screenshot](src/images/css_validator.png)
+
 
 Eslint
 

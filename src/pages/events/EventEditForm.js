@@ -251,13 +251,13 @@ function EventEditForm() {
         className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Bright}`}
         onClick={() => history.goBack()}
       >
-        cancel
+        Cancel
       </Button>
       <Button
         className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Bright}`}
         type="submit"
       >
-        update
+        Update
       </Button>
       {errors.non_field_errors?.map((message, idx) => (
         <Alert variant="warning" className="mt-3" key={idx}>
@@ -269,6 +269,7 @@ function EventEditForm() {
 
   return (
     <Form onSubmit={handleSubmit}>
+      <div className="text-white text-center"><h2>Edit {title}</h2></div>
       <Row>
         <Col className="py-2 p-0 p-md-2" md={7} lg={8}>
           <Container
