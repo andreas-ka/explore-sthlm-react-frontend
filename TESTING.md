@@ -60,3 +60,11 @@ Example from that file below:
 ![Screenshot](/src/images/mobile_signup.png)     
 - Signup Desktop.   
 ![Screenshot](/src/images/desktop_signup.png)     
+
+
+### Wave tool used to check for contrast and accessibility on the website.  
+- I note the errors and warnings, many of them are design choices where i think the contrast i good enough.   
+![Screenshot](/src/images/wave_calendar.png)  
+![Screenshot](/src/images/wave_event_detail.png)  
+![Screenshot](/src/images/wave_eventmap.png)  
+![Screenshot](/src/images/wave_homepage.png)  

@@ -277,7 +277,29 @@ can easily find the particular event categories they want.
 
 ### Footer
 - I wanted to have footer so the users can easily come in contact with the site owner(me).    
-![Screenshot](src/images/footer_readme.png) 
+![Screenshot](src/images/footer_readme.png)    
+
+### User interaction / information popups.   
+- Shows if you try to rate same event more then once.   
+![Screenshot](src/images/rating_not_rate_again.png)     
+
+- Shows if you try to rate your own event.    
+![Screenshot](src/images/rating_cant_rate_own_event.png)   
+
+- If you successfully submit a rating.   
+![Screenshot](src/images/rating_success.png)       
+
+- If username already exists.   
+![Screenshot](src/images/signup_taken_username.png)    
+
+- If Password dont match when signing up.   
+![Screenshot](src/images/signup_password_nomatch.png)    
+
+- Shows if the password you have chosen is to common or not safe to use.   
+![Screenshot](src/images/signup_password_to_common.png)   
+
+- Shows on Sign in if password or username is wrong.   
+![Screenshot](src/images/signin_wrong_password.png)    
 
 
 ## Future features
@@ -511,13 +533,13 @@ To view the manual testing details and results, please [click here](TESTING.md).
 
 ## Libraries
 
-[React Router dom 5.3](https://reactrouter.com/en/main)
+[React Router dom 5.3](https://reactrouter.com/en/main) Is used to manipulate the DOM outside of a specific component.
 
 [Eslint](https://eslint.org/)
 
 [Prettier](https://prettier.io/) Syntax formatter
 
-[Axios](https://www.npmjs.com/package/axios) Used to get, post and delete data from the API
+[Axios](https://www.npmjs.com/package/axios) Used to get, post and delete data from the API.
 
 [React-infinite-scroll](https://www.npmjs.com/package/react-infinite-scroll-component) Adds infinite scroll to site, so when you scroll to bottom it loads the next events/comments on demand instead of loading all of them direct.
 
@@ -610,7 +632,7 @@ The website was deployed using Heroku by following these steps:
 
 - Fix dependencies error when deploying [Link](https://stackoverflow.com/questions/64573177/unable-to-resolve-dependency-tree-error-when-installing-npm-packages)
 
-#### Google Maps setup
+##### Google Maps setup
 - This was alot harder than i previous thought, thanks to my friend Stefan for helping with setting up the whole fetching data
 and passing it to the EventMap.
 - Setup google maps for react [guide](https://medium.com/scalereal/integration-of-google-maps-with-react-part-1-86c075ab452a)      
