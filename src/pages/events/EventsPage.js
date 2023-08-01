@@ -71,7 +71,7 @@ function EventsPage({ message, filter = "" }) {
             onChange={(event) => setQuery(event.target.value)}
             type="text"
             className="mr-sm-2"
-            placeholder="Search events"
+            placeholder="Search events by title, username"
           />
           <Form.Control
             className={styles.formmargin}
