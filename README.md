@@ -427,6 +427,13 @@ Iteration [6](https://github.com/users/andreas-ka/projects/20)
 
 All bugs are documented as issues and are best to be seen in the project. [Link Here](https://github.com/users/andreas-ka/projects/12)
 
+- Notes regarding bug [42](https://github.com/andreas-ka/explore-sthlm-react-frontend/issues/42)
+When using react and installing libraries with old version that might conflict with dependencies it's common that during deployment to heroku it fails. This dosen't mean that the libraries are wrong and wont operate correctly. To fix this issue i had to google alot and learned from different posts on stackoverflow that you can set NPM_CONFIG_LEGACY_PEER_DEPS = true. This means it's overriding the errors and install the packages anyway. 
+For more information see these posts on stackoverflow:    
+[What does npm install --legacy-peer-deps do exactly?](https://stackoverflow.com/questions/66239691/what-does-npm-install-legacy-peer-deps-do-exactly-when-is-it-recommended-wh)    
+[Heroku not deploying build due to dependency issue](https://stackoverflow.com/questions/72490093/heroku-not-deploying-build-due-to-dependency-issue)    
+[how can I install with tag "legacy-peer-deps" on heroku](https://stackoverflow.com/questions/74236185/how-can-i-install-with-tag-legacy-peer-deps-on-heroku)
+
 
 [Back up](#table-of-content)
 
@@ -620,7 +627,9 @@ and passing it to the EventMap.
 
 - Show / Hide div [stackoverflow](https://stackoverflow.com/questions/67088602/how-to-hide-div-on-click-in-react)
 
-- How to use Some in JavaScript [w3schools](https://www.w3schools.com/jsref/jsref_some.asp) and [javascripttutorial.net](https://www.javascripttutorial.net/javascript-array-some/)
+- How to use Some in JavaScript [w3schools](https://www.w3schools.com/jsref/jsref_some.asp) and [javascripttutorial.net](https://www.javascripttutorial.net/javascript-array-some/)     
+
+- [Stackoverflow](https://stackoverflow.com/questions/16880327/why-am-i-getting-weird-result-using-parseint-in-node-js-different-result-from) post about parseInt and how to solve it to show the correct number when i had to compare 
 
 
 [Back up](#table-of-content)

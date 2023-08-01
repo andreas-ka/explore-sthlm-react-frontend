@@ -26,6 +26,7 @@ function EventRatingForm(props) {
   const [noRateModal, setNoRateModal] = useState(false);
   const [ownerRateModal, setOwnerRateModal] = useState(false);
   const currentUser = useCurrentUser();
+  const is_owner = currentUser?.username === owner;
 
   const handleRating = (rate) => {
     setRating(rate);
@@ -36,13 +37,11 @@ function EventRatingForm(props) {
     e.preventDefault();
     try {
       const { data: ratingsData } = await axiosReq.get(`/ratings/`);
-
-      // check if the current user has already rated the event
-      const userRating = ratingsData.results.find(
-        (rating) => rating.owner === currentUser?.username
-      );
-
-      const isEventOwner = currentUser?.username === owner;
+      // check if user has already rated and to compare event with id i
+      // convert id to integer
+      const userRating = ratingsData.results.find((rating) => {
+        return rating.owner === currentUser?.username && rating.event === parseInt(id, 10);
+      });
 
       // if the current user has already rated the event
       if (userRating) {
@@ -51,7 +50,7 @@ function EventRatingForm(props) {
         return;
       }
 
-      if (isEventOwner) {
+      if (is_owner) {
         setOwnerRateModal(true);
         setTimeout(() => setOwnerRateModal(false), 3000);
         return;
@@ -141,7 +140,7 @@ function EventRatingForm(props) {
         </Modal.Header>
 
         <Modal.Body>
-          <p>Sorry, you can't rate your won event.</p>
+          <p>Sorry, you can't rate your own event.</p>
         </Modal.Body>
 
         <Modal.Footer>
