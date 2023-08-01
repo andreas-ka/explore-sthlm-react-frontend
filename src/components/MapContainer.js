@@ -54,7 +54,8 @@ const MapContainer = ({ eventLocations }) => {
           center={center}
           zoom={11}
         >
-          {/* map the location location data, and add marker to each adress */}
+          {/* map the location location data, and add marker to each adress
+          also set the infowindow to display information when marker clicked */}
           {eventLocations.map((locationData, index) => (
             <Marker
               key={index}

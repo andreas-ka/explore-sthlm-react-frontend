@@ -58,7 +58,7 @@ function EventRatingForm(props) {
       }
 
       // Post new rating to database
-      const { data } = await axiosRes.post("/ratings/", {
+      await axiosRes.post("/ratings/", {
         event,
         rating,
       });

@@ -270,6 +270,11 @@ Category selector.
 Categories displaying in the dropdown.    
 ![Screenshot](src/images/categories_shown.png)  
 
+### Event Map
+- Shows all events on a google map, markers are shown in the categories colors so users
+can easily find the particular event categories they want.   
+![screenshot](src/images/map_detail.png)
+
 ### Footer
 - I wanted to have footer so the users can easily come in contact with the site owner(me).    
 ![Screenshot](src/images/footer_readme.png) 
@@ -280,6 +285,7 @@ Categories displaying in the dropdown.
 - Auto update rating when submitting a new one instead of the need to refresh page.   
 - Add a own review page for events, model already in place on backend.
 - Would like to have the option to add more images on events.
+- Implement so when events end date has passed they get archived and not show up and clutter the website.
 ---
 
 ### Structure
@@ -309,6 +315,9 @@ Categories displaying in the dropdown.
 
 #### Profile.     
 ![Screenshot](src/images/Wireframe_profile.png)  
+
+#### Map.     
+![Screenshot](src/images/Wireframe_map.png)  
 
 
 
@@ -494,15 +503,15 @@ To view the manual testing details and results, please [click here](TESTING.md).
 
 [Eslint](https://eslint.org/)
 
-[Prettier](https://prettier.io/)
+[Prettier](https://prettier.io/) Syntax formatter
 
-[Axios](https://www.npmjs.com/package/axios)
+[Axios](https://www.npmjs.com/package/axios) Used to get, post and delete data from the API
 
-[React-infinite-scroll](https://www.npmjs.com/package/react-infinite-scroll-component)
+[React-infinite-scroll](https://www.npmjs.com/package/react-infinite-scroll-component) Adds infinite scroll to site, so when you scroll to bottom it loads the next events/comments on demand instead of loading all of them direct.
 
-[react-star-rating](https://www.npmjs.com/package/react-star-ratings)
+[react-star-rating](https://www.npmjs.com/package/react-star-ratings) To add the stars rating to the website.   
 
-[react-awesome-calendar](https://www.npmjs.com/package/react-awesome-calendar)
+[react-awesome-calendar](https://www.npmjs.com/package/react-awesome-calendar) Used for my event calendar.
 
 [React Open Weather](https://www.npmjs.com/package/react-open-weather) with OpenWeather API,
 i have done research about hiding API key in react and i make a note that using an env file in the frontend
@@ -510,6 +519,7 @@ is not really the best option, it leaves it vunerable but after talking to my me
 fine for this project. The Weather API key has 60 calls / minute.
 
 [react-geocode](https://www.npmjs.com/package/react-geocode) To make adress into coordinates
+
 ---
 
 ## Deployment

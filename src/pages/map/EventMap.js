@@ -54,7 +54,7 @@ const EventMap = () => {
     <Container className="text-center">
       <>
         <div className="p-3 text-center text-white">
-          <h1>Showing all events on the map</h1>
+          <h1>Event Map</h1>
         </div>
         <div className="text-white">
           <h3>Categories</h3>
