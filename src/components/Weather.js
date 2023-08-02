@@ -34,7 +34,6 @@ const WeatherComponent = () => {
     lang: "en",
     unit: "metric",
   });
-  
 
   return (
     <ReactWeather
