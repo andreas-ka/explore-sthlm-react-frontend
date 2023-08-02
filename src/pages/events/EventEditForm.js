@@ -118,7 +118,7 @@ function EventEditForm() {
       formData.append("image", imageInput.current.files[0]);
     }
     try {
-      await axiosReq.put(`/events/${id}`, formData);
+      await axiosReq.put(`/events/${id}/`, formData);
       history.push(`/events/${id}`);
     } catch (err) {
       if (err.response?.status !== 401) {
