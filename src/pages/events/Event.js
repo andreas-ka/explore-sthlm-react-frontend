@@ -78,6 +78,7 @@ const Event = (props) => {
   };
 
   useEffect(() => {
+    // fetch all ratings data from the API
     const fetchData = async () => {
       try {
         const [

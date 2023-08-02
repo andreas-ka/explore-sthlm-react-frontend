@@ -48,7 +48,8 @@ View live website here: [Explore Sthlm](https://explore-sthlm-react-frontend-8d2
     - [Ratings](#ratings-data)
     - [Categories](#categories)
     - [Footer](#footer)
-    - [Future](#future-features)
+    - [User features](#user-interaction--information-popups)
+    - [Future features](#future-features)
 - [Structure](#structure)
     - [Database](#database)
     - [Wireframe](#wireframes)
@@ -374,6 +375,8 @@ Categories palette.
 
 - Python
 
+- Javascript
+
 ### Frameworks
 
 - Django: A high-level Python web framework used for building the Recipe Collective website.
@@ -403,8 +406,6 @@ Categories palette.
 - Google Fonts: A collection of free and open-source fonts used for typography on the Recipe Collective website.
 
 - Font Awesome: A library of icons used for adding scalable vector icons to the Recipe Collective website.
-
-### Supporting Libraries and Packages
 
 [Back up](#table-of-content)
 
@@ -507,14 +508,18 @@ CSS validator.
 ![screenshot](src/images/css_validator.png)
 
 
-Eslint
+Eslint.   
 - Used Eslint for this project, i still get some errors but will ignore these due to the fact that they
 are similiar code as "moments" tutorial and is the way i learned troughout the course.
 I have set /* eslint-disable */ in the files where these errors occur.
-Below is a image of the most common error.
-![screenshot](src/images/eslint_errors.png)
+Below is a image of the most common error.    
+![screenshot](src/images/eslint_errors.png)     
 
-Code validation JSX
+Responsiveness.   
+- Tested on a mackbook pro, 37" widescreen. 
+
+- On mobile devices in particular apple products the sign in function dont work unless you go to
+settings - safari - remove "Prevent Corss-Site Tracking"
 
 To view the manual testing details and results, please [click here](TESTING.md). 
 
@@ -559,8 +564,11 @@ i have done research about hiding API key in react and i make a note that using 
 is not really the best option, it leaves it vunerable but after talking to my mentor she said it would be
 fine for this project. The Weather API key has 60 calls / minute.
 
-[react-geocode](https://www.npmjs.com/package/react-geocode) To make adress into coordinates
+[react-geocode](https://www.npmjs.com/package/react-geocode) To make adress into coordinates.   
 
+[react-google-maps](https://www.npmjs.com/package/react-google-maps) To show the map and it's function on the website.
+
+- Regarding Open weather and the use of Google maps i have hide the API keys in my env file, i now that's not the properly way to do things, tried to set them on the backend but that will be a future feature. My mentor told me this is fine for this project.
 ---
 
 ## Deployment
@@ -665,7 +673,7 @@ The website was deployed using Heroku by following these steps:
 
 - Fix dependencies error when deploying [Link](https://stackoverflow.com/questions/64573177/unable-to-resolve-dependency-tree-error-when-installing-npm-packages)
 
-##### Google Maps setup
+Google Maps setup.   
 - This was alot harder than i previous thought, thanks to my friend Stefan for helping with setting up the whole fetching data
 and passing it to the EventMap.
 - Setup google maps for react [guide](https://medium.com/scalereal/integration-of-google-maps-with-react-part-1-86c075ab452a)      
@@ -697,7 +705,7 @@ and passing it to the EventMap.
 ## Acknowledgements
 - My awesome wife Sandra, a copywriter by profession, helped me with the Objective text.
 - *HUGE* credit to Code Institute and their tutorial on how to build the Moments app, loads of code from that.
-- My Mentor @CluelessBiker for awesome support and feedback.
-- My good friend Stefan, a senior developer for advice and tips
+- My Mentor @CluelessBiker for awesome support and feedback, and not only for this project troughout my whole course!
+- My good friend Stefan, a senior developer for advice and tips. 
 
 [Back to Top](#top)

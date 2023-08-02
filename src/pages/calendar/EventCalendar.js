@@ -46,6 +46,7 @@ const EventCalendar = () => {
     fetchEventData();
   }, []);
 
+  // Colors set for the categories.
   const categoryColorMap = {
     Family: "#57A639", // green
     Music: "purple", // purple
@@ -97,6 +98,7 @@ const EventCalendar = () => {
     }
 
     try {
+      // Get all events the currentuser has clicked attend on
       const { data } = await axiosRes.get(`/attend/`);
       const userEvents = data.results
         .filter((attend) => attend.owner === currentUser.username)

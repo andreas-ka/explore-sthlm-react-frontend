@@ -22,6 +22,7 @@ function CommentEditForm(props) {
   };
 
   const handleSubmit = async (event) => {
+    // handles the edit submit comment form
     event.preventDefault();
     try {
       await axiosRes.put(`/comments/${id}/`, {

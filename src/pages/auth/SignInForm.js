@@ -48,6 +48,7 @@ function SignInForm() {
   };
 
   const handleSubmit = async (event) => {
+    // Send signin data to API
     event.preventDefault();
     try {
       const { data } = await axios.post("/dj-rest-auth/login/", signInData);

@@ -40,6 +40,7 @@ const Comment = (props) => {
   const is_owner = currentUser?.username === owner;
 
   const handleDelete = async () => {
+    // delete the comment
     try {
       await axiosRes.delete(`/comments/${id}/`);
       setPost((prevPost) => ({

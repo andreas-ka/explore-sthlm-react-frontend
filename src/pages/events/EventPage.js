@@ -38,6 +38,7 @@ function EventPage() {
   const owner = event.results[0]?.owner;
 
   useEffect(() => {
+    // fetch both event and comment data from the API
     const fetchData = async () => {
       try {
         const [{ data: event }, { data: comments }] = await Promise.all([

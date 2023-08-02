@@ -29,7 +29,7 @@ function CommentCreateForm(props) {
     setContent(event.target.value);
   };
 
-  // Submit form function
+  // Submit comment form 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {

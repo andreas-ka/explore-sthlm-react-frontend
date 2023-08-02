@@ -44,6 +44,7 @@ const SignUpForm = () => {
   };
 
   const handleSubmit = async (event) => {
+    // send the signup data to the API and redirect to signin
     event.preventDefault();
     try {
       await axios.post("/dj-rest-auth/registration/", signUpData);

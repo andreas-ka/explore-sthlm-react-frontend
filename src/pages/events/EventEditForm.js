@@ -50,6 +50,7 @@ function EventEditForm() {
   const { id } = useParams();
 
   useEffect(() => {
+    // get the event from the API and set it to the data variable
     const handleMount = async () => {
       try {
         const { data } = await axiosReq.get(`/events/${id}/`);
@@ -93,6 +94,7 @@ function EventEditForm() {
   };
 
   const handleChangeImage = (event) => {
+    // If user wants to change the event image
     if (event.target.files.length) {
       URL.revokeObjectURL(image);
       setEventData({

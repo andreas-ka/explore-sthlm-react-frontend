@@ -25,13 +25,16 @@ const WeatherComponent = () => {
     forecastIconColor: "#ff851c",
   };
 
+ 
+
   const { data, isLoading, errorMessage } = useOpenWeather({
-    key: "7b5f855dea5801df1df9469b143c0742",
+    key: process.env.REACT_APP_WEATHER_API_KEY,
     lat: "57.64188017795392",
     lon: "18.292565198468033",
     lang: "en",
     unit: "metric",
   });
+  
 
   return (
     <ReactWeather
