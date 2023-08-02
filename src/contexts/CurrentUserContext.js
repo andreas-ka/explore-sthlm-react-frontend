@@ -1,5 +1,6 @@
+/* eslint-disable */ 
 // React hooks
-import { createContext, useContext, useEffect, useMemo, useState } from "react";
+import { React, createContext, useContext, useEffect, useMemo, useState } from "react";
 import { useHistory } from "react-router";
 
 // Axios

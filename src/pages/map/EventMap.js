@@ -1,5 +1,5 @@
 // React hooks
-import { useEffect, useState } from "react";
+import { React, useEffect, useState } from "react";
 
 // CSS styles
 import styles from "../../styles/MapContainer.module.css";

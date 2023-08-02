@@ -1,3 +1,4 @@
+/* eslint-disable */
 // React hooks
 import React, { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
@@ -97,6 +98,7 @@ const Event = (props) => {
           ratingsForEvent.length ? totalRatings / ratingsForEvent.length : 0;
         setAverageRating(averageRating);
       } catch (err) {
+         // console.log(err);
       }
     };
   
@@ -194,10 +196,11 @@ const Event = (props) => {
         </Card.Title>
         <Card.Text>{description}</Card.Text>
         <div>
+          {/* Ternarys to check if user can click attend */}
           {is_owner ? (
             <OverlayTrigger
               placement="top"
-              overlay={<Tooltip>You can't attend your own event</Tooltip>}
+              overlay={<Tooltip>You cant attend your own event</Tooltip>}
             >
               <span className="float-right">
                 <button

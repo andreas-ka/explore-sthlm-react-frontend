@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 // React hooks
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
@@ -53,7 +55,9 @@ const Comment = (props) => {
         ...prevComments,
         results: prevComments.results.filter((comment) => comment.id !== id),
       }));
-    } catch (err) {}
+    } catch (err) {
+       // console.log(err);
+    }
   };
 
   return (

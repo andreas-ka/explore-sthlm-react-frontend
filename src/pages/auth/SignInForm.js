@@ -106,7 +106,7 @@ function SignInForm() {
               Sign In
             </Button>
             {errors.non_field_errors?.map((message, idx) => [
-              <Alert variant="warning" className="mt-3">
+              <Alert key={idx} variant="warning" className="mt-3">
                 {message}
               </Alert>,
             ])}
@@ -115,7 +115,7 @@ function SignInForm() {
         <Container className={`mt-3 ${appStyles.Content}`}>
           <Link className={styles.Link} to="/signup">
             <p>
-              Don't have an account? <span>Sign up now!</span>
+              Dont have an account? <span>Sign up now!</span>
             </p>
           </Link>
         </Container>

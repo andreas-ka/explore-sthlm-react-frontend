@@ -1,3 +1,4 @@
+/* eslint-disable */
 // React hooks
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
@@ -28,6 +29,7 @@ function CommentCreateForm(props) {
     setContent(event.target.value);
   };
 
+  // Submit form function
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {

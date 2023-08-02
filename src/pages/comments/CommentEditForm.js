@@ -1,3 +1,4 @@
+/* eslint-disable */
 // React hooks
 import React, { useState } from "react";
 

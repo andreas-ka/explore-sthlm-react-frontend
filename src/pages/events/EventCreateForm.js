@@ -216,13 +216,13 @@ function EventCreateForm() {
         className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Bright}`}
         onClick={() => history.goBack()}
       >
-        cancel
+        Cancel
       </Button>
       <Button
         className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Bright}`}
         type="submit"
       >
-        create
+        Create
       </Button>
       {errors.non_field_errors?.map((message, idx) => (
         <Alert variant="warning" className="mt-3" key={idx}>
@@ -273,6 +273,11 @@ function EventCreateForm() {
                 ref={imageInput}
               />
             </Form.Group>
+            {errors?.image?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
             <div className="d-md-none">{textFields}</div>
           </Container>
         </Col>

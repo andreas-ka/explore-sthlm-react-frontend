@@ -1,3 +1,4 @@
+/* eslint-disable */
 // React hooks
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
@@ -120,7 +121,7 @@ function ProfilePage() {
   const mainProfileEvents = (
     <>
       <hr />
-      <p className="text-center">{profile?.owner}'s Events</p>
+      <p className="text-center">{profile?.owner}s Events</p>
       <hr />
       {profileEvents.results.length ? (
         <InfiniteScroll

@@ -140,6 +140,7 @@ const EventCalendar = () => {
           My Events
         </Button>
       </div>
+      {/* Ternary to display user events if they any, else show all events */}
       {showUserEvents ? (
         <div className={styles.Calendar}>
           <Calendar

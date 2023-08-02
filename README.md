@@ -11,7 +11,7 @@ This project has it's own backend API. Here is a link to the repository for [Exp
 
 Live website
 
-View live website here: LINK
+View live website here: [Explore Sthlm](https://explore-sthlm-react-frontend-8d2a7c7c328e.herokuapp.com/)
 
 ---
 
@@ -356,6 +356,10 @@ Categories palette.
 
 #### Fonts and Typography
 
+- Roboto font used on site, fall back font is sans-serif. Example of Roboto font from
+[m1.material](https://m1.material.io/style/typography.html#)     
+![screenshot](src/images/roboto_font.png)
+
 [Back up](#table-of-content)
 
 ---
@@ -364,13 +368,11 @@ Categories palette.
 
 ### Languages
 
-- HTML
+- HTML / JSX (JavaScript XML)
 
 - CSS
 
 - Python
-
-- JSX (JavaScript XML)
 
 ### Frameworks
 
@@ -506,6 +508,11 @@ CSS validator.
 
 
 Eslint
+- Used Eslint for this project, i still get some errors but will ignore these due to the fact that they
+are similiar code as "moments" tutorial and is the way i learned troughout the course.
+I have set /* eslint-disable */ in the files where these errors occur.
+Below is a image of the most common error.
+![screenshot](src/images/eslint_errors.png)
 
 Code validation JSX
 
@@ -611,6 +618,32 @@ The website was deployed using Heroku by following these steps:
 ## Credits
 
 ### Media
+
+- MS Freja tour event [image](https://www.visitstockholm.com/see-do/attractions/boat-sightseeing/)
+
+- Lasse maja Parken image is from Huddinge Kommuns [website](https://www.huddinge.se/organisation-och-styrning/sa-arbetar-vi-med/stipendier-och-priser/huddinges-byggnadspris/huddinges-byggnadspris-2020/nominering-1/)
+
+- Gröna lund event [image](https://stockholmtravelguide.com/grona-lund/)
+
+- Skansen event image from [omni](https://omni.se/akvariet-pa-skansen-byggs-om-efter-krokodilattacken/a/BRBPLl)
+
+- Vasa Museum dinner event from their [website](https://www.vasamuseetsrestaurang.se/fest-pa-museet/)
+
+- Hötorget fleemarket image from this [site](https://www.visitstockholm.se/o/hotorgets-loppmarknad/)
+
+- Summer Cinema image from this [site](https://www.mynewsdesk.com/se/stockholms_filmfestival/pressreleases/publikrekord-och-filmfest-sommarbio-summerar-3198759)
+
+- Street food festival image from their [website](https://streetfoodfestivalen.se/)
+
+- Elvis Costello image from People [Magazine](https://people.com/music/elvis-costello-releases-the-boy-named-if-exclusive-interview/)
+
+- Tele2 Arena image from it's [wikipedia](https://en.wikipedia.org/wiki/Tele2_Arena)
+
+- Kungliga Tennishallen image from [Fijen.se](https://www.fijen.se/wordpress/2014/09/23/kungliga-tennishallen-in-stockholm/)
+
+- Swedish Nationalmuseum image from their [homepage](https://www.nationalmuseum.se/)
+
+- Pippi image on the event from [pippicurkus.se](https://pippicirkus.se/)
 
 - Upload image from [flaticon](https://www.flaticon.com/free-icon/upload_126477)
 

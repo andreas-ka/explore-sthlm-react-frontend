@@ -1,7 +1,6 @@
 // React hooks
 import React, { useRef, useState, useEffect } from "react";
-import { useHistory } from "react-router";
-import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+import { useHistory, useParams } from "react-router";
 
 // Bootstrap
 import Form from "react-bootstrap/Form";
@@ -10,7 +9,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Alert from "react-bootstrap/Alert";
-import { Image } from "react-bootstrap";
+import Image from "react-bootstrap/Image";
 
 // Styles and CSS
 import styles from "../../styles/EventCreateEditForm.module.css";
@@ -259,17 +258,14 @@ function EventEditForm() {
       >
         Update
       </Button>
-      {errors.non_field_errors?.map((message, idx) => (
-        <Alert variant="warning" className="mt-3" key={idx}>
-          {message}{" "}
-        </Alert>
-      ))}
     </div>
   );
 
   return (
     <Form onSubmit={handleSubmit}>
-      <div className="text-white text-center"><h2>Edit {title}</h2></div>
+      <div className="text-white text-center">
+        <h2>Edit {title}</h2>
+      </div>
       <Row>
         <Col className="py-2 p-0 p-md-2" md={7} lg={8}>
           <Container
@@ -295,6 +291,11 @@ function EventEditForm() {
                 ref={imageInput}
               />
             </Form.Group>
+            {errors?.image?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
             <div className="d-md-none">{textFields}</div>
           </Container>
         </Col>

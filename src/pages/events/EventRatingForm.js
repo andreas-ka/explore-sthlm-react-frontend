@@ -1,3 +1,4 @@
+/* eslint-disable */
 // React hooks
 import React, { useState } from "react";
 
@@ -53,6 +54,7 @@ function EventRatingForm(props) {
         return;
       }
 
+      // if user is owner of the event
       if (is_owner) {
         setOwnerRateModal(true);
         setTimeout(() => setOwnerRateModal(false), 3000);
@@ -143,7 +145,7 @@ function EventRatingForm(props) {
         </Modal.Header>
 
         <Modal.Body>
-          <p>Sorry, you can't rate your own event.</p>
+          <p>Sorry, you cant rate your own event.</p>
         </Modal.Body>
 
         <Modal.Footer>

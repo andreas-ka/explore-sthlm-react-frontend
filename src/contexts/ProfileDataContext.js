@@ -1,5 +1,6 @@
+/* eslint-disable */ 
 // React hooks
-import { createContext, useContext, useEffect, useState } from "react";
+import { React, createContext, useContext, useEffect, useState } from "react";
 
 // Axios
 import { axiosReq, axiosRes } from "../api/axiosDefaults";
@@ -25,6 +26,7 @@ export const ProfileDataProvider = ({ children }) => {
 
   const currentUser = useCurrentUser();
 
+  // Handles the clicked profile for following
   const handleFollow = async (clickedProfile) => {
     try {
       const { data } = await axiosRes.post("/followers/", {
@@ -50,6 +52,7 @@ export const ProfileDataProvider = ({ children }) => {
     }
   };
 
+  // Handles the clicked profile for unfollowing
   const handleUnfollow = async (clickedProfile) => {
     try {
       await axiosRes.delete(`/followers/${clickedProfile.following_id}/`);

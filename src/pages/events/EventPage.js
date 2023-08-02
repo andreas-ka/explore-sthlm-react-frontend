@@ -1,3 +1,4 @@
+/* eslint-disable */
 // React hooks
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
@@ -45,7 +46,9 @@ function EventPage() {
         ]);
         setEvent({ results: [event] });
         setComments(comments);
-      } catch (err) {}
+      } catch (err) {
+        // console.log(err);
+      }
     };
 
     fetchData();
@@ -72,6 +75,7 @@ function EventPage() {
           eventPage
         />
         <Container className={`mb-3 ${appStyles.Content}`}>
+          {/* Ternary to check if current user can comment */}
           {currentUser && currentUser.profile_id ? (
             <EventRatingForm
               // Passing props

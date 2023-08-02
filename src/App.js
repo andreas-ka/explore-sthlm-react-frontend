@@ -1,3 +1,5 @@
+import React  from 'react';
+
 // Styles and CSS
 import styles from "./App.module.css";
 import NavBar from "./components/NavBar";
