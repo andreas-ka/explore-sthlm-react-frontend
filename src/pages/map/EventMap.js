@@ -77,6 +77,7 @@ const EventMap = () => {
       ) : (
         <Container className={styles.LoadingContainer}>
           <div className={styles.Spinner}></div>
+          <div className="text-center text-white mt-2">Loading...</div>
         </Container>
       )}
     </Container>

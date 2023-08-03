@@ -170,7 +170,7 @@ const EventCalendar = () => {
           </div>
         )
       ) : (
-        // Show a loading indicator while data is loading
+        // Show a loading text
         <div className="text-center text-white mt-2">Loading...</div>
       )}
     </>
