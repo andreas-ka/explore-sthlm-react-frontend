@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 
 // Axios and currentuser context
 import { axiosRes } from "../../api/axiosDefaults";
+import { axiosReq } from "../../api/axiosDefaults";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 // The calendar library
@@ -24,12 +25,13 @@ const EventCalendar = () => {
   const [showUserEvents, setShowUserEvents] = useState(false);
   const history = useHistory();
   const currentUser = useCurrentUser();
+  const [hasLoaded, setHasLoaded] = useState(false);
 
   useEffect(() => {
     // fetch all events data
     const fetchEventData = async () => {
       try {
-        const { data } = await axiosRes.get("/events/");
+        const { data } = await axiosReq.get("/events/");
         const filteredData = data.results.map((event) => ({
           id: event.id,
           title: event.title,
@@ -38,12 +40,20 @@ const EventCalendar = () => {
           category: event.category,
         }));
         setEventsData(filteredData);
+        setHasLoaded(true);
       } catch (err) {
         // console.log(err);
       }
     };
 
-    fetchEventData();
+    setHasLoaded(false);
+    const timer = setTimeout(() => {
+      fetchEventData();
+    }, 1000);
+
+    return () => {
+      clearTimeout(timer);
+    };
   }, []);
 
   // Colors set for the categories.
@@ -143,20 +153,25 @@ const EventCalendar = () => {
         </Button>
       </div>
       {/* Ternary to display user events if they any, else show all events */}
-      {showUserEvents ? (
-        <div className={styles.Calendar}>
-          <Calendar
-            events={myEvent}
-            onClickEvent={(event) => handleClickEvent(event)}
-          />
-        </div>
+      {hasLoaded ? ( // check if data has loaded
+        showUserEvents ? (
+          <div className={styles.Calendar}>
+            <Calendar
+              events={myEvent}
+              onClickEvent={(event) => handleClickEvent(event)}
+            />
+          </div>
+        ) : (
+          <div className={styles.Calendar}>
+            <Calendar
+              events={allEvents}
+              onClickEvent={(event) => handleClickEvent(event)}
+            />
+          </div>
+        )
       ) : (
-        <div className={styles.Calendar}>
-          <Calendar
-            events={allEvents}
-            onClickEvent={(event) => handleClickEvent(event)}
-          />
-        </div>
+        // Show a loading indicator while data is loading
+        <div className="text-center text-white mt-2">Loading...</div>
       )}
     </>
   );

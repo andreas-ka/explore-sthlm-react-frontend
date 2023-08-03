@@ -461,6 +461,10 @@ For more information see these posts on stackoverflow:
 [Heroku not deploying build due to dependency issue](https://stackoverflow.com/questions/72490093/heroku-not-deploying-build-due-to-dependency-issue)    
 [how can I install with tag "legacy-peer-deps" on heroku](https://stackoverflow.com/questions/74236185/how-can-i-install-with-tag-legacy-peer-deps-on-heroku)
 
+- Have an issue regarding memory leaks and unmounted component. This i tried to solve with Tutor but couldnt find a solution before i ran out of minutes. Implemented hasLoaded variables and ternarys but it did not help. This bug still remains unsolved. Picture below from console.
+The bug occurs randomly on the page, mostly often when going from calendar to event map. Nothing that breaks the page.
+Code is similiar to Moments tutorial so that's the way i learned to implement it.      
+![screenshot](src/images/useeffect_bug.png)      
 
 [Back up](#table-of-content)
 

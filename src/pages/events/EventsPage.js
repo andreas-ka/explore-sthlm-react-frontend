@@ -25,6 +25,7 @@ import Event from "./Event";
 import PopularProfiles from "../profiles/PopularProfiles";
 
 /* Shows the events, also a Search bar and category select option */
+// Using hasLoaded to check if data i loaded, still a bug thats noted in readme
 
 function EventsPage({ message, filter = "" }) {
   const [events, setEvents] = useState({ results: [] });

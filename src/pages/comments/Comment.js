@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 
 // Bootstrap components
 import { Media } from "react-bootstrap";
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
 
 // Avatar
 import Avatar from "../../components/Avatar";
@@ -38,9 +40,12 @@ const Comment = (props) => {
   const [showEditForm, setShowEditForm] = useState(false);
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
+  const [showModal, setShowModal] = useState(false);
 
   const handleDelete = async () => {
     // delete the comment
+    setShowModal(true);
+    setTimeout(() => setShowModal(false), 3000);
     try {
       await axiosRes.delete(`/comments/${id}/`);
       setPost((prevPost) => ({
@@ -55,10 +60,14 @@ const Comment = (props) => {
       setComments((prevComments) => ({
         ...prevComments,
         results: prevComments.results.filter((comment) => comment.id !== id),
+
       }));
     } catch (err) {
        // console.log(err);
     }
+  };
+  const handleCloseModal = () => {
+    setShowModal(false);
   };
 
   return (
@@ -91,6 +100,20 @@ const Comment = (props) => {
           />
         )}
       </Media>
+      <Modal show={showModal} onHide={handleCloseModal} centered>
+        <Modal.Header closeButton>
+          <Modal.Title>Comment Deleted</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <p>Comment deleted successfully!</p>
+          <p>You need to refresh the page to see the outcome.</p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleCloseModal}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </>
   );
 };

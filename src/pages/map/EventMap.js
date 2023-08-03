@@ -15,9 +15,11 @@ import axios from "axios";
 import Geocode from "react-geocode";
 
 // Fetch all event data and show the mapcontainer with the results
+// Using hasLoaded to check if data i loaded, still a bug thats noted in readme
 
 const EventMap = () => {
   const [eventLocations, setEventLocations] = useState([]);
+  const [hasLoaded, setHasLoaded] = useState(false);
 
   Geocode.setApiKey(process.env.REACT_APP_GOOGLE_MAPS_API_KEY);
   Geocode.setRegion("se");
@@ -42,62 +44,41 @@ const EventMap = () => {
           })
         );
         setEventLocations(updatedLocations);
+        setHasLoaded(true);
       } catch (err) {
         // console.log(err);
       }
     };
-
+    setHasLoaded(false);
     fetchEvents();
   }, []);
 
   return (
     <Container className="text-center">
-      <>
-        <div className="p-3 text-center text-white">
-          <h1>Event Map</h1>
-        </div>
-        <div className="text-white">
-          <h3>Categories</h3>
-          <i
-            className="fa-solid fa-location-dot"
-            style={{ color: "#57A639" }}
-          ></i>{" "}
-          Family
-          <i
-            className="fa-solid fa-location-dot"
-            style={{ color: "#ffc0cb" }}
-          ></i>{" "}
-          Food & Drink
-          <i
-            className="fa-solid fa-location-dot"
-            style={{ color: "#3B83BD" }}
-          ></i>{" "}
-          Sightseeing
-          <i
-            className="fa-solid fa-location-dot"
-            style={{ color: "purple" }}
-          ></i>{" "}
-          Music
-          <i
-            className="fa-solid fa-location-dot"
-            style={{ color: "#E1CC4F" }}
-          ></i>{" "}
-          Sport
-          <i
-            className="fa-solid fa-location-dot"
-            style={{ color: "#FF7514" }}
-          ></i>{" "}
-          Culture
-          <i
-            className="fa-solid fa-location-dot"
-            style={{ color: "#B32428" }}
-          ></i>{" "}
-          Shopping
-        </div>
-        <div className={styles.CenterMap}>
-          <MapContainer eventLocations={eventLocations} />
-        </div>
-      </>
+      <div className="p-3 text-center text-white">
+        <h1>Event Map</h1>
+      </div>
+      {hasLoaded ? (
+        <>
+          <div className="text-white">
+            <h3>Categories</h3>
+            <i className="fa-solid fa-location-dot" style={{ color: "#57A639" }}></i> Family
+            <i className="fa-solid fa-location-dot" style={{ color: "#ffc0cb" }}></i> Food & Drink
+            <i className="fa-solid fa-location-dot" style={{ color: "#3B83BD" }}></i> Sightseeing
+            <i className="fa-solid fa-location-dot" style={{ color: "purple" }}></i> Music
+            <i className="fa-solid fa-location-dot" style={{ color: "#E1CC4F" }}></i> Sport
+            <i className="fa-solid fa-location-dot" style={{ color: "#FF7514" }}></i> Culture
+            <i className="fa-solid fa-location-dot" style={{ color: "#B32428" }}></i> Shopping
+          </div>
+          <div className={styles.CenterMap}>
+            <MapContainer eventLocations={eventLocations} />
+          </div>
+        </>
+      ) : (
+        <Container className={styles.LoadingContainer}>
+          <div className={styles.Spinner}></div>
+        </Container>
+      )}
     </Container>
   );
 };
